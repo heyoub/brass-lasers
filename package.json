@@ -1,0 +1,49 @@
+{
+  "name": "brass-lasers-4am",
+  "displayName": "Brass Lasers 4AM",
+  "description": "Void-purple chrome, brass-gold accents, hot-pink lasers — a dark theme for late-night code sessions that still slap at sunrise. Funky EDM energy for VS Code & Cursor.",
+  "version": "0.1.0",
+  "publisher": "heyoub",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "color-theme",
+    "edm",
+    "neon",
+    "purple",
+    "brass",
+    "laser",
+    "cursor",
+    "wook",
+    "synth"
+  ],
+  "galleryBanner": {
+    "color": "#0e0a17",
+    "theme": "dark"
+  },
+  "icon": "media/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heyoub/brass-lasers"
+  },
+  "bugs": {
+    "url": "https://github.com/heyoub/brass-lasers/issues"
+  },
+  "homepage": "https://github.com/heyoub/brass-lasers#readme",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Brass Lasers 4AM",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-4AM-color-theme.json"
+      }
+    ]
+  }
+}

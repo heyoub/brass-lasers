@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+.gitignore
+.git/**
+**/*.vsix
+**/.DS_Store
+t3/**
+*.t3code.json
+PUBLISH.md
+agent-tools/**
+.cursor/**
+*.plan.md
+scripts/**
+node_modules/**
+**/*.map
