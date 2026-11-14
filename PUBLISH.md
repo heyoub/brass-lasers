@@ -1,8 +1,13 @@
 # Publish Brass Lasers 4AM
 
-You already have a local VSIX: `brass-lasers-4am-0.1.0.vsix`.
+You already have a local VSIX: `brass-lasers-4am-0.1.0.vsix`  
+Also attached to GitHub Release: https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0
 
 Extension ID on both registries: **`heyoub.brass-lasers-4am`**
+
+T3 gallery PR (opened as `heyoub`): https://github.com/SunkenInTime/t3-themes/pull/74
+
+**Blocked without your tokens:** `VSCE_PAT` and `OVSX_PAT` are not on this machine. Scaffolding, VSIX, repo, and release are done — run the two publish commands below after you create the PATs.
 
 ---
 

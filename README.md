@@ -30,7 +30,7 @@ Cursor pulls third-party extensions from **Open VSX**, not the Microsoft Marketp
 2. Search **Brass Lasers 4AM**
 3. Install when it shows publisher **heyoub**
 
-If search is being weird, grab the `.vsix` from [Releases](https://github.com/heyoub/brass-lasers/releases) and use **Install from VSIX…**
+If search is being weird (or before Open VSX lists it), grab the `.vsix` from [v0.1.0](https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0) and use **Install from VSIX…**
 
 ### From a VSIX (both editors)
 
