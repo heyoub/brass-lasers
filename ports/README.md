@@ -4,7 +4,7 @@ Every file in this folder (and in `../colors/`) is **generated** from `palette/*
 
 Each port ships all nine sets, in set-time order: **4AM** (the original), **Atrium 5AM**, **Daybreak** (6AM, light), **Soundcheck** (12PM, matte), **Golden Hour** (5PM, light), **Afterglow** (8PM), **Liquid Metal** (10PM), **Midnight** (12AM) and **Strobe** (2AM, high contrast). Swap `4am` in any file name for `atrium`, `daybreak`, `soundcheck`, `golden-hour`, `afterglow`, `liquid-metal`, `midnight` or `strobe`.
 
-Every port has been tested: see **[TESTED.md](TESTED.md)** for how and what passed.
+Every port is checked on every commit. **[COMPAT.md](COMPAT.md)** shows what each one is verified to (parsed, checked against the app's own source, loaded in the real app, or seen on screen), per app version and set; **[TESTED.md](TESTED.md)** explains how.
 
 ## Terminals
 

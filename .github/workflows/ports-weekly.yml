@@ -1,0 +1,71 @@
+name: Ports (weekly)
+
+# Two slower checks that don't belong on every PR:
+#  - contracts: re-fetch each app's upstream source of truth and tell a real compatibility break
+#    (a key we ship is no longer recognized) apart from a harmless source change
+#  - runtime:   load every set in the real CLI tools (L3) on Linux
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: ["templates/ports/**", "palette/**", "scripts/ports/**"]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --no-audit --no-fund
+      - name: Upstream contract drift
+        id: drift
+        env:
+          DRIFT_REPORT: drift.md
+        run: node scripts/refresh-port-contracts.js --check
+      - name: Open or update the drift issue
+        if: failure() && steps.drift.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Port compatibility: upstream no longer recognizes keys we ship"
+          body="$(cat drift.md)
+
+          Run \`node scripts/refresh-port-contracts.js\` after fixing the template, then \`npm run build\` and \`node scripts/check-ports.js --write\`. Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          n=$(gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number')
+          if [ -n "$n" ]; then gh issue comment "$n" --body "$body"; else gh issue create --title "$title" --body "$body"; fi
+
+  runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci --no-audit --no-fund
+      - name: Install the real tools
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/tools" && cd "$RUNNER_TEMP/tools"
+          gh release download -R neovim/neovim -p 'nvim-linux-x86_64.tar.gz'
+          gh release download -R sharkdp/bat -p '*x86_64-unknown-linux-musl.tar.gz'
+          gh release download -R dandavison/delta -p '*x86_64-unknown-linux-musl.tar.gz'
+          gh release download -R junegunn/fzf -p '*linux_amd64.tar.gz'
+          gh release download -R starship/starship -p 'starship-x86_64-unknown-linux-musl.tar.gz'
+          for f in *.tar.gz; do tar -xzf "$f"; done
+          mkdir -p bin
+          find . -type f \( -name bat -o -name delta -o -name fzf -o -name starship \) -perm -u+x -exec cp {} bin/ \;
+          echo "$RUNNER_TEMP/tools/bin" >> "$GITHUB_PATH"
+          echo "$RUNNER_TEMP/tools/nvim-linux-x86_64/bin" >> "$GITHUB_PATH"
+      - name: Versions
+        run: nvim --version | head -1; bat --version; delta --version; fzf --version; starship --version | head -1
+      - name: Runtime smoke (every set, every tool)
+        run: node scripts/ports/smoke.js

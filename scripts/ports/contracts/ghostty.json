@@ -1,0 +1,16 @@
+{
+  "source": {
+    "name": "Ghostty Config.zig",
+    "url": "https://raw.githubusercontent.com/ghostty-org/ghostty/main/src/config/Config.zig"
+  },
+  "refreshed": "2026-11-17",
+  "recognized": [
+    "background",
+    "cursor-color",
+    "cursor-text",
+    "foreground",
+    "palette",
+    "selection-background",
+    "selection-foreground"
+  ]
+}

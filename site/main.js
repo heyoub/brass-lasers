@@ -349,6 +349,7 @@ async function boot() {
   try {
     const { createWorld } = await import("./scene.js");
     world = createWorld($("#world"), { reducedMotion, store, beat });
+    window.dispatchEvent(new Event("bl-world-ready"));
   } catch (err) {
     console.warn("WebGL world unavailable, using the painted sky", err);
     $("#world").remove();
@@ -449,7 +450,17 @@ function beatControls() {
     d.classList.add("hit");
   };
   beat.onEnd = () => { $("#listen-note").textContent = "Sharing stopped. The clock is still here."; beatUI(); };
-  $("#beat-toggle").addEventListener("click", () => { beat.mode === "off" ? beat.useClock(true) : beat.stop(); beatUI(); });
+  // lightning switch: remembered per visitor; off by default when reduced motion is requested
+{
+  let on = !reducedMotion;
+  try { const saved = localStorage.getItem("bl-flashes"); if (saved !== null) on = saved === "on"; } catch {}
+  const btn = $("#flash-toggle");
+  const sync = () => { btn.setAttribute("aria-pressed", String(on)); $("#flash-label").textContent = on ? "Flashes on" : "Flashes off"; world?.setLightning(on); };
+  btn.addEventListener("click", () => { on = !on; try { localStorage.setItem("bl-flashes", on ? "on" : "off"); } catch {} sync(); });
+  sync();
+  window.addEventListener("bl-world-ready", sync);
+}
+$("#beat-toggle").addEventListener("click", () => { beat.mode === "off" ? beat.useClock(true) : beat.stop(); beatUI(); });
   $("#listen").addEventListener("click", async () => {
     if (beat.mode === "listen") { beat.stop(); beatUI(); return; }
     try {

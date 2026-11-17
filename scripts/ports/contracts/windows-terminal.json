@@ -1,0 +1,30 @@
+{
+  "source": {
+    "name": "Windows Terminal settings schema",
+    "url": "https://raw.githubusercontent.com/microsoft/terminal/main/doc/cascadia/profiles.schema.json"
+  },
+  "refreshed": "2026-11-17",
+  "recognized": [
+    "background",
+    "black",
+    "blue",
+    "brightBlack",
+    "brightBlue",
+    "brightCyan",
+    "brightGreen",
+    "brightPurple",
+    "brightRed",
+    "brightWhite",
+    "brightYellow",
+    "cursorColor",
+    "cyan",
+    "foreground",
+    "green",
+    "name",
+    "purple",
+    "red",
+    "selectionBackground",
+    "white",
+    "yellow"
+  ]
+}

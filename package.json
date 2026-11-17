@@ -170,14 +170,19 @@
   },
   "devDependencies": {
     "@resvg/resvg-js": "2.6.2",
-    "shiki": "3.13.0"
+    "fast-xml-parser": "4.5.0",
+    "shiki": "3.13.0",
+    "smol-toml": "1.3.1"
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "check": "node scripts/build.js --check && node scripts/contrast.js",
+    "check": "node scripts/build.js --check && node scripts/contrast.js && node scripts/check-ports.js",
     "contrast": "node scripts/contrast.js --report",
     "art": "node scripts/make-art.js",
     "package": "npx @vscode/vsce package",
-    "previews": "node scripts/make-previews.js"
+    "previews": "node scripts/make-previews.js",
+    "ports": "node scripts/check-ports.js",
+    "ports:refresh": "node scripts/refresh-port-contracts.js",
+    "ports:smoke": "node scripts/ports/smoke.js"
   }
 }

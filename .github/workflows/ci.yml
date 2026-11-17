@@ -14,8 +14,13 @@ jobs:
         with:
           node-version: 20
 
+      - run: npm ci --no-audit --no-fund
+
       - name: Generated files are up to date
         run: node scripts/build.js --check
+
+      - name: Ports (L1 parse + L2 contracts and parity, with negative controls)
+        run: node scripts/check-ports.js
 
       - name: Contrast gate (WCAG)
         run: node scripts/contrast.js --report

@@ -360,7 +360,7 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
 
   const clock = new THREE.Clock();
   const sunPos = new THREE.Vector3();
-  let travel = 0, rafId = 0, energy = 0, flash = 0, lastStrike = -1e9, flashAge = 99, flashPeakNow = 0;
+  let travel = 0, rafId = 0, energy = 0, flash = 0, lastStrike = -1e9, flashAge = 99, flashPeakNow = 0, lightningOn = true;
   // frame-rate-independent smoothing factor for a per-second rate
   const ease = (dt, rate) => 1 - Math.exp(-dt * rate);
   // frame-time watchdog for adaptive resolution
@@ -436,8 +436,10 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     state,
     start() { apply(); go(); },
     // lightning between sets; rate-limited so fast scrolling can never strobe
+    // a separate switch from reduced motion: dimmer flashes are still flashes (photosensitivity)
+    setLightning(on) { lightningOn = on; if (!on) { flashPeakNow = 0; flash = 0; } },
     strike(color) {
-      if (reducedMotion) return;
+      if (reducedMotion || !lightningOn) return;
       const now = performance.now();
       if (now - lastStrike < FEEL.strikeGap) return;
       lastStrike = now;

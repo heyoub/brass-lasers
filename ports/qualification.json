@@ -1,0 +1,22 @@
+{
+  "_comment": "Evidence for L3 (real app loaded it) and L4 (seen on screen). Hand-maintained: record only what was actually done, for the exact app version and sets. 'ci: true' means the weekly runtime job re-proves it (see .github/workflows/ports-weekly.yml). Read by scripts/check-ports.js to build COMPAT.md.",
+  "targets": {
+    "vscode": {
+      "runtime": { "app": "Cursor", "version": "2.x", "date": "2026-11-16", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] },
+      "visual": { "app": "Cursor", "date": "2026-11-16", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"], "evidence": "media/screenshots/sets/" }
+    },
+    "zed": {
+      "runtime": { "app": "Zed", "version": "dev extension", "date": "2026-11-17", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] },
+      "visual": { "app": "Zed", "date": "2026-11-17", "sets": ["4am", "atrium", "soundcheck", "golden-hour", "liquid-metal", "strobe"], "evidence": "media/screenshots/zed/" }
+    },
+    "neovim": { "runtime": { "app": "Neovim", "version": "0.12", "date": "2026-11-17", "ci": true, "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "helix": { "runtime": { "app": "Helix", "version": "25.07.1", "date": "2026-11-17", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "bat": { "runtime": { "app": "bat 0.26 + delta 0.20", "version": "", "date": "2026-11-17", "ci": true, "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "fzf": { "runtime": { "app": "fzf", "version": "0.75", "date": "2026-11-17", "ci": true, "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "starship": { "runtime": { "app": "Starship", "version": "1.27", "date": "2026-11-17", "ci": true, "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "wezterm": { "runtime": { "app": "WezTerm", "version": "20240203", "date": "2026-11-17", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "alacritty": { "runtime": { "app": "Alacritty", "version": "0.17", "date": "2026-11-17", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "banner": { "runtime": { "app": "Git Bash + PowerShell 5.1/7", "version": "", "date": "2026-11-17", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } },
+    "t3": { "runtime": { "app": "T3 gallery validator", "version": "", "date": "2026-11-16", "sets": ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"] } }
+  }
+}

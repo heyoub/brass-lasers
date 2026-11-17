@@ -1,0 +1,25 @@
+{
+  "source": {
+    "name": "fzf man page (COLOR NAMES)",
+    "url": "https://raw.githubusercontent.com/junegunn/fzf/master/man/man1/fzf.1"
+  },
+  "refreshed": "2026-11-17",
+  "recognized": [
+    "bg",
+    "bg+",
+    "border",
+    "fg",
+    "fg+",
+    "gutter",
+    "header",
+    "hl",
+    "hl+",
+    "info",
+    "label",
+    "marker",
+    "pointer",
+    "prompt",
+    "query",
+    "spinner"
+  ]
+}

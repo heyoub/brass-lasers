@@ -1,0 +1,26 @@
+{
+  "source": {
+    "name": "Sublime Text color scheme docs",
+    "url": "https://www.sublimetext.com/docs/color_schemes.html"
+  },
+  "refreshed": "2026-11-17",
+  "recognized": [
+    "accent",
+    "active_guide",
+    "background",
+    "bracket_contents_foreground",
+    "brackets_foreground",
+    "caret",
+    "find_highlight",
+    "find_highlight_foreground",
+    "foreground",
+    "guide",
+    "gutter_foreground",
+    "gutter_foreground_highlight",
+    "invisibles",
+    "line_highlight",
+    "selection",
+    "selection_border",
+    "tags_foreground"
+  ]
+}
