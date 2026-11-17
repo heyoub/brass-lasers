@@ -41,7 +41,7 @@
     <a href="#playground">Playground</a>
     <a href="#install">Install</a>
     <a href="https://github.com/heyoub/brass-lasers">GitHub</a>
-    <span class="now-playing keep" title="Now playing"><span class="dot"></span><span id="np-name">4AM · 4AM</span></span>
+    <button class="now-playing keep" id="beat-toggle" aria-pressed="false" title="Beat mode: the lights pulse to this set's tempo"><span class="dot"></span><span id="np-name">4AM · 4AM</span><span id="np-bpm"></span></button>
   </nav>
 </header>
 
@@ -133,6 +133,10 @@
         <h2 class="title reveal">Coming soon.</h2>
         <p class="lede reveal">Brass stabs, glitch-hop, laser fog and one-more-song energy. The official soundtrack is still being dug out of the crates.</p>
         <!-- PLAYLIST: embed goes here -->
+        <div class="sync reveal">
+          <button class="btn solid" id="listen">Sync to my music</button>
+          <p id="listen-note">Play anything (Spotify, YouTube, a DJ set) and share its audio when your browser asks. The lasers lock to the kick drum. Or tap the pill up top for the built-in clock.</p>
+        </div>
       </div>
       <div class="eq panel reveal" id="eq" aria-hidden="true"></div>
     </div>

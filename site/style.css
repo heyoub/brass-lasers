@@ -241,3 +241,25 @@ footer a { text-decoration-color: color-mix(in srgb, var(--text) 30%, transparen
 }
 
 @media (max-width: 720px) { .scroll-cue { display: none; } .rail { font-size: 11px; } }
+
+/* ---------- beat mode ---------- */
+button.now-playing { cursor: pointer; color: inherit; font-family: var(--mono); }
+button.now-playing[aria-pressed="true"] { border-color: color-mix(in srgb, var(--pink) 70%, transparent); box-shadow: 0 0 22px -8px var(--pink); }
+button.now-playing[aria-pressed="true"] .dot { animation: none; }
+button.now-playing .dot.hit { animation: hit .35s var(--ease); }
+button.now-playing:disabled { cursor: default; }
+@keyframes hit { 0% { transform: scale(1.9); box-shadow: 0 0 18px var(--pink); } 100% { transform: scale(1); } }
+#np-bpm { opacity: .65; }
+.sync { display: grid; gap: 12px; justify-items: start; margin-top: 8px; }
+.sync p { margin: 0; max-width: 46ch; font-size: 14px; line-height: 1.5; opacity: .72; }
+
+/* ---------- cursor companion (native cursor stays) ---------- */
+.cursor-ring {
+  position: fixed; left: 0; top: 0; z-index: 70; pointer-events: none;
+  width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%;
+  border: 1.5px solid color-mix(in srgb, var(--text) 45%, transparent);
+  opacity: 0; transition: opacity .3s, width .3s var(--ease), height .3s var(--ease), margin .3s var(--ease), border-color .3s, box-shadow .3s;
+}
+.cursor-ring.on { opacity: 1; }
+.cursor-ring.hot { width: 46px; height: 46px; margin: -23px 0 0 -23px; border-color: var(--pink); box-shadow: 0 0 22px -6px var(--pink), inset 0 0 14px -8px var(--pink); }
+.cursor-ring.press { width: 22px; height: 22px; margin: -11px 0 0 -11px; }

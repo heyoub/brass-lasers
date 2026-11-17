@@ -7,6 +7,8 @@ import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+import { createGreenhouse } from "./greenhouse.js";
+import { createWeather } from "./weather.js";
 
 const SKY_VERT = /* glsl */ `
 varying vec3 vPos;
@@ -14,7 +16,7 @@ void main() { vPos = (modelMatrix * vec4(position, 1.0)).xyz; gl_Position = proj
 
 const SKY_FRAG = /* glsl */ `
 uniform vec3 uTop, uMid, uHorizon, uSunA, uSunB, uStar;
-uniform float uSunY, uSunR, uStripes, uStars, uGlow, uTime;
+uniform float uSunY, uSunR, uStripes, uStars, uGlow, uTime, uSunGain;
 varying vec3 vPos;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 void main() {
@@ -42,7 +44,7 @@ void main() {
   float gap = step(0.08, below) * step(fract(below * 5.5 - uTime * 0.12), below * 0.42);
   disc *= 1.0 - gap * uStripes;
   // keep the disc under the bloom threshold that would clip red and shift brass toward lemon
-  col = mix(col, sunCol * 0.64, disc);
+  col = mix(col, sunCol * uSunGain, disc);
   gl_FragColor = vec4(max(col, 0.0), 1.0);
 }`;
 
@@ -120,19 +122,66 @@ void main() {
   gl_FragColor = vec4(max(uColor, 0.0) * a, a);
 }`;
 
-// Film grain + chromatic aberration that opens up with scroll velocity.
+// The lens: dew drops (refraction), sun flare (anamorphic streak + ghosts), chromatic
+// aberration that opens with scroll velocity, film grain, and the lightning flash.
 // Also the last line of defense: no NaN or negative value reaches the screen.
 const POST = {
-  uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uGrain: { value: 0.02 }, uAberration: { value: 0 } },
+  uniforms: {
+    tDiffuse: { value: null }, uTime: { value: 0 }, uGrain: { value: 0.02 }, uAberration: { value: 0 }, uAspect: { value: 1.6 },
+    uSunUV: { value: new THREE.Vector2(0.5, 0.5) }, uFlare: { value: 0 }, uFlareCol: { value: new THREE.Color() },
+    uDew: { value: 0 }, uFlash: { value: 0 }, uFlashCol: { value: new THREE.Color() },
+  },
   vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
   fragmentShader: /* glsl */ `
-uniform sampler2D tDiffuse; uniform float uTime, uGrain, uAberration;
+uniform sampler2D tDiffuse; uniform float uTime, uGrain, uAberration, uAspect, uFlare, uDew, uFlash;
+uniform vec2 uSunUV; uniform vec3 uFlareCol, uFlashCol;
 varying vec2 vUv;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+
+// one layer of dew: some cells hold a drop; inside it the scene is refracted and lit
+void drop(vec2 uv, float scale, float seed, inout vec2 off, inout float hl, inout float rim) {
+  vec2 p = uv * vec2(uAspect, 1.0) * scale;
+  vec2 id = floor(p), f = fract(p);
+  if (hash(id + seed) < 0.88) return;   // sparse: dew, not rain
+  vec2 c = vec2(0.25, 0.25) + vec2(hash(id + seed + 7.1), hash(id + seed + 3.3)) * 0.5;
+  float r = 0.08 + 0.16 * hash(id + seed + 1.7);
+  vec2 d = (f - c) / r; d.y *= 1.12;
+  float l = length(d);
+  if (l > 1.0) return;
+  float dome = sqrt(1.0 - l * l);
+  off += -d * dome * 0.06 / scale;
+  hl += smoothstep(0.3, 0.0, length(d - vec2(-0.35, 0.45))) * 0.8;
+  rim += smoothstep(0.7, 1.0, l);
+}
+
 void main() {
-  vec2 dir = vUv - 0.5;
+  vec2 uv = vUv, off = vec2(0.0);
+  float hl = 0.0, rim = 0.0;
+  if (uDew > 0.001) {
+    drop(uv, 9.0, 1.0, off, hl, rim);
+    drop(uv, 19.0, 5.0, off, hl, rim);
+    uv += off * uDew;
+  }
+  vec2 dir = uv - 0.5;
   float ab = uAberration * dot(dir, dir) * 4.0;
-  vec3 col = vec3(texture2D(tDiffuse, vUv + dir * ab).r, texture2D(tDiffuse, vUv).g, texture2D(tDiffuse, vUv - dir * ab).b);
+  vec3 col = vec3(texture2D(tDiffuse, uv + dir * ab).r, texture2D(tDiffuse, uv).g, texture2D(tDiffuse, uv - dir * ab).b);
+  col = col * (1.0 - rim * 0.12 * uDew) + vec3(hl) * 0.16 * uDew;
+
+  if (uFlare > 0.001) {
+    vec2 sv = (vUv - uSunUV) * vec2(uAspect, 1.0);
+    float streak = exp(-abs(sv.y) * 70.0) * exp(-abs(sv.x) * 1.6) * 0.55;
+    float ghosts = 0.0;
+    for (int i = 1; i <= 4; i++) {
+      vec2 g = uSunUV + (vec2(0.5) - uSunUV) * (0.45 * float(i) + 0.25);
+      float rr = 0.025 + 0.02 * float(i);
+      float dd = length((vUv - g) * vec2(uAspect, 1.0));
+      ghosts += smoothstep(rr, rr * 0.55, dd) * 0.07 + smoothstep(rr * 1.02, rr, dd) * smoothstep(rr * 0.8, rr, dd) * 0.05;
+    }
+    // blend toward the flare color so it reads on cream skies as well as black ones
+    col = mix(col, uFlareCol, clamp((streak + ghosts) * uFlare, 0.0, 0.85));
+  }
+
+  col = mix(col, uFlashCol, uFlash * 0.42) + uFlashCol * uFlash * 0.18;
   col += (hash(vUv * vec2(1920.0, 1080.0) + fract(uTime) * 61.0) - 0.5) * uGrain;
   col = clamp(col, 0.0, 64.0);
   if (any(isnan(col))) col = vec3(0.0);
@@ -140,10 +189,10 @@ void main() {
 }`,
 };
 
-export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote"];
-export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh"];
+export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote", "frame", "glass", "leafA", "leafB", "leafDark", "fog", "flare", "flash"];
+export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh", "greenhouse", "flare", "fog", "dew", "sunGain"];
 
-export function createWorld(canvas, { reducedMotion, store }) {
+export function createWorld(canvas, { reducedMotion, store, beat }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
   // adaptive resolution: start sharp, step down if frames run long, step back up when there's headroom
   const DPR_STEPS = [0.6, 0.75, 0.9, 1, 1.25, 1.5].filter((d) => d <= Math.max(1, window.devicePixelRatio));
@@ -161,7 +210,7 @@ export function createWorld(canvas, { reducedMotion, store }) {
     new THREE.ShaderMaterial({
       vertexShader: SKY_VERT, fragmentShader: SKY_FRAG, depthWrite: false,
       uniforms: U({ uTop: { value: c() }, uMid: { value: c() }, uHorizon: { value: c() }, uSunA: { value: c() }, uSunB: { value: c() }, uStar: { value: c() },
-        uSunY: { value: 4 }, uSunR: { value: 7 }, uStripes: { value: 1 }, uStars: { value: 1 }, uGlow: { value: 1 } }),
+        uSunY: { value: 4 }, uSunR: { value: 7 }, uStripes: { value: 1 }, uStars: { value: 1 }, uGlow: { value: 1 }, uSunGain: { value: 0.64 } }),
     }),
   );
   sky.position.set(0, 30, -64);
@@ -211,6 +260,9 @@ export function createWorld(canvas, { reducedMotion, store }) {
   }));
   scene.add(motes);
 
+  const greenhouse = createGreenhouse(scene);
+  const weather = createWeather(scene, camera);
+
   const composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
   const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.6, 0.5, 0.3);
@@ -226,7 +278,7 @@ export function createWorld(canvas, { reducedMotion, store }) {
     const s = state.colors, n = state.nums, su = sky.material.uniforms, gu = ground.material.uniforms;
     su.uTop.value.copy(s.top); su.uMid.value.copy(s.mid); su.uHorizon.value.copy(s.horizon);
     su.uSunA.value.copy(s.sunA); su.uSunB.value.copy(s.sunB); su.uStar.value.copy(s.star);
-    su.uSunY.value = n.sunY; su.uSunR.value = n.sunR; su.uStripes.value = n.stripes; su.uStars.value = n.stars; su.uGlow.value = n.glow;
+    su.uSunY.value = n.sunY; su.uSunR.value = n.sunR; su.uStripes.value = n.stripes; su.uStars.value = n.stars; su.uGlow.value = n.glow; su.uSunGain.value = n.sunGain ?? 0.64;
     gu.uFill.value.copy(s.fill); gu.uGrid.value.copy(s.grid); gu.uGrid2.value.copy(s.grid2); gu.uAmp.value = n.amp; gu.uLine.value = n.line;
     beams.forEach((b) => { b.material.uniforms.uColor.value.copy(s[`beam${b.userData.colorIndex}`]); b.material.uniforms.uAmt.value = n.beams; b.position.y = n.sunY; });
     motes.material.uniforms.uColor.value.copy(s.mote); motes.material.uniforms.uAmt.value = n.motes; motes.material.uniforms.uRise.value = n.rise;
@@ -244,6 +296,7 @@ export function createWorld(canvas, { reducedMotion, store }) {
     renderer.setSize(w, h, false);
     composer.setSize(w, h);
     bloom.resolution.set(w, h);
+    post.uniforms.uAspect.value = w / h;
     camera.aspect = w / h;
     // keep the horizon composed on tall phones
     camera.fov = w / h < 0.8 ? 72 : 55;
@@ -253,7 +306,8 @@ export function createWorld(canvas, { reducedMotion, store }) {
   resize();
 
   const clock = new THREE.Clock();
-  let travel = 0, rafId = 0, energy = 0;
+  const sunPos = new THREE.Vector3();
+  let travel = 0, rafId = 0, energy = 0, flash = 0, lastStrike = -1e9;
   // frame-time watchdog for adaptive resolution
   let acc = 0, count = 0, cool = 0;
   function adapt(dt) {
@@ -278,12 +332,33 @@ export function createWorld(canvas, { reducedMotion, store }) {
     ground.material.uniforms.uOff.value = travel;
     sky.material.uniforms.uTime.value = t * motion;
     motes.material.uniforms.uTime.value = t * motion;
+    // beat: the lasers, bloom and grid breathe with the music (gentle on purpose)
+    if (beat && !reducedMotion) beat.update(performance.now(), raw);
+    const pulse = beat && !reducedMotion ? beat.pulse : 0;
     beams.forEach((b) => {
       b.rotation.z = b.userData.base + Math.sin(t * (0.35 + energy * 1.5) * motion + b.userData.phase) * (0.12 + energy * 0.1);
-      b.material.uniforms.uAmt.value = state.nums.beams * (1 + energy * 1.4);
+      b.material.uniforms.uAmt.value = state.nums.beams * (1 + energy * 1.4 + pulse * 1.1);
     });
+    bloom.strength = state.nums.bloom * 0.62 + pulse * 0.25;
+    ground.material.uniforms.uLine.value = state.nums.line * (1 + pulse * 0.45);
+    sky.material.uniforms.uSunR.value = state.nums.sunR * (1 + pulse * 0.015);
+
+    // set pieces and weather
+    greenhouse.update(state.nums.greenhouse, t * motion, state.colors);
+    weather.update(dt, t * motion, state.nums, state.colors);
+
+    // lens: sun flare follows the sun's screen position and fades as it sinks
+    sunPos.set(0, state.nums.sunY, -64).project(camera);
+    post.uniforms.uSunUV.value.set(sunPos.x * 0.5 + 0.5, sunPos.y * 0.5 + 0.5);
+    const sunUp = Math.min(1, Math.max(0, (state.nums.sunY + state.nums.sunR * 0.2) / (state.nums.sunR * 0.8)));
+    post.uniforms.uFlare.value = state.nums.flare * sunUp;
+    post.uniforms.uFlareCol.value.copy(state.colors.flare);
+    post.uniforms.uDew.value = state.nums.dew;
+    flash *= Math.exp(-dt * 7);
+    post.uniforms.uFlash.value = flash;
+    post.uniforms.uFlashCol.value.copy(state.colors.flash);
     post.uniforms.uTime.value = t;
-    post.uniforms.uAberration.value = reducedMotion ? 0 : energy * 0.035;
+    post.uniforms.uAberration.value = reducedMotion ? 0 : energy * 0.035 + pulse * 0.006;
     pointer.x += (pointer.tx - pointer.x) * 0.04;
     pointer.y += (pointer.ty - pointer.y) * 0.04;
     camera.position.x = pointer.x * 1.6;
@@ -300,6 +375,15 @@ export function createWorld(canvas, { reducedMotion, store }) {
   return {
     state,
     start() { apply(); go(); },
+    // lightning between sets; rate-limited so fast scrolling can never strobe
+    strike(color) {
+      if (reducedMotion) return;
+      const now = performance.now();
+      if (now - lastStrike < 900) return;
+      lastStrike = now;
+      flash = 1;
+      weather.strike(new THREE.Color(color));
+    },
     get quality() { return DPR_STEPS[dprIndex]; },
   };
 }
