@@ -3,13 +3,16 @@
 Current release: **v0.2.0 — the afterglow set** → `brass-lasers-4am-0.2.0.vsix` (build with `npx @vscode/vsce package`)
 Previous: v0.1.0 is attached to its GitHub Release at https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0
 
-**Before publishing 0.2.0:** capture and push the screenshots ([`media/screenshots/README.md`](media/screenshots/README.md)). The Marketplace README pulls them from raw GitHub URLs.
+Screenshots for 0.2.0 are captured and pushed ([`media/screenshots/README.md`](media/screenshots/README.md)). The Marketplace README pulls them from raw GitHub URLs.
 
 Extension ID on both registries: **`heyoub.brass-lasers-4am`**
 
 T3 gallery PR (opened as `heyoub`): https://github.com/SunkenInTime/t3-themes/pull/74
 
-**Blocked without your tokens:** `VSCE_PAT` and `OVSX_PAT` are not on this machine. Scaffolding, VSIX, repo, and release are done — run the two publish commands below after you create the PATs.
+| Registry | Status |
+|---|---|
+| Open VSX (Cursor) | **Live:** v0.2.0 at https://open-vsx.org/extension/heyoub/brass-lasers-4am (namespace `heyoub` claimed) |
+| VS Marketplace | **Not yet published:** needs a `VSCE_PAT`. Azure DevOps sign-in was failing when 0.2.0 shipped. Run step 1 below once you have the token. |
 
 ---
 
@@ -64,7 +67,7 @@ Cursor installs third-party extensions from Open VSX.
 1. Sign in at https://open-vsx.org with GitHub **`heyoub`**
 2. Connect Eclipse account + sign the **Publisher Agreement**
 3. Settings → Access Tokens → generate one
-4. Claim the namespace (once):
+4. Claim the namespace (once, already done for `heyoub`):
 
 ```bash
 npx ovsx create-namespace heyoub -p YOUR_OVSX_PAT
@@ -149,7 +152,7 @@ The extension lives in `zed/` (`id = "brass-lasers-4am-theme"`, MIT license copi
 
 - Push this folder to https://github.com/heyoub/brass-lasers so `repository` / `bugs` links resolve
 - Attach the `.vsix` to a GitHub Release for “Install from VSIX” folks
-- After Open VSX is live, search **Brass Lasers 4AM** inside Cursor Extensions
+- Open VSX is live; search **Brass Lasers 4AM** inside Cursor Extensions
 
 ---
 
