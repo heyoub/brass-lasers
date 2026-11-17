@@ -41,10 +41,10 @@ Every set also ships a **No Italics** flavor, for people who'd rather not see co
 
 ## Install
 
-**VS Code:** Extensions → search **Brass Lasers 4AM** (publisher `heyoub`), or:
+**VS Code:** the Marketplace listing is on its way. Until then, grab `brass-lasers-4am-<version>.vsix` from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest), then:
 
 ```bash
-code --install-extension heyoub.brass-lasers-4am
+code --install-extension brass-lasers-4am-0.5.0.vsix
 ```
 
 **Cursor / VSCodium:** these pull from [Open VSX](https://open-vsx.org/extension/heyoub/brass-lasers-4am). Search **Brass Lasers 4AM** in Extensions.

@@ -1,16 +1,26 @@
-# Publish Brass Lasers 4AM
+# Publish Brass Lasers
 
-Current release: **v0.2.0 — the afterglow set** → `brass-lasers-4am-0.2.0.vsix` (build with `npx @vscode/vsce package`)
-Previous: v0.1.0 is attached to its GitHub Release at https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0
+**Releases are automated.** Bump `version` in `package.json` and `zed/extension.toml`, add a `## <version> — <name>` section to `CHANGELOG.md`, then:
 
-Screenshots for 0.2.0 are captured and pushed ([`media/screenshots/README.md`](media/screenshots/README.md)). The Marketplace README pulls them from raw GitHub URLs.
+```bash
+git tag v0.6.0 && git push origin v0.6.0
+```
 
-Extension ID on both registries: **`heyoub.brass-lasers-4am`**
+`.github/workflows/release.yml` checks the tag against `package.json`, runs `build --check` and the contrast gate, packages the VSIX, publishes to every registry that has a token secret, and creates the GitHub Release with notes from the CHANGELOG.
 
-T3 gallery PR (opened as `heyoub`): https://github.com/SunkenInTime/t3-themes/pull/74
+Extension ID on every registry: **`heyoub.brass-lasers-4am`**. Site: https://heyoub.github.io/brass-lasers/
 
-| Registry | Status |
-|---|---|
+| Where | Status | What it needs |
+|---|---|---|
+| Open VSX (Cursor, VSCodium) | **Live**, published on every tag | `OVSX_PAT` repo secret (set) |
+| GitHub Releases | **Live**, VSIX attached on every tag | nothing |
+| GitHub Pages site | **Live**, redeploys on site changes and after the Art bot redraws | nothing |
+| VS Marketplace | **Not published** | Make an Azure DevOps PAT (step 1 below) and save it as the `VSCE_PAT` repo secret. The next tag publishes. |
+| Zed registry | **Not submitted** | Test `zed/` as a dev extension in Zed, then the PR in step 4 |
+| T3 Themes gallery | **4AM only** ([PR #74](https://github.com/SunkenInTime/t3-themes/pull/74)) | One PR per extra set from `t3/` (step 3) |
+
+The manual steps below still work for one-off publishing.
+---|---|
 | Open VSX (Cursor) | **Live:** v0.2.0 at https://open-vsx.org/extension/heyoub/brass-lasers-4am (namespace `heyoub` claimed) |
 | VS Marketplace | **Not yet published:** needs a `VSCE_PAT`. Azure DevOps sign-in was failing when 0.2.0 shipped. Run step 1 below once you have the token. |
 

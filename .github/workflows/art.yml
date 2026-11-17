@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: art
@@ -38,3 +39,7 @@ jobs:
           git add media
           git commit -m "Redraw art and previews from palettes"
           git push
+          # pushes made with GITHUB_TOKEN never trigger other workflows, so redeploy the site explicitly
+          gh workflow run pages.yml --ref master
+        env:
+          GH_TOKEN: ${{ github.token }}
