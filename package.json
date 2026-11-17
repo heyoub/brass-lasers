@@ -1,8 +1,8 @@
 {
   "name": "brass-lasers-4am",
   "displayName": "Brass Lasers 4AM — Neon Synthwave Dark Theme",
-  "description": "Neon synthwave themes for VS Code & Cursor: 4AM, Afterglow, Strobe (AAA high contrast) and Golden Hour (light), plus matching file icons. Void-purple chrome, brass-gold accents, hot-pink lasers, lime strings. Readable at 4AM.",
-  "version": "0.3.0",
+  "description": "Seven synthwave-to-biophilic color themes, one for every hour of the festival: Golden Hour, Afterglow, Midnight, Strobe (AAA), 4AM, Atrium 5AM and Daybreak, plus matching file icons. Contrast-checked, readable at 4AM.",
+  "version": "0.4.0",
   "publisher": "heyoub",
   "engines": {
     "vscode": "^1.85.0"
@@ -42,7 +42,12 @@
     "high contrast",
     "icon theme",
     "file icons",
-    "no italics"
+    "no italics",
+    "biophilic",
+    "solarized",
+    "atrium",
+    "midnight",
+    "daybreak"
   ],
   "galleryBanner": {
     "color": "#0e0a17",

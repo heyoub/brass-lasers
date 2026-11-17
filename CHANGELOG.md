@@ -2,6 +2,34 @@
 
 All notable drops of **Brass Lasers 4AM** land here. Newest first. Hydrate accordingly.
 
+## 0.4.0 — a day at the festival
+
+**Seven sets, seven rooms.** The family is now a timeline: one set for every hour that matters, each with its own base hue and its own reason to exist, instead of four tints of the same night.
+
+### New sets
+
+- **Atrium 5AM:** a biophilic sci-fi workspace. Forest-charcoal, lagoon holograms, moss, orchid displays and lantern light. Built from an eight-color spec, and every one of those eight colors survives the contrast gate exactly as written.
+- **Midnight (12AM):** the night market. Navy ink, moonlight text, sodium-orange streetlight keywords.
+- **Daybreak (6AM):** the sunrise walk. A cool porcelain-mist light theme with indigo ink, dawn-rose keywords and dew-green strings.
+
+### Reworked sets
+
+- **Golden Hour (5PM)** is now solarized-subtropical daylight: papaya-cream paper, deep lagoon ink, hibiscus keywords, palm-green strings, mango types.
+- **Afterglow (8PM)** is now a real dusk: wine-plum sky, coral keywords, mint strings, blue-hour functions.
+- **Strobe (2AM)** is now pure black with UV magenta, electric cyan and laser yellow, still AAA (7:1) on every syntax color.
+- **4AM** is unchanged, byte for byte.
+
+14 themes in the picker (every set has a No Italics flavor). Every port, icon, wallpaper and preview covers all seven.
+
+### The site
+
+[heyoub.github.io/brass-lasers](https://heyoub.github.io/brass-lasers/) is now a scroll-driven tour. A live WebGL world (three.js, bloom) sits behind the page: scroll through the lineup and the sun sets, the moon rises, lasers sweep the Warehouse, fireflies drift through the Greenhouse, and dawn breaks, while the whole page re-colors to each set. Plus an interactive playground, live contrast bars, wallpapers, and full `prefers-reduced-motion` support.
+
+### Under the hood
+
+- `scripts/expand.js` grows a short spec (canvas, ink and one color per syntax role) into the full ~70-color palette in OKLCH. It keeps 4AM's proportions between surfaces, borders, selections and dim text, then repairs contrast. Replaces the old derive-from-4AM script, which is why the old sets looked like siblings.
+- Code previews render all seven sets, in a lineup grid.
+
 ## 0.3.0 — the full lineup
 
 **One palette, every venue.** Brass Lasers is now a family: four sets, a No Italics flavor of each, a file icon theme, and ports to 25+ apps, all generated from a single palette and contrast-checked on every commit.

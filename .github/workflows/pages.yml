@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p _site/wallpapers
           cp -r site/* _site/
-          cp media/wallpapers/*.png _site/wallpapers/
+          cp -r media/wallpapers/. _site/wallpapers/
           cp media/icon.png _site/icon.png
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

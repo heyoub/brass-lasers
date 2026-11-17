@@ -169,6 +169,7 @@ function main() {
     png(swatchSvg(p), path.join(ROOT, "media/swatches", `${p.meta.slug}.png`));
     png(wallpaperSvg(p, 3840, 2160), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-desktop.png`));
     png(wallpaperSvg(p, 1290, 2796), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-phone.png`));
+    png(wallpaperSvg(p, 960, 600), path.join(ROOT, "media/wallpapers/thumbs", `${p.meta.slug}.png`));
   }
   png(socialSvg(palettes), path.join(ROOT, "media/social-preview.png"));
 }

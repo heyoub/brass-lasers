@@ -8,6 +8,8 @@ A family of neon synthwave color themes, built for that stretch of night when th
 
 ![Brass Lasers](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/social-preview.png)
 
+**[Take the tour → heyoub.github.io/brass-lasers](https://heyoub.github.io/brass-lasers/)**: scroll through a day at the festival and watch the sky change with every set.
+
 ![Brass Lasers 4AM — TypeScript / React](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/tsx.png)
 
 ![Brass Lasers 4AM — Rust](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/rust.png)
