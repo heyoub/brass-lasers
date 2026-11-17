@@ -1,46 +1,71 @@
 /**
  * @name Brass Lasers {{meta.name}}
  * @author heyoub
- * @version 1.0.0
+ * @version 2.0.0
  * @description {{meta.tagline}}
  * @source https://github.com/heyoub/brass-lasers
  */
-/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
-   looks off, open an issue with a screenshot. Generated from palette/{{meta.slug}}.json. */
-.theme-dark, .theme-light, :root {
+/* For Vencord / BetterDiscord. Generated from palette/{{meta.slug}}.json.
+   Targets Discord's current color system (checked against the live discord.com
+   stylesheet, November 2026), with the legacy names kept for older clients. */
+.theme-dark, .theme-light, .theme-darker, .theme-midnight, :root {
+  /* surfaces, darkest to lightest */
+  --background-base-lowest: {{crust}};
+  --background-base-lower: {{mantle}};
+  --background-base-low: {{base}};
+  --background-surface-high: {{surface1}};
+  --background-surface-higher: {{overlaySurface}};
+  --background-surface-highest: {{secondary}};
+  --chat-background-default: {{base}};
+  --input-background-default: {{surface0}};
+  --background-mod-subtle: {{hover}};
+  --background-mod-normal: {{selectionActive}};
+  --background-mod-strong: {{secondaryHover}};
+  --background-mod-muted: {{surface0}};
+  --border-subtle: {{border1}};
+
+  /* text */
+  --text-default: {{textEditor}};
+  --text-strong: {{text}};
+  --text-muted: {{subtext0}};
+  --text-subtle: {{overlay2}};
+  --text-link: {{cyan}};
+  --text-feedback-critical: {{red}};
+  --text-feedback-positive: {{lime}};
+  --text-feedback-warning: {{sunset}};
+  --interactive-text-default: {{subtext1}};
+  --interactive-text-hover: {{text}};
+  --interactive-text-active: {{brass}};
+  --interactive-background-hover: {{hover}};
+  --interactive-background-active: {{selectionActive}};
+  --interactive-background-selected: {{selectionActive}};
+  --channel-icon: {{overlay2}};
+  --channels-default: {{overlay2}};
+
+  /* accent and status */
+  --brand-500: {{pink}};
+  --brand-530: {{pinkHover}};
+  --brand-560: {{pinkHover}};
+  --status-positive: {{lime}};
+  --status-warning: {{brass}};
+  --status-danger: {{red}};
+
+  /* legacy names (older clients, some BetterDiscord builds) */
   --background-primary: {{base}};
   --background-secondary: {{mantle}};
   --background-secondary-alt: {{crust}};
   --background-tertiary: {{crust}};
-  --background-accent: {{secondary}};
   --background-floating: {{surface1}};
   --background-modifier-hover: {{hover}};
   --background-modifier-active: {{selectionActive}};
   --background-modifier-selected: {{selectionActive}};
-  --background-modifier-accent: {{border1}};
-  --channeltextarea-background: {{surface0}};
   --text-normal: {{textEditor}};
-  --text-muted: {{subtext0}};
-  --text-link: {{cyan}};
   --header-primary: {{text}};
   --header-secondary: {{subtext1}};
   --interactive-normal: {{subtext1}};
   --interactive-hover: {{text}};
   --interactive-active: {{brass}};
-  --interactive-muted: {{overlay0}};
-  --channels-default: {{overlay2}};
   --brand-experiment: {{pink}};
-  --brand-500: {{pink}};
-  --mention-background: {{brass}}22;
-  --mention-foreground: {{brass}};
-  --info-warning-foreground: {{sunset}};
-  --info-danger-foreground: {{red}};
-  --info-positive-foreground: {{lime}};
-  --status-positive: {{lime}};
-  --status-warning: {{brass}};
-  --status-danger: {{red}};
-  --scrollbar-auto-thumb: {{secondary}};
-  --scrollbar-thin-thumb: {{secondary}};
 }
 ::selection { background: {{selection}}88; }
 code, pre { background: {{codeBlock}} !important; color: {{afterglow}}; }

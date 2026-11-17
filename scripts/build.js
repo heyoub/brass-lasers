@@ -34,6 +34,7 @@ function loadPalettes() {
     if (!p.colors) p.colors = expand(p.meta, p.spec);
     // computed meta, available to every template
     p.meta.jetbrainsParent = p.meta.appearance === "light" ? "Default" : "Darcula";
+    p.meta.nameUrl = encodeURIComponent(`Brass Lasers ${p.meta.name}`);
     return p;
   });
 }
@@ -98,7 +99,9 @@ function portsFor(palettes) {
     const tpl = read(`templates/ports/${port.template}`);
     for (const p of palettes) {
       const file = port.out.replace("{slug}", p.meta.slug).replace("{Title}", fileTitle(p)).replace("{name}", p.meta.name);
-      out[file] = render(tpl, p, port.template);
+      // Windows PowerShell 5.1 reads BOM-less .ps1 as ANSI and chokes on the box-drawing
+      // characters; a UTF-8 BOM makes it read the file as UTF-8 (PowerShell 7 is fine either way)
+      out[file] = (file.endsWith(".ps1") ? "﻿" : "") + render(tpl, p, port.template);
     }
   }
   return out;

@@ -1,46 +1,71 @@
 /**
  * @name Brass Lasers Strobe
  * @author heyoub
- * @version 1.0.0
+ * @version 2.0.0
  * @description High contrast. Pure black, UV magenta, electric cyan, laser yellow. Every syntax color at WCAG AAA (7:1).
  * @source https://github.com/heyoub/brass-lasers
  */
-/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
-   looks off, open an issue with a screenshot. Generated from palette/strobe.json. */
-.theme-dark, .theme-light, :root {
+/* For Vencord / BetterDiscord. Generated from palette/strobe.json.
+   Targets Discord's current color system (checked against the live discord.com
+   stylesheet, November 2026), with the legacy names kept for older clients. */
+.theme-dark, .theme-light, .theme-darker, .theme-midnight, :root {
+  /* surfaces, darkest to lightest */
+  --background-base-lowest: #020202;
+  --background-base-lower: #030304;
+  --background-base-low: #050507;
+  --background-surface-high: #101015;
+  --background-surface-higher: #17171e;
+  --background-surface-highest: #1e1e27;
+  --chat-background-default: #050507;
+  --input-background-default: #09090d;
+  --background-mod-subtle: #111116;
+  --background-mod-normal: #59324e;
+  --background-mod-strong: #2c2c38;
+  --background-mod-muted: #09090d;
+  --border-subtle: #1d1d24;
+
+  /* text */
+  --text-default: #fdf8ec;
+  --text-strong: #ffffff;
+  --text-muted: #a2a2ad;
+  --text-subtle: #7f7f89;
+  --text-link: #2ee8ff;
+  --text-feedback-critical: #fe6679;
+  --text-feedback-positive: #86ff6a;
+  --text-feedback-warning: #ffa24d;
+  --interactive-text-default: #c3c4cf;
+  --interactive-text-hover: #ffffff;
+  --interactive-text-active: #ffe24d;
+  --interactive-background-hover: #111116;
+  --interactive-background-active: #59324e;
+  --interactive-background-selected: #59324e;
+  --channel-icon: #7f7f89;
+  --channels-default: #7f7f89;
+
+  /* accent and status */
+  --brand-500: #ff5fdc;
+  --brand-530: #ff8be1;
+  --brand-560: #ff8be1;
+  --status-positive: #86ff6a;
+  --status-warning: #ffe24d;
+  --status-danger: #fe6679;
+
+  /* legacy names (older clients, some BetterDiscord builds) */
   --background-primary: #050507;
   --background-secondary: #030304;
   --background-secondary-alt: #020202;
   --background-tertiary: #020202;
-  --background-accent: #1e1e27;
   --background-floating: #101015;
   --background-modifier-hover: #111116;
   --background-modifier-active: #59324e;
   --background-modifier-selected: #59324e;
-  --background-modifier-accent: #1d1d24;
-  --channeltextarea-background: #09090d;
   --text-normal: #fdf8ec;
-  --text-muted: #a2a2ad;
-  --text-link: #2ee8ff;
   --header-primary: #ffffff;
   --header-secondary: #c3c4cf;
   --interactive-normal: #c3c4cf;
   --interactive-hover: #ffffff;
   --interactive-active: #ffe24d;
-  --interactive-muted: #5e5e67;
-  --channels-default: #7f7f89;
   --brand-experiment: #ff5fdc;
-  --brand-500: #ff5fdc;
-  --mention-background: #ffe24d22;
-  --mention-foreground: #ffe24d;
-  --info-warning-foreground: #ffa24d;
-  --info-danger-foreground: #fe6679;
-  --info-positive-foreground: #86ff6a;
-  --status-positive: #86ff6a;
-  --status-warning: #ffe24d;
-  --status-danger: #fe6679;
-  --scrollbar-auto-thumb: #1e1e27;
-  --scrollbar-thin-thumb: #1e1e27;
 }
 ::selection { background: #9c4c8788; }
 code, pre { background: #020203 !important; color: #86ff6a; }

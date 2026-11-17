@@ -4,6 +4,8 @@ Every file in this folder (and in `../colors/`) is **generated** from `palette/*
 
 Each port ships all nine sets, in set-time order: **4AM** (the original), **Atrium 5AM**, **Daybreak** (6AM, light), **Soundcheck** (12PM, matte), **Golden Hour** (5PM, light), **Afterglow** (8PM), **Liquid Metal** (10PM), **Midnight** (12AM) and **Strobe** (2AM, high contrast). Swap `4am` in any file name for `atrium`, `daybreak`, `soundcheck`, `golden-hour`, `afterglow`, `liquid-metal`, `midnight` or `strobe`.
 
+Every port has been tested: see **[TESTED.md](TESTED.md)** for how and what passed.
+
 ## Terminals
 
 | Terminal | Install |
@@ -31,8 +33,8 @@ Each port ships all nine sets, in set-time order: **4AM** (the original), **Atri
 
 | Tool | Install |
 |---|---|
-| **bat** | `mkdir -p "$(bat --config-dir)/themes"`, copy `bat/*.tmTheme` in, run `bat cache --build`, then `export BAT_THEME="Brass Lasers 4AM"`. |
-| **delta** | Same `.tmTheme` as bat: install it for bat, then set `syntax-theme = Brass Lasers 4AM` under `[delta]` in `.gitconfig`. |
+| **bat** | `mkdir -p "$(bat --config-dir)/themes"`, copy `bat/*.tmTheme` in, run `bat cache --build`, then `export BAT_THEME="Brass Lasers 4AM"`.  If colors look slightly off, your terminal isn't advertising truecolor: set `COLORTERM=truecolor`. |
+| **delta** | Same `.tmTheme` as bat: install it for bat, then set `syntax-theme = Brass Lasers 4AM` under `[delta]` in `.gitconfig`.  Add `true-color = always` under `[delta]` for exact colors. |
 | **fzf** | `source ports/fzf/brass-lasers-4am.sh` from your shell rc. |
 | **Starship** | Paste `starship/brass-lasers-<variant>.toml` into `starship.toml`, then use `brass`, `pink`, `cyan`… as color names. |
 

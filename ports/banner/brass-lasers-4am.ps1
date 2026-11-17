@@ -1,4 +1,4 @@
-# Brass Lasers 4AM boot banner for PowerShell. Needs a truecolor terminal (Windows Terminal is fine).
+﻿# Brass Lasers 4AM boot banner for PowerShell. Needs a truecolor terminal (Windows Terminal is fine).
 # Add to your $PROFILE:   . /path/to/brass-lasers-4am.ps1
 $e = [char]27
 function Write-Laser($r, $g, $b, $s) { Write-Host "$e[38;2;${r};${g};${b}m$s$e[0m" }

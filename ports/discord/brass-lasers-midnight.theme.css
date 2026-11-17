@@ -1,46 +1,71 @@
 /**
  * @name Brass Lasers Midnight
  * @author heyoub
- * @version 1.0.0
+ * @version 2.0.0
  * @description Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.
  * @source https://github.com/heyoub/brass-lasers
  */
-/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
-   looks off, open an issue with a screenshot. Generated from palette/midnight.json. */
-.theme-dark, .theme-light, :root {
+/* For Vencord / BetterDiscord. Generated from palette/midnight.json.
+   Targets Discord's current color system (checked against the live discord.com
+   stylesheet, November 2026), with the legacy names kept for older clients. */
+.theme-dark, .theme-light, .theme-darker, .theme-midnight, :root {
+  /* surfaces, darkest to lightest */
+  --background-base-lowest: #0a0e18;
+  --background-base-lower: #0c111d;
+  --background-base-low: #0e1526;
+  --background-surface-high: #16213f;
+  --background-surface-higher: #192951;
+  --background-surface-highest: #1d3060;
+  --chat-background-default: #0e1526;
+  --input-background-default: #131b30;
+  --background-mod-subtle: #142245;
+  --background-mod-normal: #385a7d;
+  --background-mod-strong: #2c4072;
+  --background-mod-muted: #131b30;
+  --border-subtle: #1d2f5c;
+
+  /* text */
+  --text-default: #d1e2ff;
+  --text-strong: #dfe7f4;
+  --text-muted: #909cb6;
+  --text-subtle: #747f98;
+  --text-link: #6cb6ff;
+  --text-feedback-critical: #ff5c6c;
+  --text-feedback-positive: #c9e2ff;
+  --text-feedback-warning: #ff7b72;
+  --interactive-text-default: #aab7d4;
+  --interactive-text-hover: #dfe7f4;
+  --interactive-text-active: #f5d76e;
+  --interactive-background-hover: #142245;
+  --interactive-background-active: #385a7d;
+  --interactive-background-selected: #385a7d;
+  --channel-icon: #747f98;
+  --channels-default: #747f98;
+
+  /* accent and status */
+  --brand-500: #ff9f43;
+  --brand-530: #ffba81;
+  --brand-560: #ffba81;
+  --status-positive: #c9e2ff;
+  --status-warning: #f5d76e;
+  --status-danger: #ff5c6c;
+
+  /* legacy names (older clients, some BetterDiscord builds) */
   --background-primary: #0e1526;
   --background-secondary: #0c111d;
   --background-secondary-alt: #0a0e18;
   --background-tertiary: #0a0e18;
-  --background-accent: #1d3060;
   --background-floating: #16213f;
   --background-modifier-hover: #142245;
   --background-modifier-active: #385a7d;
   --background-modifier-selected: #385a7d;
-  --background-modifier-accent: #1d2f5c;
-  --channeltextarea-background: #131b30;
   --text-normal: #d1e2ff;
-  --text-muted: #909cb6;
-  --text-link: #6cb6ff;
   --header-primary: #dfe7f4;
   --header-secondary: #aab7d4;
   --interactive-normal: #aab7d4;
   --interactive-hover: #dfe7f4;
   --interactive-active: #f5d76e;
-  --interactive-muted: #59637a;
-  --channels-default: #747f98;
   --brand-experiment: #ff9f43;
-  --brand-500: #ff9f43;
-  --mention-background: #f5d76e22;
-  --mention-foreground: #f5d76e;
-  --info-warning-foreground: #ff7b72;
-  --info-danger-foreground: #ff5c6c;
-  --info-positive-foreground: #c9e2ff;
-  --status-positive: #c9e2ff;
-  --status-warning: #f5d76e;
-  --status-danger: #ff5c6c;
-  --scrollbar-auto-thumb: #1d3060;
-  --scrollbar-thin-thumb: #1d3060;
 }
 ::selection { background: #3f8ad088; }
 code, pre { background: #0b101b !important; color: #9be3a0; }
