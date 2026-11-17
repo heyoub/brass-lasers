@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers 4AM",
+  "background": "#07050C",
+  "foreground": "#B6FF5C",
+  "cursorColor": "#FF3D9A",
+  "selectionBackground": "#4A1F6B",
+  "black": "#5F5485",
+  "red": "#FF4D6D",
+  "green": "#B6FF5C",
+  "yellow": "#FFB627",
+  "blue": "#7C8CFF",
+  "purple": "#FF3D9A",
+  "cyan": "#3DF2E0",
+  "white": "#D9CFEE",
+  "brightBlack": "#857AB0",
+  "brightRed": "#FF7D95",
+  "brightGreen": "#D0FF94",
+  "brightYellow": "#FFD27A",
+  "brightBlue": "#A5B0FF",
+  "brightPurple": "#FF7FC0",
+  "brightCyan": "#8FF7EC",
+  "brightWhite": "#FFF8EA"
+}

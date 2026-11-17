@@ -1,0 +1,66 @@
+/* Brass Lasers Strobe for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/strobe.json. */
+.theme-dark {
+  --background-primary: #040209;
+  --background-primary-alt: #06030f;
+  --background-secondary: #030106;
+  --background-secondary-alt: #020104;
+  --background-modifier-border: #120728;
+  --background-modifier-hover: #0a041c;
+  --background-modifier-active-hover: #1e0123;
+  --background-modifier-form-field: #06030f;
+  --text-normal: #f5effe;
+  --text-muted: #bbafde;
+  --text-faint: #8c81b3;
+  --text-accent: #fe7aaf;
+  --text-accent-hover: #ffa9d1;
+  --text-on-accent: #060003;
+  --text-selection: #38015a66;
+  --text-highlight-bg: #ffd59544;
+  --interactive-accent: #fe7aaf;
+  --interactive-accent-hover: #ff99c6;
+  --interactive-normal: #090418;
+  --interactive-hover: #0a041c;
+  --caret-color: #fe7aaf;
+  --link-color: #92fff1;
+  --link-color-hover: #90fff3;
+  --link-external-color: #92fff1;
+  --link-unresolved-color: #c3abff;
+  --h1-color: #ffd595;
+  --h2-color: #ffd595;
+  --h3-color: #feaf81;
+  --h4-color: #ffa9d1;
+  --h5-color: #c3abff;
+  --h6-color: #ded4ff;
+  --bold-color: #feaf81;
+  --italic-color: #ffa9d1;
+  --blockquote-border-color: #c3abff;
+  --code-background: #020105;
+  --code-normal: #f5effe;
+  --code-comment: #a398d0;
+  --code-keyword: #fe7aaf;
+  --code-string: #beff7d;
+  --code-function: #92fff1;
+  --code-value: #feaf81;
+  --code-property: #ded4ff;
+  --code-tag: #fe7aaf;
+  --code-operator: #ffa3d6;
+  --code-punctuation: #bbafde;
+  --code-important: #ffd595;
+  --tag-color: #ffd595;
+  --tag-background: #251600;
+  --graph-node: #c3abff;
+  --graph-node-focused: #fe7aaf;
+  --graph-node-tag: #ffd595;
+  --graph-line: #25124d;
+  --color-red: #ff818e;
+  --color-orange: #feaf81;
+  --color-yellow: #ffd595;
+  --color-green: #c0ff7b;
+  --color-cyan: #92fff1;
+  --color-blue: #97a7fe;
+  --color-purple: #c3abff;
+  --color-pink: #fe7aaf;
+}

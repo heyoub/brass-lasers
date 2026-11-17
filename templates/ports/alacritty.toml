@@ -1,0 +1,61 @@
+# Brass Lasers {{meta.name}} for Alacritty
+# {{meta.tagline}}
+# Generated from palette/{{meta.slug}}.json. Do not edit by hand.
+
+[colors.primary]
+background = "{{crust}}"
+foreground = "{{lime}}"
+dim_foreground = "{{comment}}"
+bright_foreground = "{{limeLight}}"
+
+[colors.cursor]
+text = "{{crust}}"
+cursor = "{{pink}}"
+
+[colors.vi_mode_cursor]
+text = "{{crust}}"
+cursor = "{{brass}}"
+
+[colors.selection]
+text = "{{text}}"
+background = "{{terminalSelection}}"
+
+[colors.search.matches]
+foreground = "{{crust}}"
+background = "{{brass}}"
+
+[colors.search.focused_match]
+foreground = "{{crust}}"
+background = "{{pink}}"
+
+[colors.hints.start]
+foreground = "{{crust}}"
+background = "{{cyan}}"
+
+[colors.hints.end]
+foreground = "{{crust}}"
+background = "{{uv}}"
+
+[colors.footer_bar]
+foreground = "{{text}}"
+background = "{{surface1}}"
+
+[colors.normal]
+black = "{{ansiBlack}}"
+red = "{{red}}"
+green = "{{lime}}"
+yellow = "{{brass}}"
+blue = "{{blue}}"
+magenta = "{{pink}}"
+cyan = "{{cyan}}"
+white = "{{ansiWhite}}"
+
+[colors.bright]
+black = "{{comment}}"
+red = "{{redLight}}"
+green = "{{limeLight}}"
+yellow = "{{brassLight}}"
+blue = "{{blueLight}}"
+magenta = "{{pinkLight}}"
+cyan = "{{cyanLight}}"
+white = "{{brightWhite}}"

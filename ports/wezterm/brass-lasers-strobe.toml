@@ -1,0 +1,41 @@
+# Brass Lasers Strobe for WezTerm
+# High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+# Generated from palette/strobe.json. Do not edit by hand.
+
+[colors]
+background = "#020104"
+foreground = "#c0ff7b"
+cursor_bg = "#fe7aaf"
+cursor_border = "#fe7aaf"
+cursor_fg = "#020104"
+selection_bg = "#26003f"
+selection_fg = "#fcf7ed"
+scrollbar_thumb = "#13052e"
+split = "#120728"
+compose_cursor = "#ffd595"
+ansi = ["#5f5485", "#ff818e", "#c0ff7b", "#ffd595", "#97a7fe", "#fe7aaf", "#92fff1", "#e8e2f5"]
+brights = ["#a398d0", "#fea6b3", "#cafb8a", "#ffe4b3", "#c1c9ff", "#ffa9d1", "#90fff3", "#fffdfa"]
+
+[colors.tab_bar]
+background = "#030106"
+
+[colors.tab_bar.active_tab]
+bg_color = "#040209"
+fg_color = "#ffd595"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#030106"
+fg_color = "#9b8fc3"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#0a041c"
+fg_color = "#fcf7ed"
+
+[colors.tab_bar.new_tab]
+bg_color = "#030106"
+fg_color = "#9b8fc3"
+
+[metadata]
+name = "Brass Lasers Strobe"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

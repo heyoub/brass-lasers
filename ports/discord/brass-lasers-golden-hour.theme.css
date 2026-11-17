@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers Golden Hour
+ * @author heyoub
+ * @version 1.0.0
+ * @description The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/golden-hour.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #fef9f1;
+  --background-secondary: #fcf2e4;
+  --background-secondary-alt: #f6edde;
+  --background-tertiary: #f6edde;
+  --background-accent: #d0cbed;
+  --background-floating: #eee5d6;
+  --background-modifier-hover: #ece3d4;
+  --background-modifier-active: #e8cdec;
+  --background-modifier-selected: #e8cdec;
+  --background-modifier-accent: #d2cdea;
+  --channeltextarea-background: #f8efe0;
+  --text-normal: #251e2e;
+  --text-muted: #61577c;
+  --text-link: #01736a;
+  --header-primary: #231d11;
+  --header-secondary: #483e5f;
+  --interactive-normal: #483e5f;
+  --interactive-hover: #231d11;
+  --interactive-active: #835a03;
+  --interactive-muted: #9b91c1;
+  --channels-default: #73698c;
+  --brand-experiment: #b20965;
+  --brand-500: #b20965;
+  --mention-background: #835a0322;
+  --mention-foreground: #835a03;
+  --info-warning-foreground: #9b4801;
+  --info-danger-foreground: #b9003d;
+  --info-positive-foreground: #487102;
+  --status-positive: #487102;
+  --status-warning: #835a03;
+  --status-danger: #b9003d;
+  --scrollbar-auto-thumb: #d0cbed;
+  --scrollbar-thin-thumb: #d0cbed;
+}
+::selection { background: #b790e088; }
+code, pre { background: #f9f0e1 !important; color: #477204; }

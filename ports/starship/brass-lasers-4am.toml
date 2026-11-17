@@ -1,0 +1,26 @@
+# Brass Lasers 4AM palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_4am"
+
+[palettes.brass_lasers_4am]
+crust = "#07050c"
+mantle = "#0a0711"
+base = "#0e0a17"
+surface = "#1b142e"
+text = "#efe6d5"
+subtext = "#9c90bd"
+comment = "#857ab0"
+brass = "#ffb627"
+brass_light = "#ffd27a"
+pink = "#ff3d9a"
+pink_light = "#ff7fc0"
+cyan = "#3df2e0"
+lime = "#b6ff5c"
+afterglow = "#a6e85f"
+sunset = "#ff8a3d"
+uv = "#b18cff"
+lavender = "#c9b8ff"
+red = "#ff4d6d"
+blue = "#7c8cff"

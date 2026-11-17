@@ -19,3 +19,12 @@ plans/**
 .github/**
 **/target/**
 RELEASE_NOTES.md
+palette/**
+templates/**
+ports/**
+colors/**
+docs/**
+site/**
+media/wallpapers/**
+media/swatches/**
+extensions/**

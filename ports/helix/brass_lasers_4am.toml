@@ -1,0 +1,118 @@
+# Brass Lasers 4AM for Helix
+# Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.
+# Generated from palette/4am.json. Do not edit by hand.
+
+"attribute" = { fg = "uv", modifiers = ["italic"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"constant" = "sunset"
+"constant.character.escape" = "cyan"
+"constant.numeric" = "sunset"
+"constructor" = "brass"
+"function" = "cyan"
+"function.macro" = { fg = "cyan_light", modifiers = ["bold"] }
+"keyword" = "pink"
+"keyword.control" = { fg = "pink", modifiers = ["italic"] }
+"keyword.storage" = "pink"
+"label" = { fg = "sunset", modifiers = ["italic"] }
+"namespace" = "uv"
+"operator" = "orchid"
+"punctuation" = "sub0"
+"special" = "cyan"
+"string" = "afterglow"
+"string.regexp" = "cyan"
+"string.special.url" = { fg = "cyan", modifiers = ["underlined"] }
+"tag" = "pink"
+"type" = "brass"
+"type.builtin" = "brass"
+"type.parameter" = { fg = "peach", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "pink_light", modifiers = ["italic"] }
+"variable.parameter" = { fg = "brass_light", modifiers = ["italic"] }
+"variable.other.member" = "lavender"
+
+"markup.heading" = { fg = "brass", modifiers = ["bold"] }
+"markup.bold" = { fg = "sunset", modifiers = ["bold"] }
+"markup.italic" = { fg = "pink_light", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.quote" = "uv"
+"markup.raw" = "afterglow"
+"markup.list" = "uv"
+
+"diff.plus" = "lime"
+"diff.minus" = "red"
+"diff.delta" = "brass"
+
+"ui.background" = { bg = "base" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "text", bg = "sel_active" }
+"ui.cursor" = { fg = "base", bg = "pink" }
+"ui.cursor.primary" = { fg = "base", bg = "pink" }
+"ui.cursor.match" = { fg = "pink", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "brass", modifiers = ["bold"] }
+"ui.statusline" = { fg = "sub1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "mantle" }
+"ui.statusline.normal" = { fg = "on_brass", bg = "brass", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "on_pink", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "crust", bg = "cyan", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "surface1" }
+"ui.window" = "border"
+"ui.help" = { fg = "text", bg = "surface1" }
+"ui.menu" = { fg = "text", bg = "surface1" }
+"ui.menu.selected" = { fg = "text", bg = "sel_active", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "whitespace"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.inlay-hint" = { fg = "inlay", bg = "surface1" }
+"ui.bufferline" = { fg = "ghost", bg = "mantle" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold"] }
+
+"error" = "red"
+"warning" = "sunset"
+"info" = "cyan"
+"hint" = "uv"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "sunset", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "uv", style = "curl" } }
+
+[palette]
+crust = "#07050c"
+mantle = "#0a0711"
+base = "#0e0a17"
+surface0 = "#140f21"
+surface1 = "#1b142e"
+line = "#171028"
+border = "#2a1f47"
+whitespace = "#2f2550"
+selection = "#6a2c9a"
+sel_active = "#3a1640"
+line_nr = "#4b3f70"
+text = "#efe6d5"
+fg = "#e6dcf5"
+sub1 = "#b9add9"
+sub0 = "#9c90bd"
+comment = "#857ab0"
+doc = "#9488bf"
+inlay = "#8a7fb0"
+ghost = "#7d71a3"
+brass = "#ffb627"
+brass_light = "#ffd27a"
+peach = "#ffb98a"
+pink = "#ff3d9a"
+pink_light = "#ff7fc0"
+orchid = "#e88cc0"
+cyan = "#3df2e0"
+cyan_light = "#8ff7ec"
+sunset = "#ff8a3d"
+uv = "#b18cff"
+lavender = "#c9b8ff"
+red = "#ff4d6d"
+lime = "#b6ff5c"
+afterglow = "#a6e85f"
+on_pink = "#1a0410"
+on_brass = "#170f02"

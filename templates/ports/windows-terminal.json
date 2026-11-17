@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers {{meta.name}}",
+  "background": "{{crust|upper}}",
+  "foreground": "{{lime|upper}}",
+  "cursorColor": "{{pink|upper}}",
+  "selectionBackground": "{{terminalSelection|upper}}",
+  "black": "{{ansiBlack|upper}}",
+  "red": "{{red|upper}}",
+  "green": "{{lime|upper}}",
+  "yellow": "{{brass|upper}}",
+  "blue": "{{blue|upper}}",
+  "purple": "{{pink|upper}}",
+  "cyan": "{{cyan|upper}}",
+  "white": "{{ansiWhite|upper}}",
+  "brightBlack": "{{comment|upper}}",
+  "brightRed": "{{redLight|upper}}",
+  "brightGreen": "{{limeLight|upper}}",
+  "brightYellow": "{{brassLight|upper}}",
+  "brightBlue": "{{blueLight|upper}}",
+  "brightPurple": "{{pinkLight|upper}}",
+  "brightCyan": "{{cyanLight|upper}}",
+  "brightWhite": "{{brightWhite|upper}}"
+}

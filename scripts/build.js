@@ -28,6 +28,8 @@ function loadPalettes() {
   return VARIANTS.map((slug) => {
     const p = JSON.parse(read(`palette/${slug}.json`));
     if (p.meta.slug !== slug) throw new Error(`palette/${slug}.json has meta.slug ${p.meta.slug}`);
+    // computed meta, available to every template
+    p.meta.jetbrainsParent = p.meta.appearance === "light" ? "Default" : "Darcula";
     return p;
   });
 }

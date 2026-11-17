@@ -1,0 +1,26 @@
+# Brass Lasers Afterglow palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_afterglow"
+
+[palettes.brass_lasers_afterglow]
+crust = "#0c0a10"
+mantle = "#0f0d15"
+base = "#13101a"
+surface = "#201c2f"
+text = "#e2dbcc"
+subtext = "#9187ad"
+comment = "#7f76a9"
+brass = "#e5ba78"
+brass_light = "#e7cd9c"
+pink = "#e476a1"
+pink_light = "#e598bc"
+cyan = "#8adfd4"
+lime = "#beea92"
+afterglow = "#b2d98e"
+sunset = "#e49e75"
+uv = "#b09de1"
+lavender = "#c4bae5"
+red = "#e37c86"
+blue = "#8e9bdf"

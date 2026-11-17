@@ -1,0 +1,26 @@
+# Brass Lasers {{meta.name}} palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_{{meta.slug}}"
+
+[palettes.brass_lasers_{{meta.slug}}]
+crust = "{{crust}}"
+mantle = "{{mantle}}"
+base = "{{base}}"
+surface = "{{surface1}}"
+text = "{{text}}"
+subtext = "{{subtext0}}"
+comment = "{{comment}}"
+brass = "{{brass}}"
+brass_light = "{{brassLight}}"
+pink = "{{pink}}"
+pink_light = "{{pinkLight}}"
+cyan = "{{cyan}}"
+lime = "{{lime}}"
+afterglow = "{{afterglow}}"
+sunset = "{{sunset}}"
+uv = "{{uv}}"
+lavender = "{{lavender}}"
+red = "{{red}}"
+blue = "{{blue}}"

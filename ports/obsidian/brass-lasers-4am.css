@@ -1,0 +1,66 @@
+/* Brass Lasers 4AM for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/4am.json. */
+.theme-dark {
+  --background-primary: #0e0a17;
+  --background-primary-alt: #140f21;
+  --background-secondary: #0a0711;
+  --background-secondary-alt: #07050c;
+  --background-modifier-border: #2a1f47;
+  --background-modifier-hover: #1c1433;
+  --background-modifier-active-hover: #3a1640;
+  --background-modifier-form-field: #140f21;
+  --text-normal: #e6dcf5;
+  --text-muted: #9c90bd;
+  --text-faint: #6f6494;
+  --text-accent: #ff3d9a;
+  --text-accent-hover: #ff7fc0;
+  --text-on-accent: #1a0410;
+  --text-selection: #6a2c9a66;
+  --text-highlight-bg: #ffb62744;
+  --interactive-accent: #ff3d9a;
+  --interactive-accent-hover: #ff6bb3;
+  --interactive-normal: #1b142e;
+  --interactive-hover: #1c1433;
+  --caret-color: #ff3d9a;
+  --link-color: #3df2e0;
+  --link-color-hover: #8ff7ec;
+  --link-external-color: #3df2e0;
+  --link-unresolved-color: #b18cff;
+  --h1-color: #ffb627;
+  --h2-color: #ffb627;
+  --h3-color: #ff8a3d;
+  --h4-color: #ff7fc0;
+  --h5-color: #b18cff;
+  --h6-color: #c9b8ff;
+  --bold-color: #ff8a3d;
+  --italic-color: #ff7fc0;
+  --blockquote-border-color: #b18cff;
+  --code-background: #09060f;
+  --code-normal: #e6dcf5;
+  --code-comment: #857ab0;
+  --code-keyword: #ff3d9a;
+  --code-string: #a6e85f;
+  --code-function: #3df2e0;
+  --code-value: #ff8a3d;
+  --code-property: #c9b8ff;
+  --code-tag: #ff3d9a;
+  --code-operator: #e88cc0;
+  --code-punctuation: #9c90bd;
+  --code-important: #ffb627;
+  --tag-color: #ffb627;
+  --tag-background: #33230a;
+  --graph-node: #b18cff;
+  --graph-node-focused: #ff3d9a;
+  --graph-node-tag: #ffb627;
+  --graph-line: #4b3a80;
+  --color-red: #ff4d6d;
+  --color-orange: #ff8a3d;
+  --color-yellow: #ffb627;
+  --color-green: #b6ff5c;
+  --color-cyan: #3df2e0;
+  --color-blue: #7c8cff;
+  --color-purple: #b18cff;
+  --color-pink: #ff3d9a;
+}

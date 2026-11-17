@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers Strobe
+ * @author heyoub
+ * @version 1.0.0
+ * @description High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/strobe.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #040209;
+  --background-secondary: #030106;
+  --background-secondary-alt: #020104;
+  --background-tertiary: #020104;
+  --background-accent: #13052e;
+  --background-floating: #090418;
+  --background-modifier-hover: #0a041c;
+  --background-modifier-active: #1e0123;
+  --background-modifier-selected: #1e0123;
+  --background-modifier-accent: #120728;
+  --channeltextarea-background: #06030f;
+  --text-normal: #f5effe;
+  --text-muted: #bbafde;
+  --text-link: #92fff1;
+  --header-primary: #fcf7ed;
+  --header-secondary: #d9cdfa;
+  --interactive-normal: #d9cdfa;
+  --interactive-hover: #fcf7ed;
+  --interactive-active: #ffd595;
+  --interactive-muted: #7c71a4;
+  --channels-default: #9b8fc3;
+  --brand-experiment: #fe7aaf;
+  --brand-500: #fe7aaf;
+  --mention-background: #ffd59522;
+  --mention-foreground: #ffd595;
+  --info-warning-foreground: #feaf81;
+  --info-danger-foreground: #ff818e;
+  --info-positive-foreground: #c0ff7b;
+  --status-positive: #c0ff7b;
+  --status-warning: #ffd595;
+  --status-danger: #ff818e;
+  --scrollbar-auto-thumb: #13052e;
+  --scrollbar-thin-thumb: #13052e;
+}
+::selection { background: #38015a88; }
+code, pre { background: #020105 !important; color: #beff7d; }

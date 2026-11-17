@@ -1,0 +1,41 @@
+# Brass Lasers 4AM for WezTerm
+# Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.
+# Generated from palette/4am.json. Do not edit by hand.
+
+[colors]
+background = "#07050c"
+foreground = "#b6ff5c"
+cursor_bg = "#ff3d9a"
+cursor_border = "#ff3d9a"
+cursor_fg = "#07050c"
+selection_bg = "#4a1f6b"
+selection_fg = "#efe6d5"
+scrollbar_thumb = "#2b1e4f"
+split = "#2a1f47"
+compose_cursor = "#ffb627"
+ansi = ["#5f5485", "#ff4d6d", "#b6ff5c", "#ffb627", "#7c8cff", "#ff3d9a", "#3df2e0", "#d9cfee"]
+brights = ["#857ab0", "#ff7d95", "#d0ff94", "#ffd27a", "#a5b0ff", "#ff7fc0", "#8ff7ec", "#fff8ea"]
+
+[colors.tab_bar]
+background = "#0a0711"
+
+[colors.tab_bar.active_tab]
+bg_color = "#0e0a17"
+fg_color = "#ffb627"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#0a0711"
+fg_color = "#7d71a3"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#1c1433"
+fg_color = "#efe6d5"
+
+[colors.tab_bar.new_tab]
+bg_color = "#0a0711"
+fg_color = "#7d71a3"
+
+[metadata]
+name = "Brass Lasers 4AM"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

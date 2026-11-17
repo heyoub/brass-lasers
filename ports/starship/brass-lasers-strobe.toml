@@ -1,0 +1,26 @@
+# Brass Lasers Strobe palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_strobe"
+
+[palettes.brass_lasers_strobe]
+crust = "#020104"
+mantle = "#030106"
+base = "#040209"
+surface = "#090418"
+text = "#fcf7ed"
+subtext = "#bbafde"
+comment = "#a398d0"
+brass = "#ffd595"
+brass_light = "#ffe4b3"
+pink = "#fe7aaf"
+pink_light = "#ffa9d1"
+cyan = "#92fff1"
+lime = "#c0ff7b"
+afterglow = "#beff7d"
+sunset = "#feaf81"
+uv = "#c3abff"
+lavender = "#ded4ff"
+red = "#ff818e"
+blue = "#97a7fe"

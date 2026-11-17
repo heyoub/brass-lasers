@@ -1,1 +1,20 @@
-[]
+[
+  { "template": "windows-terminal.json", "out": "ports/windows-terminal/brass-lasers-{slug}.json" },
+  { "template": "ghostty.conf", "out": "ports/ghostty/brass-lasers-{slug}" },
+  { "template": "wezterm.toml", "out": "ports/wezterm/brass-lasers-{slug}.toml" },
+  { "template": "kitty.conf", "out": "ports/kitty/brass-lasers-{slug}.conf" },
+  { "template": "alacritty.toml", "out": "ports/alacritty/brass-lasers-{slug}.toml" },
+  { "template": "iterm2.itermcolors", "out": "ports/iterm2/Brass Lasers {name}.itermcolors" },
+  { "template": "neovim.lua", "out": "colors/brass-lasers-{slug}.lua" },
+  { "template": "helix.toml", "out": "ports/helix/brass_lasers_{slug}.toml" },
+  { "template": "sublime.sublime-color-scheme", "out": "ports/sublime/Brass Lasers {name}.sublime-color-scheme" },
+  { "template": "bat.tmTheme", "out": "ports/bat/Brass Lasers {name}.tmTheme" },
+  { "template": "jetbrains.icls", "out": "ports/jetbrains/Brass Lasers {name}.icls" },
+  { "template": "starship.toml", "out": "ports/starship/brass-lasers-{slug}.toml" },
+  { "template": "fzf.sh", "out": "ports/fzf/brass-lasers-{slug}.sh" },
+  { "template": "obsidian.css", "out": "ports/obsidian/brass-lasers-{slug}.css" },
+  { "template": "discord.theme.css", "out": "ports/discord/brass-lasers-{slug}.theme.css" },
+  { "template": "firefox-manifest.json", "out": "ports/firefox/{slug}/manifest.json" },
+  { "template": "slack.md", "out": "ports/slack/brass-lasers-{slug}.md" },
+  { "template": "raycast.md", "out": "ports/raycast/brass-lasers-{slug}.md" }
+]

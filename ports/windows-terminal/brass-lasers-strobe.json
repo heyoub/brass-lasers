@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Strobe",
+  "background": "#020104",
+  "foreground": "#C0FF7B",
+  "cursorColor": "#FE7AAF",
+  "selectionBackground": "#26003F",
+  "black": "#5F5485",
+  "red": "#FF818E",
+  "green": "#C0FF7B",
+  "yellow": "#FFD595",
+  "blue": "#97A7FE",
+  "purple": "#FE7AAF",
+  "cyan": "#92FFF1",
+  "white": "#E8E2F5",
+  "brightBlack": "#A398D0",
+  "brightRed": "#FEA6B3",
+  "brightGreen": "#CAFB8A",
+  "brightYellow": "#FFE4B3",
+  "brightBlue": "#C1C9FF",
+  "brightPurple": "#FFA9D1",
+  "brightCyan": "#90FFF3",
+  "brightWhite": "#FFFDFA"
+}

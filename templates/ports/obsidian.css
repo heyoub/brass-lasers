@@ -1,0 +1,66 @@
+/* Brass Lasers {{meta.name}} for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to {{meta.appearance}}.
+   Generated from palette/{{meta.slug}}.json. */
+.theme-{{meta.appearance}} {
+  --background-primary: {{base}};
+  --background-primary-alt: {{surface0}};
+  --background-secondary: {{mantle}};
+  --background-secondary-alt: {{crust}};
+  --background-modifier-border: {{border1}};
+  --background-modifier-hover: {{hover}};
+  --background-modifier-active-hover: {{selectionActive}};
+  --background-modifier-form-field: {{surface0}};
+  --text-normal: {{textEditor}};
+  --text-muted: {{subtext0}};
+  --text-faint: {{overlay1}};
+  --text-accent: {{pink}};
+  --text-accent-hover: {{pinkLight}};
+  --text-on-accent: {{onPink}};
+  --text-selection: {{selection}}66;
+  --text-highlight-bg: {{brass}}44;
+  --interactive-accent: {{pink}};
+  --interactive-accent-hover: {{pinkHover}};
+  --interactive-normal: {{surface1}};
+  --interactive-hover: {{hover}};
+  --caret-color: {{pink}};
+  --link-color: {{cyan}};
+  --link-color-hover: {{cyanLight}};
+  --link-external-color: {{cyan}};
+  --link-unresolved-color: {{uv}};
+  --h1-color: {{brass}};
+  --h2-color: {{brass}};
+  --h3-color: {{sunset}};
+  --h4-color: {{pinkLight}};
+  --h5-color: {{uv}};
+  --h6-color: {{lavender}};
+  --bold-color: {{sunset}};
+  --italic-color: {{pinkLight}};
+  --blockquote-border-color: {{uv}};
+  --code-background: {{codeBlock}};
+  --code-normal: {{textEditor}};
+  --code-comment: {{comment}};
+  --code-keyword: {{pink}};
+  --code-string: {{afterglow}};
+  --code-function: {{cyan}};
+  --code-value: {{sunset}};
+  --code-property: {{lavender}};
+  --code-tag: {{pink}};
+  --code-operator: {{orchid}};
+  --code-punctuation: {{subtext0}};
+  --code-important: {{brass}};
+  --tag-color: {{brass}};
+  --tag-background: {{accentSurface}};
+  --graph-node: {{uv}};
+  --graph-node-focused: {{pink}};
+  --graph-node-tag: {{brass}};
+  --graph-line: {{border2}};
+  --color-red: {{red}};
+  --color-orange: {{sunset}};
+  --color-yellow: {{brass}};
+  --color-green: {{lime}};
+  --color-cyan: {{cyan}};
+  --color-blue: {{blue}};
+  --color-purple: {{uv}};
+  --color-pink: {{pink}};
+}

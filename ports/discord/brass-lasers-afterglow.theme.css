@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers Afterglow
+ * @author heyoub
+ * @version 1.0.0
+ * @description The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/afterglow.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #13101a;
+  --background-secondary: #0f0d15;
+  --background-secondary-alt: #0c0a10;
+  --background-tertiary: #0c0a10;
+  --background-accent: #30284d;
+  --background-floating: #201c2f;
+  --background-modifier-hover: #211c34;
+  --background-modifier-active: #3c2241;
+  --background-modifier-selected: #3c2241;
+  --background-modifier-accent: #2f2846;
+  --channeltextarea-background: #191624;
+  --text-normal: #dad1e6;
+  --text-muted: #9187ad;
+  --text-link: #8adfd4;
+  --header-primary: #e2dbcc;
+  --header-secondary: #ada3c8;
+  --interactive-normal: #ada3c8;
+  --interactive-hover: #e2dbcc;
+  --interactive-active: #e5ba78;
+  --interactive-muted: #554c75;
+  --channels-default: #7e74aa;
+  --brand-experiment: #e476a1;
+  --brand-500: #e476a1;
+  --mention-background: #e5ba7822;
+  --mention-foreground: #e5ba78;
+  --info-warning-foreground: #e49e75;
+  --info-danger-foreground: #e37c86;
+  --info-positive-foreground: #beea92;
+  --status-positive: #beea92;
+  --status-warning: #e5ba78;
+  --status-danger: #e37c86;
+  --scrollbar-auto-thumb: #30284d;
+  --scrollbar-thin-thumb: #30284d;
+}
+::selection { background: #6b419088; }
+code, pre { background: #0e0b13 !important; color: #b2d98e; }

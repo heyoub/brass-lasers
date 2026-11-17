@@ -1,0 +1,61 @@
+# Brass Lasers 4AM for Alacritty
+# Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.
+# Generated from palette/4am.json. Do not edit by hand.
+
+[colors.primary]
+background = "#07050c"
+foreground = "#b6ff5c"
+dim_foreground = "#857ab0"
+bright_foreground = "#d0ff94"
+
+[colors.cursor]
+text = "#07050c"
+cursor = "#ff3d9a"
+
+[colors.vi_mode_cursor]
+text = "#07050c"
+cursor = "#ffb627"
+
+[colors.selection]
+text = "#efe6d5"
+background = "#4a1f6b"
+
+[colors.search.matches]
+foreground = "#07050c"
+background = "#ffb627"
+
+[colors.search.focused_match]
+foreground = "#07050c"
+background = "#ff3d9a"
+
+[colors.hints.start]
+foreground = "#07050c"
+background = "#3df2e0"
+
+[colors.hints.end]
+foreground = "#07050c"
+background = "#b18cff"
+
+[colors.footer_bar]
+foreground = "#efe6d5"
+background = "#1b142e"
+
+[colors.normal]
+black = "#5f5485"
+red = "#ff4d6d"
+green = "#b6ff5c"
+yellow = "#ffb627"
+blue = "#7c8cff"
+magenta = "#ff3d9a"
+cyan = "#3df2e0"
+white = "#d9cfee"
+
+[colors.bright]
+black = "#857ab0"
+red = "#ff7d95"
+green = "#d0ff94"
+yellow = "#ffd27a"
+blue = "#a5b0ff"
+magenta = "#ff7fc0"
+cyan = "#8ff7ec"
+white = "#fff8ea"

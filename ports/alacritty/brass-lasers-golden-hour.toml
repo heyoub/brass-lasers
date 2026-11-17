@@ -1,0 +1,61 @@
+# Brass Lasers Golden Hour for Alacritty
+# The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+# Generated from palette/golden-hour.json. Do not edit by hand.
+
+[colors.primary]
+background = "#f6edde"
+foreground = "#487102"
+dim_foreground = "#6f6591"
+bright_foreground = "#547601"
+
+[colors.cursor]
+text = "#f6edde"
+cursor = "#b20965"
+
+[colors.vi_mode_cursor]
+text = "#f6edde"
+cursor = "#835a03"
+
+[colors.selection]
+text = "#231d11"
+background = "#e0cff2"
+
+[colors.search.matches]
+foreground = "#f6edde"
+background = "#835a03"
+
+[colors.search.focused_match]
+foreground = "#f6edde"
+background = "#b20965"
+
+[colors.hints.start]
+foreground = "#f6edde"
+background = "#01736a"
+
+[colors.hints.end]
+foreground = "#f6edde"
+background = "#6f47b4"
+
+[colors.footer_bar]
+foreground = "#231d11"
+background = "#eee5d6"
+
+[colors.normal]
+black = "#2f2945"
+red = "#b9003d"
+green = "#487102"
+yellow = "#835a03"
+blue = "#4b54c1"
+magenta = "#b20965"
+cyan = "#01736a"
+white = "#d4cde2"
+
+[colors.bright]
+black = "#6f6591"
+red = "#ba3e5d"
+green = "#547601"
+yellow = "#876605"
+blue = "#5e66a8"
+magenta = "#b73d81"
+cyan = "#017973"
+white = "#efe7d9"

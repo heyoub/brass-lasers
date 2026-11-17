@@ -1,0 +1,25 @@
+# Brass Lasers Strobe for Ghostty
+# High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+# Generated from palette/strobe.json. Do not edit by hand.
+background = #020104
+foreground = #c0ff7b
+cursor-color = #fe7aaf
+cursor-text = #020104
+selection-background = #26003f
+selection-foreground = #fcf7ed
+palette = 0=#5f5485
+palette = 1=#ff818e
+palette = 2=#c0ff7b
+palette = 3=#ffd595
+palette = 4=#97a7fe
+palette = 5=#fe7aaf
+palette = 6=#92fff1
+palette = 7=#e8e2f5
+palette = 8=#a398d0
+palette = 9=#fea6b3
+palette = 10=#cafb8a
+palette = 11=#ffe4b3
+palette = 12=#c1c9ff
+palette = 13=#ffa9d1
+palette = 14=#90fff3
+palette = 15=#fffdfa

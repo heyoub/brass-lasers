@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers 4AM
+ * @author heyoub
+ * @version 1.0.0
+ * @description Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/4am.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #0e0a17;
+  --background-secondary: #0a0711;
+  --background-secondary-alt: #07050c;
+  --background-tertiary: #07050c;
+  --background-accent: #2b1e4f;
+  --background-floating: #1b142e;
+  --background-modifier-hover: #1c1433;
+  --background-modifier-active: #3a1640;
+  --background-modifier-selected: #3a1640;
+  --background-modifier-accent: #2a1f47;
+  --channeltextarea-background: #140f21;
+  --text-normal: #e6dcf5;
+  --text-muted: #9c90bd;
+  --text-link: #3df2e0;
+  --header-primary: #efe6d5;
+  --header-secondary: #b9add9;
+  --interactive-normal: #b9add9;
+  --interactive-hover: #efe6d5;
+  --interactive-active: #ffb627;
+  --interactive-muted: #5f5485;
+  --channels-default: #7d71a3;
+  --brand-experiment: #ff3d9a;
+  --brand-500: #ff3d9a;
+  --mention-background: #ffb62722;
+  --mention-foreground: #ffb627;
+  --info-warning-foreground: #ff8a3d;
+  --info-danger-foreground: #ff4d6d;
+  --info-positive-foreground: #b6ff5c;
+  --status-positive: #b6ff5c;
+  --status-warning: #ffb627;
+  --status-danger: #ff4d6d;
+  --scrollbar-auto-thumb: #2b1e4f;
+  --scrollbar-thin-thumb: #2b1e4f;
+}
+::selection { background: #6a2c9a88; }
+code, pre { background: #09060f !important; color: #a6e85f; }

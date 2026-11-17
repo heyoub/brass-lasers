@@ -1,0 +1,41 @@
+# Brass Lasers Golden Hour for WezTerm
+# The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+# Generated from palette/golden-hour.json. Do not edit by hand.
+
+[colors]
+background = "#f6edde"
+foreground = "#487102"
+cursor_bg = "#b20965"
+cursor_border = "#b20965"
+cursor_fg = "#f6edde"
+selection_bg = "#e0cff2"
+selection_fg = "#231d11"
+scrollbar_thumb = "#d0cbed"
+split = "#d2cdea"
+compose_cursor = "#835a03"
+ansi = ["#2f2945", "#b9003d", "#487102", "#835a03", "#4b54c1", "#b20965", "#01736a", "#d4cde2"]
+brights = ["#6f6591", "#ba3e5d", "#547601", "#876605", "#5e66a8", "#b73d81", "#017973", "#efe7d9"]
+
+[colors.tab_bar]
+background = "#fcf2e4"
+
+[colors.tab_bar.active_tab]
+bg_color = "#fef9f1"
+fg_color = "#835a03"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#fcf2e4"
+fg_color = "#73698c"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#ece3d4"
+fg_color = "#231d11"
+
+[colors.tab_bar.new_tab]
+bg_color = "#fcf2e4"
+fg_color = "#73698c"
+
+[metadata]
+name = "Brass Lasers Golden Hour"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

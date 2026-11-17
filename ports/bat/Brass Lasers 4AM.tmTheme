@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Brass Lasers 4AM for bat, delta, and anything that reads TextMate themes.
+     Generated from palette/4am.json. Do not edit by hand. -->
+<plist version="1.0">
+<dict>
+	<key>name</key><string>Brass Lasers 4AM</string>
+	<key>author</key><string>heyoub</string>
+	<key>settings</key>
+	<array>
+		<dict><key>settings</key><dict>
+			<key>background</key><string>#0e0a17</string>
+			<key>foreground</key><string>#e6dcf5</string>
+			<key>caret</key><string>#ff3d9a</string>
+			<key>lineHighlight</key><string>#171028</string>
+			<key>selection</key><string>#6a2c9a</string>
+			<key>gutter</key><string>#0e0a17</string>
+			<key>gutterForeground</key><string>#4b3f70</string>
+			<key>invisibles</key><string>#2f2550</string>
+			<key>findHighlight</key><string>#ffb627</string>
+		</dict></dict>
+		<dict><key>name</key><string>Comment</string><key>scope</key><string>comment, punctuation.definition.comment</string><key>settings</key><dict><key>foreground</key><string>#857ab0</string><key>fontStyle</key><string>italic</string></dict></dict>
+		<dict><key>name</key><string>Keyword</string><key>scope</key><string>keyword, storage, storage.type, storage.modifier</string><key>settings</key><dict><key>foreground</key><string>#ff3d9a</string></dict></dict>
+		<dict><key>name</key><string>Operator</string><key>scope</key><string>keyword.operator, punctuation.accessor</string><key>settings</key><dict><key>foreground</key><string>#e88cc0</string></dict></dict>
+		<dict><key>name</key><string>String</string><key>scope</key><string>string, punctuation.definition.string</string><key>settings</key><dict><key>foreground</key><string>#a6e85f</string></dict></dict>
+		<dict><key>name</key><string>Escape</string><key>scope</key><string>constant.character.escape, string.regexp</string><key>settings</key><dict><key>foreground</key><string>#3df2e0</string></dict></dict>
+		<dict><key>name</key><string>Number</string><key>scope</key><string>constant.numeric, constant.language, constant.other, variable.other.constant</string><key>settings</key><dict><key>foreground</key><string>#ff8a3d</string></dict></dict>
+		<dict><key>name</key><string>Function</string><key>scope</key><string>entity.name.function, support.function, variable.function</string><key>settings</key><dict><key>foreground</key><string>#3df2e0</string></dict></dict>
+		<dict><key>name</key><string>Type</string><key>scope</key><string>entity.name.type, entity.name.class, support.type, support.class, storage.type.primitive</string><key>settings</key><dict><key>foreground</key><string>#ffb627</string></dict></dict>
+		<dict><key>name</key><string>Namespace</string><key>scope</key><string>entity.name.namespace, entity.name.module</string><key>settings</key><dict><key>foreground</key><string>#b18cff</string></dict></dict>
+		<dict><key>name</key><string>Parameter</string><key>scope</key><string>variable.parameter</string><key>settings</key><dict><key>foreground</key><string>#ffd27a</string><key>fontStyle</key><string>italic</string></dict></dict>
+		<dict><key>name</key><string>Property</string><key>scope</key><string>variable.other.member, variable.other.property, meta.object-literal.key, support.type.property-name</string><key>settings</key><dict><key>foreground</key><string>#c9b8ff</string></dict></dict>
+		<dict><key>name</key><string>Language variable</string><key>scope</key><string>variable.language</string><key>settings</key><dict><key>foreground</key><string>#ff7fc0</string><key>fontStyle</key><string>italic</string></dict></dict>
+		<dict><key>name</key><string>Punctuation</string><key>scope</key><string>punctuation</string><key>settings</key><dict><key>foreground</key><string>#9c90bd</string></dict></dict>
+		<dict><key>name</key><string>Tag</string><key>scope</key><string>entity.name.tag</string><key>settings</key><dict><key>foreground</key><string>#ff3d9a</string></dict></dict>
+		<dict><key>name</key><string>Attribute</string><key>scope</key><string>entity.other.attribute-name</string><key>settings</key><dict><key>foreground</key><string>#ffd27a</string><key>fontStyle</key><string>italic</string></dict></dict>
+		<dict><key>name</key><string>Heading</string><key>scope</key><string>markup.heading, entity.name.section</string><key>settings</key><dict><key>foreground</key><string>#ffb627</string><key>fontStyle</key><string>bold</string></dict></dict>
+		<dict><key>name</key><string>Inline code</string><key>scope</key><string>markup.raw</string><key>settings</key><dict><key>foreground</key><string>#a6e85f</string></dict></dict>
+		<dict><key>name</key><string>Link</string><key>scope</key><string>markup.underline.link</string><key>settings</key><dict><key>foreground</key><string>#3df2e0</string></dict></dict>
+		<dict><key>name</key><string>Inserted</string><key>scope</key><string>markup.inserted</string><key>settings</key><dict><key>foreground</key><string>#b6ff5c</string></dict></dict>
+		<dict><key>name</key><string>Deleted</string><key>scope</key><string>markup.deleted</string><key>settings</key><dict><key>foreground</key><string>#ff4d6d</string></dict></dict>
+		<dict><key>name</key><string>Changed</string><key>scope</key><string>markup.changed</string><key>settings</key><dict><key>foreground</key><string>#ffb627</string></dict></dict>
+		<dict><key>name</key><string>Invalid</string><key>scope</key><string>invalid</string><key>settings</key><dict><key>foreground</key><string>#ff4d6d</string><key>fontStyle</key><string>underline</string></dict></dict>
+	</array>
+</dict>
+</plist>

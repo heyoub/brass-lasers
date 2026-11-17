@@ -1,0 +1,61 @@
+# Brass Lasers Strobe for Alacritty
+# High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+# Generated from palette/strobe.json. Do not edit by hand.
+
+[colors.primary]
+background = "#020104"
+foreground = "#c0ff7b"
+dim_foreground = "#a398d0"
+bright_foreground = "#cafb8a"
+
+[colors.cursor]
+text = "#020104"
+cursor = "#fe7aaf"
+
+[colors.vi_mode_cursor]
+text = "#020104"
+cursor = "#ffd595"
+
+[colors.selection]
+text = "#fcf7ed"
+background = "#26003f"
+
+[colors.search.matches]
+foreground = "#020104"
+background = "#ffd595"
+
+[colors.search.focused_match]
+foreground = "#020104"
+background = "#fe7aaf"
+
+[colors.hints.start]
+foreground = "#020104"
+background = "#92fff1"
+
+[colors.hints.end]
+foreground = "#020104"
+background = "#c3abff"
+
+[colors.footer_bar]
+foreground = "#fcf7ed"
+background = "#090418"
+
+[colors.normal]
+black = "#5f5485"
+red = "#ff818e"
+green = "#c0ff7b"
+yellow = "#ffd595"
+blue = "#97a7fe"
+magenta = "#fe7aaf"
+cyan = "#92fff1"
+white = "#e8e2f5"
+
+[colors.bright]
+black = "#a398d0"
+red = "#fea6b3"
+green = "#cafb8a"
+yellow = "#ffe4b3"
+blue = "#c1c9ff"
+magenta = "#ffa9d1"
+cyan = "#90fff3"
+white = "#fffdfa"

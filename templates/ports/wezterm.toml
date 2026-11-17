@@ -1,0 +1,41 @@
+# Brass Lasers {{meta.name}} for WezTerm
+# {{meta.tagline}}
+# Generated from palette/{{meta.slug}}.json. Do not edit by hand.
+
+[colors]
+background = "{{crust}}"
+foreground = "{{lime}}"
+cursor_bg = "{{pink}}"
+cursor_border = "{{pink}}"
+cursor_fg = "{{crust}}"
+selection_bg = "{{terminalSelection}}"
+selection_fg = "{{text}}"
+scrollbar_thumb = "{{secondary}}"
+split = "{{border1}}"
+compose_cursor = "{{brass}}"
+ansi = ["{{ansiBlack}}", "{{red}}", "{{lime}}", "{{brass}}", "{{blue}}", "{{pink}}", "{{cyan}}", "{{ansiWhite}}"]
+brights = ["{{comment}}", "{{redLight}}", "{{limeLight}}", "{{brassLight}}", "{{blueLight}}", "{{pinkLight}}", "{{cyanLight}}", "{{brightWhite}}"]
+
+[colors.tab_bar]
+background = "{{mantle}}"
+
+[colors.tab_bar.active_tab]
+bg_color = "{{base}}"
+fg_color = "{{brass}}"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "{{mantle}}"
+fg_color = "{{overlay2}}"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "{{hover}}"
+fg_color = "{{text}}"
+
+[colors.tab_bar.new_tab]
+bg_color = "{{mantle}}"
+fg_color = "{{overlay2}}"
+
+[metadata]
+name = "Brass Lasers {{meta.name}}"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

@@ -1,0 +1,25 @@
+# Brass Lasers 4AM for Ghostty
+# Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.
+# Generated from palette/4am.json. Do not edit by hand.
+background = #07050c
+foreground = #b6ff5c
+cursor-color = #ff3d9a
+cursor-text = #07050c
+selection-background = #4a1f6b
+selection-foreground = #efe6d5
+palette = 0=#5f5485
+palette = 1=#ff4d6d
+palette = 2=#b6ff5c
+palette = 3=#ffb627
+palette = 4=#7c8cff
+palette = 5=#ff3d9a
+palette = 6=#3df2e0
+palette = 7=#d9cfee
+palette = 8=#857ab0
+palette = 9=#ff7d95
+palette = 10=#d0ff94
+palette = 11=#ffd27a
+palette = 12=#a5b0ff
+palette = 13=#ff7fc0
+palette = 14=#8ff7ec
+palette = 15=#fff8ea

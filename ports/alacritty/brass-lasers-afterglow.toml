@@ -1,0 +1,61 @@
+# Brass Lasers Afterglow for Alacritty
+# The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+# Generated from palette/afterglow.json. Do not edit by hand.
+
+[colors.primary]
+background = "#0c0a10"
+foreground = "#beea92"
+dim_foreground = "#7f76a9"
+bright_foreground = "#ceebad"
+
+[colors.cursor]
+text = "#0c0a10"
+cursor = "#e476a1"
+
+[colors.vi_mode_cursor]
+text = "#0c0a10"
+cursor = "#e5ba78"
+
+[colors.selection]
+text = "#e2dbcc"
+background = "#4c2f66"
+
+[colors.search.matches]
+foreground = "#0c0a10"
+background = "#e5ba78"
+
+[colors.search.focused_match]
+foreground = "#0c0a10"
+background = "#e476a1"
+
+[colors.hints.start]
+foreground = "#0c0a10"
+background = "#8adfd4"
+
+[colors.hints.end]
+foreground = "#0c0a10"
+background = "#b09de1"
+
+[colors.footer_bar]
+foreground = "#e2dbcc"
+background = "#201c2f"
+
+[colors.normal]
+black = "#554c75"
+red = "#e37c86"
+green = "#beea92"
+yellow = "#e5ba78"
+blue = "#8e9bdf"
+magenta = "#e476a1"
+cyan = "#8adfd4"
+white = "#cdc5df"
+
+[colors.bright]
+black = "#7f76a9"
+red = "#e496a1"
+green = "#ceebad"
+yellow = "#e7cd9c"
+blue = "#acb4e3"
+magenta = "#e598bc"
+cyan = "#abe4dd"
+white = "#f2ece1"

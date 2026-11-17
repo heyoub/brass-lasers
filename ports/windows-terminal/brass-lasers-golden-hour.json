@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Golden Hour",
+  "background": "#F6EDDE",
+  "foreground": "#487102",
+  "cursorColor": "#B20965",
+  "selectionBackground": "#E0CFF2",
+  "black": "#2F2945",
+  "red": "#B9003D",
+  "green": "#487102",
+  "yellow": "#835A03",
+  "blue": "#4B54C1",
+  "purple": "#B20965",
+  "cyan": "#01736A",
+  "white": "#D4CDE2",
+  "brightBlack": "#6F6591",
+  "brightRed": "#BA3E5D",
+  "brightGreen": "#547601",
+  "brightYellow": "#876605",
+  "brightBlue": "#5E66A8",
+  "brightPurple": "#B73D81",
+  "brightCyan": "#017973",
+  "brightWhite": "#EFE7D9"
+}

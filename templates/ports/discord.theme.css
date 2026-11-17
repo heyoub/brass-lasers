@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers {{meta.name}}
+ * @author heyoub
+ * @version 1.0.0
+ * @description {{meta.tagline}}
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/{{meta.slug}}.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: {{base}};
+  --background-secondary: {{mantle}};
+  --background-secondary-alt: {{crust}};
+  --background-tertiary: {{crust}};
+  --background-accent: {{secondary}};
+  --background-floating: {{surface1}};
+  --background-modifier-hover: {{hover}};
+  --background-modifier-active: {{selectionActive}};
+  --background-modifier-selected: {{selectionActive}};
+  --background-modifier-accent: {{border1}};
+  --channeltextarea-background: {{surface0}};
+  --text-normal: {{textEditor}};
+  --text-muted: {{subtext0}};
+  --text-link: {{cyan}};
+  --header-primary: {{text}};
+  --header-secondary: {{subtext1}};
+  --interactive-normal: {{subtext1}};
+  --interactive-hover: {{text}};
+  --interactive-active: {{brass}};
+  --interactive-muted: {{overlay0}};
+  --channels-default: {{overlay2}};
+  --brand-experiment: {{pink}};
+  --brand-500: {{pink}};
+  --mention-background: {{brass}}22;
+  --mention-foreground: {{brass}};
+  --info-warning-foreground: {{sunset}};
+  --info-danger-foreground: {{red}};
+  --info-positive-foreground: {{lime}};
+  --status-positive: {{lime}};
+  --status-warning: {{brass}};
+  --status-danger: {{red}};
+  --scrollbar-auto-thumb: {{secondary}};
+  --scrollbar-thin-thumb: {{secondary}};
+}
+::selection { background: {{selection}}88; }
+code, pre { background: {{codeBlock}} !important; color: {{afterglow}}; }

@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Afterglow",
+  "background": "#0C0A10",
+  "foreground": "#BEEA92",
+  "cursorColor": "#E476A1",
+  "selectionBackground": "#4C2F66",
+  "black": "#554C75",
+  "red": "#E37C86",
+  "green": "#BEEA92",
+  "yellow": "#E5BA78",
+  "blue": "#8E9BDF",
+  "purple": "#E476A1",
+  "cyan": "#8ADFD4",
+  "white": "#CDC5DF",
+  "brightBlack": "#7F76A9",
+  "brightRed": "#E496A1",
+  "brightGreen": "#CEEBAD",
+  "brightYellow": "#E7CD9C",
+  "brightBlue": "#ACB4E3",
+  "brightPurple": "#E598BC",
+  "brightCyan": "#ABE4DD",
+  "brightWhite": "#F2ECE1"
+}

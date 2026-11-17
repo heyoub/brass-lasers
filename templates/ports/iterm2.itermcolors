@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Brass Lasers {{meta.name}} for iTerm2. Generated from palette/{{meta.slug}}.json. -->
+<plist version="1.0">
+<dict>
+	<key>Ansi 0 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{ansiBlack|rf}}</real><key>Green Component</key><real>{{ansiBlack|gf}}</real><key>Blue Component</key><real>{{ansiBlack|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 1 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{red|rf}}</real><key>Green Component</key><real>{{red|gf}}</real><key>Blue Component</key><real>{{red|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 2 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{lime|rf}}</real><key>Green Component</key><real>{{lime|gf}}</real><key>Blue Component</key><real>{{lime|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 3 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{brass|rf}}</real><key>Green Component</key><real>{{brass|gf}}</real><key>Blue Component</key><real>{{brass|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 4 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{blue|rf}}</real><key>Green Component</key><real>{{blue|gf}}</real><key>Blue Component</key><real>{{blue|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 5 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{pink|rf}}</real><key>Green Component</key><real>{{pink|gf}}</real><key>Blue Component</key><real>{{pink|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 6 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{cyan|rf}}</real><key>Green Component</key><real>{{cyan|gf}}</real><key>Blue Component</key><real>{{cyan|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 7 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{ansiWhite|rf}}</real><key>Green Component</key><real>{{ansiWhite|gf}}</real><key>Blue Component</key><real>{{ansiWhite|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 8 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{comment|rf}}</real><key>Green Component</key><real>{{comment|gf}}</real><key>Blue Component</key><real>{{comment|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 9 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{redLight|rf}}</real><key>Green Component</key><real>{{redLight|gf}}</real><key>Blue Component</key><real>{{redLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 10 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{limeLight|rf}}</real><key>Green Component</key><real>{{limeLight|gf}}</real><key>Blue Component</key><real>{{limeLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 11 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{brassLight|rf}}</real><key>Green Component</key><real>{{brassLight|gf}}</real><key>Blue Component</key><real>{{brassLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 12 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{blueLight|rf}}</real><key>Green Component</key><real>{{blueLight|gf}}</real><key>Blue Component</key><real>{{blueLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 13 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{pinkLight|rf}}</real><key>Green Component</key><real>{{pinkLight|gf}}</real><key>Blue Component</key><real>{{pinkLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 14 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{cyanLight|rf}}</real><key>Green Component</key><real>{{cyanLight|gf}}</real><key>Blue Component</key><real>{{cyanLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Ansi 15 Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{brightWhite|rf}}</real><key>Green Component</key><real>{{brightWhite|gf}}</real><key>Blue Component</key><real>{{brightWhite|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Background Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{crust|rf}}</real><key>Green Component</key><real>{{crust|gf}}</real><key>Blue Component</key><real>{{crust|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Foreground Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{lime|rf}}</real><key>Green Component</key><real>{{lime|gf}}</real><key>Blue Component</key><real>{{lime|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Bold Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{limeLight|rf}}</real><key>Green Component</key><real>{{limeLight|gf}}</real><key>Blue Component</key><real>{{limeLight|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Cursor Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{pink|rf}}</real><key>Green Component</key><real>{{pink|gf}}</real><key>Blue Component</key><real>{{pink|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Cursor Text Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{crust|rf}}</real><key>Green Component</key><real>{{crust|gf}}</real><key>Blue Component</key><real>{{crust|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Selection Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{terminalSelection|rf}}</real><key>Green Component</key><real>{{terminalSelection|gf}}</real><key>Blue Component</key><real>{{terminalSelection|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Selected Text Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{text|rf}}</real><key>Green Component</key><real>{{text|gf}}</real><key>Blue Component</key><real>{{text|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+	<key>Link Color</key>
+	<dict><key>Color Space</key><string>sRGB</string><key>Red Component</key><real>{{cyan|rf}}</real><key>Green Component</key><real>{{cyan|gf}}</real><key>Blue Component</key><real>{{cyan|bf}}</real><key>Alpha Component</key><real>1</real></dict>
+</dict>
+</plist>

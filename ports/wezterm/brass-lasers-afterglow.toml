@@ -1,0 +1,41 @@
+# Brass Lasers Afterglow for WezTerm
+# The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+# Generated from palette/afterglow.json. Do not edit by hand.
+
+[colors]
+background = "#0c0a10"
+foreground = "#beea92"
+cursor_bg = "#e476a1"
+cursor_border = "#e476a1"
+cursor_fg = "#0c0a10"
+selection_bg = "#4c2f66"
+selection_fg = "#e2dbcc"
+scrollbar_thumb = "#30284d"
+split = "#2f2846"
+compose_cursor = "#e5ba78"
+ansi = ["#554c75", "#e37c86", "#beea92", "#e5ba78", "#8e9bdf", "#e476a1", "#8adfd4", "#cdc5df"]
+brights = ["#7f76a9", "#e496a1", "#ceebad", "#e7cd9c", "#acb4e3", "#e598bc", "#abe4dd", "#f2ece1"]
+
+[colors.tab_bar]
+background = "#0f0d15"
+
+[colors.tab_bar.active_tab]
+bg_color = "#13101a"
+fg_color = "#e5ba78"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#0f0d15"
+fg_color = "#7e74aa"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#211c34"
+fg_color = "#e2dbcc"
+
+[colors.tab_bar.new_tab]
+bg_color = "#0f0d15"
+fg_color = "#7e74aa"
+
+[metadata]
+name = "Brass Lasers Afterglow"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

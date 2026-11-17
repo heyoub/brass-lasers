@@ -1,0 +1,26 @@
+# Brass Lasers Golden Hour palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_golden-hour"
+
+[palettes.brass_lasers_golden-hour]
+crust = "#f6edde"
+mantle = "#fcf2e4"
+base = "#fef9f1"
+surface = "#eee5d6"
+text = "#231d11"
+subtext = "#61577c"
+comment = "#6f6591"
+brass = "#835a03"
+brass_light = "#876605"
+pink = "#b20965"
+pink_light = "#b73d81"
+cyan = "#01736a"
+lime = "#487102"
+afterglow = "#477204"
+sunset = "#9b4801"
+uv = "#6f47b4"
+lavender = "#7968a9"
+red = "#b9003d"
+blue = "#4b54c1"
