@@ -37,6 +37,18 @@ Nine sets, starting where it all began, at 4AM, and running the clock forward th
 Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's 18 themes in the picker.
 
 ![All nine sets](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/previews/lineup.png)
+
+<details>
+<summary><b>Every set in a real editor</b> (Cursor, semantic highlighting on)</summary>
+
+| | |
+|---|---|
+| **Atrium 5AM** ![Atrium 5AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/atrium.png) | **Daybreak** ![Daybreak](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/daybreak.png) |
+| **Soundcheck** ![Soundcheck](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/soundcheck.png) | **Golden Hour** ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/golden-hour.png) |
+| **Afterglow** ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/afterglow.png) | **Liquid Metal** ![Liquid Metal](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/liquid-metal.png) |
+| **Midnight** ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/midnight.png) | **Strobe** ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/strobe.png) |
+
+</details>
 ---
 
 ## Install
@@ -111,7 +123,7 @@ Install steps for each: **[ports/README.md](ports/README.md)**.
 
 ## Neon Glow (experimental, opt-in)
 
-Want the lasers to actually glow? **[Brass Lasers Neon Glow](extensions/glow/README.md)** is a separate extension that adds a soft neon halo to keywords, strings, functions and types. It works by patching the editor's own files, so VS Code will complain that the install is "corrupt". That's expected, and the extension explains it before doing anything. One command turns it on, one turns it off.
+Want the lasers to actually glow? **[Brass Lasers Neon Glow](https://open-vsx.org/extension/heyoub/brass-lasers-glow)** ([source](extensions/glow/README.md)) is a separate extension, on Open VSX as `heyoub.brass-lasers-glow`, that adds a soft neon halo to keywords, strings, functions and types. It works by patching the editor's own files, so VS Code will complain that the install is "corrupt". That's expected, and the extension explains it before doing anything. One command turns it on, one turns it off.
 
 ---
 

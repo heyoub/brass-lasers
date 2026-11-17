@@ -17,7 +17,8 @@ Extension ID on every registry: **`heyoub.brass-lasers-4am`**. Site: https://hey
 | GitHub Pages site | **Live**, redeploys on site changes and after the Art bot redraws | nothing |
 | VS Marketplace | **Not published** | Make an Azure DevOps PAT (step 1 below) and save it as the `VSCE_PAT` repo secret. The next tag publishes. |
 | Zed registry | **Not submitted** | Test `zed/` as a dev extension in Zed, then the PR in step 4 |
-| T3 Themes gallery | **4AM only** ([PR #74](https://github.com/SunkenInTime/t3-themes/pull/74)) | One PR per extra set from `t3/` (step 3) |
+| T3 Themes gallery | **4AM live**; the other 8 sets are open PRs [#94](https://github.com/SunkenInTime/t3-themes/pull/94) to [#101](https://github.com/SunkenInTime/t3-themes/pull/101) | Merge (the gallery auto-merges theme PRs when checks pass) |
+| Neon Glow (`heyoub.brass-lasers-glow`) | **Live on Open VSX** v0.1.0, tested end to end in Cursor (enable, glow, disable restores the install byte for byte) | Publish manually: `cd extensions/glow && npx @vscode/vsce package`, then `npx ovsx publish <vsix> -p $OVSX_PAT` |
 
 The manual steps below still work for one-off publishing.
 ---|---|
