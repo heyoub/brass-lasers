@@ -2,7 +2,7 @@
   "name": "brass-lasers-4am",
   "displayName": "Brass Lasers 4AM — Neon Synthwave Dark Theme",
   "description": "Nine color themes, one for every hour of the festival: 4AM, Atrium 5AM, Daybreak, Soundcheck (matte), Golden Hour, Afterglow, Liquid Metal, Midnight and Strobe (AAA), plus matching file icons. Contrast-checked, readable at 4AM.",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "publisher": "heyoub",
   "engines": {
     "vscode": "^1.85.0"
@@ -165,18 +165,24 @@
         "id": "brass-lasers-icons",
         "label": "Brass Lasers Icons",
         "path": "./icons/brass-lasers-icon-theme.json"
+      },
+      {
+        "id": "brass-lasers-icons-classic",
+        "label": "Brass Lasers Icons (Classic)",
+        "path": "./icons/brass-lasers-classic-icon-theme.json"
       }
     ]
   },
   "devDependencies": {
     "@resvg/resvg-js": "2.6.2",
     "fast-xml-parser": "4.5.0",
+    "material-icon-theme": "5.40.0",
     "shiki": "3.13.0",
     "smol-toml": "1.3.1"
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "check": "node scripts/build.js --check && node scripts/contrast.js && node scripts/check-ports.js",
+    "check": "node scripts/build.js --check && node scripts/contrast.js && node scripts/check-ports.js && node scripts/check-icons.js",
     "contrast": "node scripts/contrast.js --report",
     "art": "node scripts/make-art.js",
     "package": "npx @vscode/vsce package",

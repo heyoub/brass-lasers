@@ -33,3 +33,4 @@ media/social-preview.png
 icons/**/*.md
 package-lock.json
 media/icon-lab/**
+vendor/**

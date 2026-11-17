@@ -2,6 +2,33 @@
 
 All notable drops of **Brass Lasers 4AM** land here. Newest first. Hydrate accordingly.
 
+## 0.6.0 — the new hardware
+
+**Brass Lasers Icons, rebuilt.** The typographic badges are replaced by a full organic icon theme, chosen from three prototypes in the [icon lab](media/icon-lab/README.md).
+
+### Icons
+
+- **Files, in the Enamel Edge finish:** every Material Icon Theme file icon (1,391 extensions, 2,156 file names, 200 languages), recolored from the palette by hue so TypeScript stays blue and Rust stays orange. Each gets a vertical light falloff, a top sheen, a darker rim and a small cut shadow. Shapes are never edited.
+- **Folders, in the Resin finish:** Catppuccin's line folders (421 folder names) in brass, each with a soft tinted glass body.
+- **Light sets:** each icon is lifted to the brightest tone that keeps 3:1 contrast on the sidebar (WCAG 1.4.11), so icons come out vivid rather than bronze.
+- **Classic badges** remain available as **Brass Lasers Icons (Classic)**.
+- Third-party notices ship in `icons/THIRD-PARTY-NOTICES.txt`.
+
+### Quality
+
+- **Every port checked on every PR:** each port parses, every key is recognized by the app's own source (snapshots of 10 upstreams), and each port's main surfaces carry the intended palette colors. 45 negative controls prove the checks can fail. Status is in [ports/COMPAT.md](ports/COMPAT.md).
+- **Weekly:** upstream drift detection (opens an issue only on a real break) and a runtime smoke test in real Neovim, bat, delta, fzf and Starship.
+- **Icon gate:** every association resolves, every SVG renders, none is blank, and none swells past its source shape.
+
+### Site
+
+- Smoother scrolling: slow scrolls pass through untouched, hard flicks have a top speed, and set changes glide instead of restarting.
+- Softer lightning that lights the scene instead of washing it out, plus a **Flashes on/off** switch (off by default under reduced motion).
+- A brass-rail scrollbar, and set, theme and check counts now derived from the data.
+
+### Ports
+
+- Discord remapped to Discord's current color variables; Raycast links fixed; PowerShell banners work in Windows PowerShell 5.1.
 ## 0.5.0 — round the clock
 
 **Two house brands join the lineup, and the day now runs in order.** The family starts where it began, at 4AM, and runs the clock forward: dawn, sunrise, midday, golden hour, dusk, the headliner, midnight, the warehouse, and back around.

@@ -22,6 +22,9 @@ jobs:
       - name: Ports (L1 parse + L2 contracts and parity, with negative controls)
         run: node scripts/check-ports.js
 
+      - name: Icons (every association resolves, every SVG renders, none blank)
+        run: node scripts/check-icons.js
+
       - name: Contrast gate (WCAG)
         run: node scripts/contrast.js --report
 

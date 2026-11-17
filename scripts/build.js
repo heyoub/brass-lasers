@@ -170,11 +170,16 @@ function buildAll() {
   // package.json theme list stays in sync with the flavors
   const pkg = JSON.parse(read("package.json"));
   pkg.contributes.themes = contributes;
-  pkg.contributes.iconThemes = [{ id: "brass-lasers-icons", label: "Brass Lasers Icons", path: "./icons/brass-lasers-icon-theme.json" }];
+  pkg.contributes.iconThemes = [
+    { id: "brass-lasers-icons", label: "Brass Lasers Icons", path: "./icons/brass-lasers-icon-theme.json" },
+    { id: "brass-lasers-icons-classic", label: "Brass Lasers Icons (Classic)", path: "./icons/brass-lasers-classic-icon-theme.json" },
+  ];
   files["package.json"] = JSON.stringify(pkg, null, 2) + "\n";
 
   return files;
 }
+
+const OWNED_DIRS = ["icons"];
 
 function main() {
   const check = process.argv.includes("--check");
@@ -189,6 +194,16 @@ function main() {
       fs.mkdirSync(path.dirname(abs), { recursive: true });
       fs.writeFileSync(abs, content);
       console.log("wrote", file);
+    }
+  }
+  // directories the build owns outright: anything in them it didn't generate is an orphan
+  for (const dir of OWNED_DIRS) {
+    const walk = (d) => (fs.existsSync(d) ? fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)])) : []);
+    for (const abs of walk(rel(dir))) {
+      const r = path.relative(rel("."), abs).split(path.sep).join("/");
+      if (r in files) continue;
+      if (check) stale.push(`${r} (orphan)`);
+      else { fs.unlinkSync(abs); console.log("removed", r); }
     }
   }
   if (check && stale.length) {

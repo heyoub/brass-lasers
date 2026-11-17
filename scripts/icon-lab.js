@@ -76,63 +76,20 @@ const parse = (svg) => {
 const shapes = (inner) => [...inner.matchAll(/<(path|circle|rect|ellipse|polygon)\b[^>]*?\/>/g)].map((m) => m[0]);
 
 // ---------- treatments: (icon, palette, uid) -> { vb, inner } ----------
+// the real finishes, shared with the shipped theme (scripts/icon-finish.js)
+const finish = require("./icon-finish.js");
 function resin(name, pal, uid) {
   const raw = fs.readFileSync(path.join(SRC, "catppuccin", `${name}.svg`), "utf8");
-  let { vb, inner } = parse(raw);
-  const roleOf = (v) => (FOLDERS.has(name) && v === "text" ? "brass" : CTP[v] || "text");
-  const first = (inner.match(/var\(--vscode-ctp-(\w+)\)/) || [, "text"])[1];
-  inner = inner.replace(/var\(--vscode-ctp-(\w+)\)/g, (_, v) => pal[roleOf(v)]);
-  if (NO_BODY.has(name)) return { vb, inner };
-  const d = (inner.match(/<path[^>]*\sd="([^"]+)"/) || [])[1];
-  if (!d) return { vb, inner };
-  const c = pal[roleOf(first)];
-  const defs = `<defs><linearGradient id="${uid}b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${lighten(c, 0.06)}" stop-opacity=".42"/><stop offset="1" stop-color="${c}" stop-opacity=".16"/></linearGradient></defs>`;
-  return { vb, inner: `${defs}<path d="${d}" fill="url(#${uid}b)" stroke="none"/>${inner}` };
+  return finish.parse(finish.resin(raw, pal, uid, { plain: FOLDERS.has(name), body: !NO_BODY.has(name) }));
 }
-
 function enamel(name, pal, uid, { edge = false } = {}) {
-  // Material has no root or open-folder icon; use its base folder shape for both
-  const file = MATERIAL_FALLBACK[name] || name;
-  const f = path.join(SRC, "material", `${file}.svg`);
+  const f = path.join(SRC, "material", `${MATERIAL_FALLBACK[name] || name}.svg`);
   if (!fs.existsSync(f)) return null;
-  let { vb, inner } = parse(fs.readFileSync(f, "utf8"));
-  if (!/fill="#/.test(inner)) inner = inner.replace(/<(path|circle|rect|ellipse|polygon)\b/g, '<$1 fill="#757575"');
-  const [x, y, w, h] = vb, u = w / 16; // u = one 16px-grid unit in this viewBox
-  const grads = new Map();
-  let defs = "";
-  // Recolor the whole icon coherently: each source color takes its palette hue and chroma, but
-  // keeps its lightness OFFSET from the icon's first (body) color, so inner symbols stay distinct.
-  // Then the icon is lifted as one piece for light sets.
-  const expand = (s) => (s.length === 4 ? "#" + [...s.slice(1)].map((c) => c + c).join("") : s).toLowerCase();
-  const srcs = [...new Set([...inner.matchAll(/fill="(#[0-9a-fA-F]{3,6})"/g)].map((m) => expand(m[1])))];
-  const plainFolder = FOLDERS.has(name);
-  const bodySrc = hexToOklch(srcs[0]);
-  const bodyNew = hexToOklch(plainFolder ? pal.brass : harmonize(srcs[0], pal));
-  const lifted = hexToOklch(forIcons(oklchToHex(bodyNew), pal));
-  const lift = lifted.L - bodyNew.L;
-  const recolor = new Map(srcs.map((s) => {
-    const o = hexToOklch(s), base = hexToOklch(plainFolder ? pal.brass : harmonize(s, pal));
-    const L = Math.min(0.97, Math.max(0.05, bodyNew.L + (o.L - bodySrc.L) + lift));
-    return [s, oklchToHex({ ...base, L })];
-  }));
-  inner = inner.replace(/fill="(#[0-9a-fA-F]{3,6})"/g, (_, src) => {
-    const c = recolor.get(expand(src));
-    if (!grads.has(c)) {
-      const id = `${uid}g${grads.size}`;
-      grads.set(c, id);
-      defs += `<linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="${y}" x2="0" y2="${y + h}"><stop offset="0" stop-color="${lighten(c, 0.09)}"/><stop offset=".55" stop-color="${c}"/><stop offset="1" stop-color="${lighten(c, -0.08)}"/></linearGradient>`;
-    }
-    const rim = edge ? ` stroke="${lighten(c, -0.2)}" stroke-width="${(0.55 * u).toFixed(3)}" stroke-linejoin="round" paint-order="stroke"` : "";
-    return `fill="url(#${grads.get(c)})"${rim}`;
-  });
-  const geo = shapes(inner).map((s) => s.replace(/\s(fill|stroke|stroke-width|stroke-linejoin|paint-order)="[^"]*"/g, ""));
-  defs += `<clipPath id="${uid}c">${geo.join("")}</clipPath>`;
-  defs += `<linearGradient id="${uid}s" gradientUnits="userSpaceOnUse" x1="0" y1="${y}" x2="0" y2="${y + h * 0.55}"><stop offset="0" stop-color="#fff" stop-opacity=".30"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>`;
-  const shadow = edge ? `<g transform="translate(0 ${(0.7 * u).toFixed(3)})" fill="${pal.crust}" fill-opacity=".45">${geo.join("")}</g>` : "";
-  const sheen = `<rect x="${x}" y="${y}" width="${w}" height="${h * 0.55}" fill="url(#${uid}s)" clip-path="url(#${uid}c)"/>`;
-  return { vb, inner: `<defs>${defs}</defs>${shadow}${inner}${sheen}` };
+  let svg = fs.readFileSync(f, "utf8");
+  // plain folders are brass in the lab's Material columns, as they were in the prototype
+  if (FOLDERS.has(name)) svg = svg.replace(/fill="#[0-9a-fA-F]{3,6}"/, `fill="${pal.brass}"`);
+  return finish.parse(finish.edge(svg, pal, uid, { rim: edge }));
 }
-
 // baselines, untouched
 const original = (dir) => (name) => {
   const f = path.join(SRC, dir, `${name}.svg`);

@@ -103,6 +103,21 @@ The theme looks good with anything. These make it look its best:
 
 ---
 
+## Brass Lasers Icons
+
+A full file and folder icon theme ships in the same extension. Pick it with **Preferences → File Icon Theme → Brass Lasers Icons**.
+
+- **Files: Enamel Edge.** Every icon from [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme) (1,391 extensions, 2,156 file names), with shapes untouched, recolored from the palette, and finished with a soft light falloff, a top sheen, a darker rim and a small cut shadow.
+- **Folders: Resin.** [Catppuccin](https://github.com/catppuccin/vscode-icons)'s line folders in brass, each with a tinted glass body (421 folder names).
+- **Light sets:** each icon is lifted to the brightest tone that still keeps 3:1 contrast against the sidebar.
+- **Classic badges:** the original typographic badges are still there as **Brass Lasers Icons (Classic)**.
+
+![Brass Lasers Icons in VS Code, 4AM and Daybreak, 2x](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/icons/sidebar-2x.png)
+
+Both source sets are MIT; their notices ship in `icons/THIRD-PARTY-NOTICES.txt`. Every icon is checked in CI: each one must resolve, render, and not swell past its source shape.
+
+---
+
 ## Everywhere else
 
 All nine sets are ported to **25+ apps**, all generated from one palette, so they always match.

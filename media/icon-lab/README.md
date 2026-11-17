@@ -1,6 +1,6 @@
-# Icon lab: three organic finishes, awaiting a pick
+# Icon lab: three organic finishes
 
-**Experimental. Not shipped.** Nothing here is in the VSIX or the icon theme until one finish is chosen. The current Brass badges stay the default meanwhile.
+**Decided 2026-11-17: C · Enamel Edge for files, A · Resin for folders.** Shipped in 0.6.0 as Brass Lasers Icons (see `scripts/icons.js`; the finishes live in `scripts/icon-finish.js`, shared with this lab). The old badges remain as Brass Lasers Icons (Classic). This folder keeps the comparison that led to the choice.
 
 Regenerate everything with `node scripts/icon-lab.js`.
 

@@ -28,7 +28,10 @@ jobs:
           fi
           echo "VERSION=$v" >> "$GITHUB_ENV"
 
+      - run: npm ci --no-audit --no-fund
       - run: node scripts/build.js --check
+      - run: node scripts/check-ports.js
+      - run: node scripts/check-icons.js
       - run: node scripts/contrast.js
 
       - name: Package

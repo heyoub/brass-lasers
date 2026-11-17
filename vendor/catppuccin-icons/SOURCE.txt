@@ -1,0 +1,1 @@
+Vendored from https://github.com/catppuccin/vscode-icons at b6915da9f6889b683a110aa747de96c2820a537d (folder icons, css-variables variant, and src/defaults/folderIcons.ts). MIT, see LICENSE. Refresh: re-download the same paths at a newer commit.
