@@ -1,0 +1,40 @@
+name: Art
+
+# Redraw swatches, wallpapers, the social card and the Shiki code previews whenever
+# a palette, template or art script changes, and commit them back. Screenshots can't go stale.
+
+on:
+  push:
+    branches: [master]
+    paths: ["palette/**", "templates/**", "scripts/make-art.js", "scripts/make-previews.js", "media/screenshots/samples/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: art
+  cancel-in-progress: true
+
+jobs:
+  art:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: sudo apt-get install -y fonts-dejavu-core
+      - run: npm ci
+      - run: node scripts/build.js --check
+      - run: npm run art
+      - run: npm run previews
+      - name: Commit changes
+        run: |
+          if git diff --quiet -- media; then echo "art unchanged"; exit 0; fi
+          git config user.name "brass-lasers-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media
+          git commit -m "Redraw art and previews from palettes"
+          git push

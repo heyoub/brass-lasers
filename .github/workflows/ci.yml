@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generated files are up to date
+        run: node scripts/build.js --check
+
+      - name: Contrast gate (WCAG)
+        run: node scripts/contrast.js --report
+
+      - name: Package VSIX
+        run: npx --yes @vscode/vsce package --out brass-lasers.vsix
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vsix
+          path: brass-lasers.vsix

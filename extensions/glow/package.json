@@ -1,0 +1,34 @@
+{
+  "name": "brass-lasers-glow",
+  "displayName": "Brass Lasers Neon Glow (experimental)",
+  "description": "Opt-in neon glow for the Brass Lasers themes. Patches the editor's workbench to add a laser glow to keywords, strings, functions and types. VS Code will report the install as modified.",
+  "version": "0.1.0",
+  "publisher": "heyoub",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Themes", "Other"],
+  "keywords": ["glow", "neon", "synthwave", "brass lasers", "theme"],
+  "repository": { "type": "git", "url": "https://github.com/heyoub/brass-lasers" },
+  "extensionDependencies": ["heyoub.brass-lasers-4am"],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      { "command": "brassLasersGlow.enable", "title": "Brass Lasers: Enable Neon Glow" },
+      { "command": "brassLasersGlow.disable", "title": "Brass Lasers: Disable Neon Glow" }
+    ],
+    "configuration": {
+      "title": "Brass Lasers Neon Glow",
+      "properties": {
+        "brassLasersGlow.intensity": {
+          "type": "number",
+          "default": 0.6,
+          "minimum": 0.1,
+          "maximum": 1,
+          "description": "Glow strength (0.1 subtle to 1 full rave). Re-run Enable Neon Glow after changing it."
+        }
+      }
+    }
+  }
+}

@@ -16,5 +16,7 @@
   { "template": "discord.theme.css", "out": "ports/discord/brass-lasers-{slug}.theme.css" },
   { "template": "firefox-manifest.json", "out": "ports/firefox/{slug}/manifest.json" },
   { "template": "slack.md", "out": "ports/slack/brass-lasers-{slug}.md" },
-  { "template": "raycast.md", "out": "ports/raycast/brass-lasers-{slug}.md" }
+  { "template": "raycast.md", "out": "ports/raycast/brass-lasers-{slug}.md" },
+  { "template": "banner.sh", "out": "ports/banner/brass-lasers-{slug}.sh" },
+  { "template": "banner.ps1", "out": "ports/banner/brass-lasers-{slug}.ps1" }
 ]

@@ -1,0 +1,20 @@
+name: "Port request"
+description: Ask for Brass Lasers in another app, terminal, or tool.
+labels: ["port"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App or tool
+      placeholder: "e.g. tmux, Warp, lazygit"
+    validations:
+      required: true
+  - type: input
+    id: format
+    attributes:
+      label: Link to its theme format docs
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: Ports are generated from palette/*.json via templates/ports/, so a PR adding a template is very welcome.

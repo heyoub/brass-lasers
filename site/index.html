@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brass Lasers</title>
+<meta name="description" content="Neon synthwave color themes for VS Code, Cursor, Zed, Neovim, JetBrains, terminals and more. Readable at 4AM.">
+<meta property="og:title" content="Brass Lasers">
+<meta property="og:description" content="Neon synthwave themes, readable at 4AM.">
+<meta property="og:image" content="https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/social-preview.png">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --mono: "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas, monospace; --sans: "Segoe UI", Inter, system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--sans); background: var(--mantle); color: var(--text); transition: background .4s, color .4s; }
+  a { color: var(--cyan); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+  header.hero { position: relative; overflow: hidden; min-height: 78vh; display: flex; align-items: center; background-size: cover; background-position: center; }
+  header.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--crust) 0%, color-mix(in srgb, var(--crust) 70%, transparent) 45%, transparent 80%); }
+  .hero .wrap { position: relative; z-index: 1; width: 100%; }
+  h1 { font-size: clamp(48px, 9vw, 112px); line-height: .95; margin: 0 0 16px; color: var(--brass); font-weight: 900; letter-spacing: -2px; text-shadow: 0 0 24px color-mix(in srgb, var(--brass) 40%, transparent); }
+  .tag { font-size: clamp(18px, 2.4vw, 26px); color: var(--pink); font-weight: 650; margin: 0 0 28px; }
+  .apps { font-family: var(--mono); color: var(--textEditor); opacity: .85; margin-bottom: 32px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid var(--brass); color: var(--brass); background: color-mix(in srgb, var(--base) 80%, transparent); transition: transform .15s, box-shadow .15s; cursor: pointer; font-size: 15px; font-family: var(--sans); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 0 18px color-mix(in srgb, var(--brass) 45%, transparent); }
+  .btn.primary { background: var(--brass); color: var(--onBrass); }
+  .btn.pink { border-color: var(--pink); color: var(--pink); }
+
+  section { padding: 72px 0; }
+  h2 { font-size: 34px; margin: 0 0 8px; color: var(--brass); }
+  .sub { color: var(--subtext1); margin: 0 0 28px; }
+
+  .variants { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .chip { padding: 10px 18px; border-radius: 999px; border: 2px solid var(--border2); background: var(--surface0); color: var(--text); font-weight: 700; cursor: pointer; font-family: var(--sans); font-size: 15px; }
+  .chip[aria-pressed="true"] { border-color: var(--pink); color: var(--pink); box-shadow: 0 0 14px color-mix(in srgb, var(--pink) 35%, transparent); }
+  .controls { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-bottom: 16px; color: var(--subtext1); }
+  .controls select, .controls label { font-family: var(--sans); font-size: 15px; }
+  select { background: var(--surface0); color: var(--text); border: 1px solid var(--border1); border-radius: 8px; padding: 6px 10px; }
+
+  .window { border-radius: 14px; overflow: hidden; border: 1px solid var(--border1); box-shadow: 0 30px 80px -20px #000a, 0 0 0 1px #0003; }
+  .titlebar { background: var(--mantle); height: 38px; display: flex; align-items: center; gap: 8px; padding: 0 14px; border-bottom: 1px solid var(--border0); }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .tabs { display: flex; background: var(--mantle); border-bottom: 1px solid var(--border0); }
+  .tab { padding: 9px 16px; font-size: 13px; color: var(--overlay2); border-right: 1px solid var(--border0); font-family: var(--sans); }
+  .tab.active { background: var(--base); color: var(--text); box-shadow: inset 0 2px 0 var(--pink); }
+  pre.code { margin: 0; background: var(--base); color: var(--textEditor); font-family: var(--mono); font-size: 14.5px; line-height: 1.65; padding: 16px 0; overflow-x: auto; counter-reset: ln; }
+  pre.code .line { display: block; padding: 0 20px 0 0; }
+  pre.code .line::before { counter-increment: ln; content: counter(ln); display: inline-block; width: 3.2em; padding-right: 1.4em; text-align: right; color: var(--lineNumber); user-select: none; }
+  pre.code .line.cur { background: var(--lineHighlight); }
+  pre.code .line.cur::before { color: var(--brass); }
+  .terminal { background: var(--crust); color: var(--lime); font-family: var(--mono); font-size: 13.5px; line-height: 1.6; padding: 14px 20px; border-top: 1px solid var(--border0); white-space: pre-wrap; }
+  .noital .i { font-style: normal !important; }
+
+  .k { color: var(--pink); } .kc { color: var(--pink); font-style: italic; } .s { color: var(--afterglow); } .f { color: var(--cyan); }
+  .t { color: var(--brass); } .tp { color: var(--peach); font-style: italic; } .p { color: var(--brassLight); font-style: italic; }
+  .n { color: var(--sunset); } .c { color: var(--comment); font-style: italic; } .pr { color: var(--lavender); } .ns { color: var(--uv); }
+  .o { color: var(--orchid); } .pu { color: var(--subtext0); } .m { color: var(--cyanLight); font-weight: 700; } .sf { color: var(--pinkLight); font-style: italic; }
+  .a { color: var(--uv); font-style: italic; } .tg { color: var(--pink); } .at { color: var(--brassLight); font-style: italic; } .l { color: var(--sunset); font-style: italic; }
+  .un { text-decoration: underline; } .bd { color: var(--red); font-weight: 700; } .e { color: var(--cyan); }
+
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .sw { border-radius: 12px; background: var(--surface0); border: 1px solid var(--border1); padding: 8px; cursor: pointer; text-align: left; color: var(--text); font-family: var(--sans); }
+  .sw .chip-color { height: 64px; border-radius: 8px; border: 1px solid #ffffff14; margin-bottom: 8px; }
+  .sw b { font-family: var(--mono); font-size: 14px; display: block; }
+  .sw small { color: var(--subtext0); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: var(--surface0); border: 1px solid var(--border1); border-radius: 14px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; color: var(--pink); font-size: 18px; }
+  .card p { margin: 0; color: var(--subtext1); font-size: 15px; line-height: 1.5; }
+  .walls { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .walls a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--border1); }
+  .walls img { width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--brass); color: var(--onBrass); padding: 10px 18px; border-radius: 999px; font-weight: 700; transition: transform .25s; }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+  footer { padding: 40px 0 60px; color: var(--overlay2); text-align: center; }
+  code.inline { font-family: var(--mono); background: var(--surface1); padding: 2px 6px; border-radius: 6px; color: var(--afterglow); }
+  @media (max-width: 640px) { pre.code { font-size: 12.5px; } section { padding: 48px 0; } }
+</style>
+</head>
+<body>
+<header class="hero" id="hero">
+  <div class="wrap">
+    <h1>Brass<br>Lasers</h1>
+    <p class="tag">Neon synthwave themes, readable at 4AM.</p>
+    <p class="apps">VS Code · Cursor · Zed · Neovim · JetBrains · 6 terminals · +more</p>
+    <div class="btns">
+      <a class="btn primary" href="vscode:extension/heyoub.brass-lasers-4am">Install for VS Code</a>
+      <a class="btn" href="https://open-vsx.org/extension/heyoub.brass-lasers-4am">Cursor / Open VSX</a>
+      <a class="btn pink" href="#playground">Try it live ↓</a>
+      <a class="btn" href="https://github.com/heyoub/brass-lasers">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="playground">
+  <div class="wrap">
+    <h2>Playground</h2>
+    <p class="sub">Pick a set, pick a language. The colors are the real palettes, the same ones every port is generated from.</p>
+    <div class="variants" id="variants"></div>
+    <div class="controls">
+      <label>Language <select id="lang"><option value="ts">TypeScript / React</option><option value="rs">Rust</option><option value="py">Python</option></select></label>
+      <label><input type="checkbox" id="italics" checked> Italics</label>
+    </div>
+    <div class="window" id="window">
+      <div class="titlebar"><span class="dot" style="background:var(--red)"></span><span class="dot" style="background:var(--brass)"></span><span class="dot" style="background:var(--lime)"></span></div>
+      <div class="tabs"><div class="tab active" id="tabname">neon-setlist.tsx</div><div class="tab">laser-rig.rs</div></div>
+      <pre class="code" id="code"></pre>
+      <div class="terminal" id="terminal"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The palette</h2>
+    <p class="sub" id="tagline"></p>
+    <div class="swatches" id="swatches"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Everywhere you work</h2>
+    <p class="sub">25+ ports, all generated from one palette, so a tweak lands everywhere at once. <a href="https://github.com/heyoub/brass-lasers/tree/master/ports">Install guides →</a></p>
+    <div class="grid">
+      <div class="card"><h3>Editors</h3><p>VS Code, Cursor, VSCodium, Zed, Neovim, Helix, Sublime Text, JetBrains IDEs, T3 Code</p></div>
+      <div class="card"><h3>Terminals</h3><p>Windows Terminal, Ghostty, WezTerm, Kitty, Alacritty, iTerm2</p></div>
+      <div class="card"><h3>CLI</h3><p>bat, delta, fzf, Starship, and a truecolor boot banner</p></div>
+      <div class="card"><h3>Apps</h3><p>Obsidian, Discord, Firefox, Slack, Raycast</p></div>
+      <div class="card"><h3>Neovim, one line</h3><p><code class="inline">{ "heyoub/brass-lasers" }</code> then <code class="inline">:colorscheme brass-lasers-4am</code></p></div>
+      <div class="card"><h3>Neon Glow</h3><p>An opt-in extension that makes the lasers actually glow in VS Code. Experimental, fully reversible.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Wallpapers</h2>
+    <p class="sub">Synthwave sunsets in every set's colors. 4K desktop and phone.</p>
+    <div class="walls" id="walls"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The 4AM playlist</h2>
+    <p class="sub">🎺 Coming soon: brass stabs, glitch-hop, laser fog, one-more-song energy.</p>
+    <!-- PLAYLIST: embed goes here -->
+  </div>
+</section>
+
+<footer>Stay weird. Ship code. Respect the lasers. · MIT · <a href="https://github.com/heyoub/brass-lasers">heyoub/brass-lasers</a></footer>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+// «role:text» markup. Roles map to CSS classes above; "i" marks italic-capable roles.
+const SAMPLES = {
+  ts: { file: "neon-setlist.tsx", cur: 3, src: `«c:/** Pick the first act that matches the vibe. */»
+«k:export» «k:function» «f:pickHeadliner»«pu:<»«tp:T» «k:extends» «t:Act»«pu:>(»«p:acts»«pu::» «k:readonly» «tp:T»«pu:[],» «p:vibe»«pu::» «t:Vibe» «o:=» «s:"peak"»«pu:):» «tp:T» «o:|» «t:undefined» «pu:{»
+  «k:const» pool «o:=» «p:vibe» «o:===» «s:"afterhours"» «o:?» «p:acts».«f:filter»«pu:((»act«pu:)» «o:=>» act.«pr:bpm» «o:<» «n:MAX_BPM»«pu:)» «o::» «p:acts»«pu:;»
+  «kc:return» pool.«f:find»«pu:(({» «p:headliner» «pu:})» «o:=>» «p:headliner»«pu:)» «o:??» pool«pu:[»«n:0»«pu:];»
+«pu:}»
+
+«k:export» «k:function» «f:Setlist»«pu:({» «p:url»«pu:,» «p:vibe» «pu:}:» «pu:{» «pr:url»«pu::» «t:string»«pu:;» «pr:vibe»«pu::» «t:Vibe» «pu:})» «pu:{»
+  «k:const» «pu:[»acts«pu:,» «f:setActs»«pu:]» «o:=» «f:useState»«pu:<»«t:Act»«pu:[]>([]);»
+  «kc:return» «pu:(»
+    «tg:<section» «at:className»«o:=»«s:"setlist"» «at:data-vibe»«o:=»«pu:{»«p:vibe»«pu:}»«tg:>»
+      «tg:<h1>»«pu:{»headliner «o:?» headliner.«pr:name» «o::» «s:"TBA"»«pu:}»«tg:</h1>»
+      «pu:{»acts.«f:map»«pu:((»act«pu:)» «o:=>» «tg:<li» «at:key»«o:=»«pu:{»act.«pr:name»«pu:}»«tg:>»«pu:{»act.«pr:bpm»«pu:}» bpm«tg:</li>»«pu:)}»
+    «tg:</section>»
+  «pu:);»
+«pu:}»` },
+  rs: { file: "laser_rig.rs", cur: 8, src: `«c:/// A cue borrows its label from the setlist for its whole lifetime.»
+«a:#[derive(Debug, Clone, Copy)]»
+«k:struct» «t:Cue»«pu:<»«l:'a»«pu:>» «pu:{»
+    «pr:label»«pu::» «o:&»«l:'a» «t:str»«pu:,»
+    «pr:strobe_hz»«pu::» «t:u32»«pu:,»
+«pu:}»
+
+«k:impl»«pu:<»«tp:T»«pu::» «t:Display»«pu:>» «t:Projector» «k:for» «t:Rig»«pu:<»«tp:T»«pu:>» «pu:{»
+    «k:fn» «f:project»«pu:(»«o:&»«k:mut» «sf:self»«pu:,» «p:cue»«pu::» «o:&»«t:Cue»«pu:<»«l:'_»«pu:>)» «o:->» «t:String» «pu:{»
+        «sf:self».«pr:fired» «o:+=» «n:1»«pu:;»
+        «m:format!»«pu:(»«s:"[»«e:{}»«s:] »«e:{}»«s: at »«e:{}»«s:hz"»«pu:,» «sf:self».«pr:name»«pu:,» «p:cue».«pr:label»«pu:,» «p:cue».«pr:strobe_hz»«pu:)»
+    «pu:}»
+«pu:}»
+
+«k:fn» «f:main»«pu:()» «pu:{»
+    «k:let» «k:mut» «un:rig» «o:=» «t:Rig» «pu:{» «pr:name»«pu::» «s:"main stage"»«pu:,» «pr:fired»«pu::» «n:0» «pu:};»
+    «k:let» raw «o:=» «o:&»rig.«pr:fired» «k:as» «o:*»«k:const» «t:usize»«pu:;»
+    «k:let» fired «o:=» «bd:unsafe» «pu:{» «o:*»raw «pu:};»
+«pu:}»` },
+  py: { file: "lightshow.py", cur: 6, src: `«k:from» «ns:dataclasses» «k:import» «f:dataclass»
+
+«a:@dataclass»
+«k:class» «t:Laser»«pu::»
+    «pr:color»«pu::» «t:str»
+    «pr:strobe_hz»«pu::» «t:int» «o:=» «n:24»
+
+    «k:def» «f:fire»«pu:(»«sf:self»«pu:,» «p:beats»«pu::» «t:int»«pu:)» «o:->» «t:str»«pu::»
+        «c:# the fog machine never sleeps»
+        «kc:return» «s:f"»«e:{»«sf:self».«pr:color»«e:}»«s: x»«e:{»«p:beats»«e:}»«s: at »«e:{»«sf:self».«pr:strobe_hz»«e:}»«s:hz"»
+
+«kc:for» laser «kc:in» «pu:[»«t:Laser»«pu:(»«s:"hot pink"»«pu:),» «t:Laser»«pu:(»«s:"lime"»«pu:,» «p:strobe_hz»«o:=»«n:30»«pu:)]:»
+    «f:print»«pu:(»laser.«f:fire»«pu:(»«n:4»«pu:))»` },
+};
+const ITALIC = new Set(["kc", "tp", "p", "c", "sf", "a", "at", "l"]);
+const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const render = (src) => esc(src).replace(/«(\w+):([^»]*)»/g, (m, r, t) => `<span class="${r}${ITALIC.has(r) ? " i" : ""}">${t}</span>`);
+
+const ROLES = [["base","editor"],["mantle","chrome"],["crust","terminal"],["textEditor","text"],["pink","keywords"],["afterglow","strings"],["cyan","functions"],["brass","types"],["brassLight","parameters"],["peach","generics"],["sunset","numbers"],["uv","namespaces"],["lavender","properties"],["orchid","operators"],["comment","comments"],["lime","terminal text"],["red","errors"],["blue","ANSI blue"]];
+
+let palettes = [], current = 0;
+const $ = (id) => document.getElementById(id);
+const PREF = "brass-lasers-site";
+const load = () => { try { return JSON.parse(localStorage.getItem(PREF)) || {}; } catch { return {}; } };
+const save = (o) => { try { localStorage.setItem(PREF, JSON.stringify({ ...load(), ...o })); } catch {} };
+
+function apply(i) {
+  current = i;
+  const p = palettes[i];
+  for (const [k, v] of Object.entries(p.colors)) document.documentElement.style.setProperty(`--${k}`, v);
+  document.documentElement.style.colorScheme = p.meta.appearance;
+  $("hero").style.backgroundImage = `url(wallpapers/${p.meta.slug}-desktop.png)`;
+  document.querySelectorAll(".chip").forEach((c, j) => c.setAttribute("aria-pressed", String(j === i)));
+  $("tagline").textContent = p.meta.tagline;
+  $("swatches").innerHTML = ROLES.map(([r, l]) => `<button class="sw" data-hex="${p.colors[r]}"><div class="chip-color" style="background:${p.colors[r]}"></div><b>${p.colors[r]}</b><small>${l}</small></button>`).join("");
+  terminal();
+  save({ variant: p.meta.slug });
+}
+function code() {
+  const s = SAMPLES[$("lang").value];
+  $("tabname").textContent = s.file;
+  $("code").innerHTML = render(s.src).split("\n").map((l, i) => `<span class="line${i === s.cur ? " cur" : ""}">${l || " "}</span>`).join("");
+}
+function terminal() {
+  const c = palettes[current].colors;
+  const span = (col, t) => `<span style="color:${c[col]}">${esc(t)}</span>`;
+  $("terminal").innerHTML =
+    `${span("pink", "❯")} ${span("cyan", "npm")} run check\n` +
+    `${span("lime", "ok")}: 98 generated files up to date\n` +
+    `${span("brass", "4AM")}: pass   ${span("uv", "Afterglow")}: pass   ${span("pink", "Strobe")}: pass   ${span("sunset", "Golden Hour")}: pass\n` +
+    ["ansiBlack","red","lime","brass","blue","pink","cyan","ansiWhite"].map((k) => `<span style="background:${c[k]}">   </span>`).join("") + "  " +
+    ["comment","redLight","limeLight","brassLight","blueLight","pinkLight","cyanLight","brightWhite"].map((k) => `<span style="background:${c[k]}">   </span>`).join("");
+}
+
+fetch("palettes.json").then((r) => r.json()).then((ps) => {
+  palettes = ps;
+  $("variants").innerHTML = ps.map((p, i) => `<button class="chip" data-i="${i}">${p.meta.name}</button>`).join("");
+  $("walls").innerHTML = ps.map((p) => `<a href="wallpapers/${p.meta.slug}-desktop.png" title="${p.meta.name} desktop (4K)"><img loading="lazy" src="wallpapers/${p.meta.slug}-desktop.png" alt="${p.meta.name} wallpaper"></a>`).join("");
+  const pref = load();
+  const start = Math.max(0, ps.findIndex((p) => p.meta.slug === pref.variant));
+  if (pref.lang) $("lang").value = pref.lang;
+  if (pref.italics === false) { $("italics").checked = false; $("window").classList.add("noital"); }
+  code(); apply(start);
+});
+document.addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip");
+  if (chip) apply(+chip.dataset.i);
+  const sw = e.target.closest(".sw");
+  if (sw) { navigator.clipboard?.writeText(sw.dataset.hex); const t = $("toast"); t.textContent = `Copied ${sw.dataset.hex}`; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 1400); }
+});
+$("lang").addEventListener("change", () => { code(); save({ lang: $("lang").value }); });
+$("italics").addEventListener("change", (e) => { $("window").classList.toggle("noital", !e.target.checked); save({ italics: e.target.checked }); });
+</script>
+</body>
+</html>

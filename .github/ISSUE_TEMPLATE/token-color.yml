@@ -1,0 +1,39 @@
+name: "A color looks wrong"
+description: Something in your code or UI is the wrong color, unreadable, or falling back to default gray.
+labels: ["color"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks! The most useful thing you can send is the **scope inspector** output.
+        In VS Code or Cursor: `Ctrl+Shift+P` → **Developer: Inspect Editor Tokens and Scopes**, click the token, and screenshot the popup.
+  - type: dropdown
+    id: variant
+    attributes:
+      label: Variant
+      options: ["4AM", "Afterglow", "Strobe", "Golden Hour", "a No Italics flavor"]
+    validations:
+      required: true
+  - type: dropdown
+    id: app
+    attributes:
+      label: Where
+      options: ["VS Code", "Cursor", "VSCodium", "Zed", "T3 Code", "Neovim", "Helix", "JetBrains", "A terminal", "Other port"]
+    validations:
+      required: true
+  - type: input
+    id: language
+    attributes:
+      label: Language / file type
+      placeholder: "e.g. Rust, TSX, Markdown"
+  - type: textarea
+    id: what
+    attributes:
+      label: What looks wrong, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: scopes
+    attributes:
+      label: Scope inspector output or screenshot
+      description: Paste the textmate scopes / semantic token type, or drop a screenshot.

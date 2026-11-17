@@ -130,9 +130,19 @@ function buildAll() {
 
   Object.assign(files, portsFor(palettes));
 
+  // Landing site playground
+  files["site/palettes.json"] = JSON.stringify(palettes.map((p) => ({ meta: p.meta, colors: p.colors })), null, 2) + "\n";
+
+  // Neon Glow extension reads the palettes to know which colors are lasers
+  for (const slug of VARIANTS) files[`extensions/glow/palettes/${slug}.json`] = read(`palette/${slug}.json`).replace(/\r\n/g, "\n");
+
+  // File icon theme
+  Object.assign(files, require("./icons.js").iconFiles(palettes));
+
   // package.json theme list stays in sync with the flavors
   const pkg = JSON.parse(read("package.json"));
   pkg.contributes.themes = contributes;
+  pkg.contributes.iconThemes = [{ id: "brass-lasers-icons", label: "Brass Lasers Icons", path: "./icons/brass-lasers-icon-theme.json" }];
   files["package.json"] = JSON.stringify(pkg, null, 2) + "\n";
 
   return files;

@@ -1,0 +1,59 @@
+name: Release
+
+# git tag v0.3.0 && git push origin v0.3.0
+# → checks, packages the VSIX, publishes to Open VSX and the VS Marketplace
+#   (each only if its token secret is set), and creates the GitHub Release.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Tag matches package.json version
+        run: |
+          v=$(node -p "require('./package.json').version")
+          if [ "v$v" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $v"; exit 1
+          fi
+          echo "VERSION=$v" >> "$GITHUB_ENV"
+
+      - run: node scripts/build.js --check
+      - run: node scripts/contrast.js
+
+      - name: Package
+        run: npx --yes @vscode/vsce package --out "brass-lasers-4am-$VERSION.vsix"
+
+      - name: Publish to Open VSX
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        if: env.OVSX_PAT != ''
+        run: npx --yes ovsx publish "brass-lasers-4am-$VERSION.vsix" -p "$OVSX_PAT"
+
+      - name: Publish to VS Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        if: env.VSCE_PAT != ''
+        run: npx --yes @vscode/vsce publish --packagePath "brass-lasers-4am-$VERSION.vsix" -p "$VSCE_PAT"
+
+      - name: Release notes from CHANGELOG
+        run: |
+          awk -v v="$VERSION" '$0 ~ "^## "v" " {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
+          [ -s notes.md ] || echo "See CHANGELOG.md" > notes.md
+
+      - name: GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "brass-lasers-4am-$VERSION.vsix" \
+            --title "Brass Lasers $VERSION" --notes-file notes.md --verify-tag

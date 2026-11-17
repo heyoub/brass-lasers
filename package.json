@@ -1,8 +1,8 @@
 {
   "name": "brass-lasers-4am",
   "displayName": "Brass Lasers 4AM — Neon Synthwave Dark Theme",
-  "description": "Neon synthwave dark theme for VS Code & Cursor — void-purple chrome, brass-gold accents, hot-pink lasers, lime strings. Vibrant, cyberpunk-retro EDM energy that's still readable at 4AM.",
-  "version": "0.2.0",
+  "description": "Neon synthwave themes for VS Code & Cursor: 4AM, Afterglow, Strobe (AAA high contrast) and Golden Hour (light), plus matching file icons. Void-purple chrome, brass-gold accents, hot-pink lasers, lime strings. Readable at 4AM.",
+  "version": "0.3.0",
   "publisher": "heyoub",
   "engines": {
     "vscode": "^1.85.0"
@@ -37,7 +37,12 @@
     "retro",
     "vibrant",
     "cyberpunk",
-    "cursor"
+    "cursor",
+    "light theme",
+    "high contrast",
+    "icon theme",
+    "file icons",
+    "no italics"
   ],
   "galleryBanner": {
     "color": "#0e0a17",
@@ -95,6 +100,25 @@
         "uiTheme": "vs",
         "path": "./themes/Brass-Lasers-Golden-Hour-No-Italics-color-theme.json"
       }
+    ],
+    "iconThemes": [
+      {
+        "id": "brass-lasers-icons",
+        "label": "Brass Lasers Icons",
+        "path": "./icons/brass-lasers-icon-theme.json"
+      }
     ]
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "2.6.2",
+    "shiki": "3.13.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "node scripts/build.js --check && node scripts/contrast.js",
+    "contrast": "node scripts/contrast.js --report",
+    "art": "node scripts/make-art.js",
+    "package": "npx @vscode/vsce package",
+    "previews": "node scripts/make-previews.js"
   }
 }
