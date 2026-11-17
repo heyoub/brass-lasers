@@ -78,9 +78,11 @@ function scene(W, H, seed) {
       S.add(`<g mask="${fade}"><g transform="translate(0 ${f(axis * 2)}) scale(1 -1)">${drawn}</g></g>`);
     },
     vignette(color, op = 0.55) { S.add(`<rect width="${W}" height="${H}" fill="${S.rgrad(W / 2, H * 0.48, Math.hypot(W, H) * 0.62, [[0.55, color, 0], [1, color, op]])}"/>`); },
-    wordmark(name, color) {
+    // a soft halo in the scene's darkest (or, on light sets, lightest) tone keeps the wordmark
+    // readable over foliage, glitter or sparks without moving the composition
+    wordmark(name, color, halo) {
       const fs1 = Math.round(m * 0.028);
-      S.add(`<text x="${W - fs1 * 1.4}" y="${H - fs1 * 1.4}" text-anchor="end" font-family="${MONO}" font-size="${fs1}" font-weight="700" letter-spacing="${(fs1 * 0.25).toFixed(1)}" fill="${color}" opacity="0.9">BRASS LASERS · ${esc(name.toUpperCase())}</text>`);
+      S.add(`<text x="${W - fs1 * 1.4}" y="${H - fs1 * 1.4}" text-anchor="end" font-family="${MONO}" font-size="${fs1}" font-weight="700" letter-spacing="${(fs1 * 0.25).toFixed(1)}" fill="${color}" stroke="${halo}" stroke-width="${f(fs1 * 0.32)}" stroke-opacity="0.8" stroke-linejoin="round" paint-order="stroke" opacity="0.95">BRASS LASERS · ${esc(name.toUpperCase())}</text>`);
     },
     svg: () => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs>${defs}</defs>${body}</svg>`,
   };
@@ -384,7 +386,8 @@ function worldSvg(p, W, H, sun4am) {
   if (!draw) return null;
   const S = scene(W, H, [...p.meta.slug].reduce((a, ch) => a * 31 + ch.charCodeAt(0), 7));
   draw(p.colors, S, sun4am);
-  S.wordmark(p.meta.name, p.meta.appearance === "light" ? p.colors.brass : p.colors.brass);
+  const light = p.meta.appearance === "light";
+  S.wordmark(p.meta.name, p.colors.brass, light ? p.colors.base : p.colors.crust);
   return S.svg();
 }
 
