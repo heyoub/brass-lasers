@@ -1,7 +1,7 @@
-id = "brass-lasers-4am-theme"
-name = "Brass Lasers 4AM"
+id = "brass-lasers-theme"
+name = "Brass Lasers"
 version = "0.5.0"
 schema_version = 1
 authors = ["heyoub"]
-description = "Neon synthwave dark theme: void-purple chrome, brass-gold accents, hot-pink lasers, lime strings. Funky EDM energy that's still readable at 4AM."
+description = "Nine color themes, one for every hour of the festival: neon synthwave 4AM, biophilic Atrium, matte Soundcheck, Liquid Metal and more. Contrast-checked, with No Italics flavors."
 repository = "https://github.com/heyoub/brass-lasers"

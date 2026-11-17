@@ -126,7 +126,7 @@ function buildAll() {
     const txt = render(zedTpl, p, "zed-theme.json");
     return p.meta.slug.endsWith("-no-italics") ? stripItalicZed(txt) : txt;
   });
-  files["zed/themes/brass-lasers-4am.json"] = renderZedFamily(blocks, "Brass Lasers");
+  files["zed/themes/brass-lasers.json"] = renderZedFamily(blocks, "Brass Lasers");
 
   // T3 Code: no font styles, so palettes only
   const t3Tpl = read("templates/t3.json");
