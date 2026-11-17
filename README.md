@@ -1,10 +1,12 @@
-# Brass Lasers 4AM
+# Brass Lasers
 
 Void-purple chrome. Brass-gold hardware. Hot-pink lasers cutting the fog.
 
-This is a dark color theme for **VS Code** and **Cursor** — built for that stretch of night when the playlist goes Griz → Pretty Lights → Big G and the only responsible adult left in the room is your syntax highlighter. Funky EDM energy. Still readable. Still slap.
+A family of neon synthwave color themes, built for that stretch of night when the playlist goes Griz → Pretty Lights → Big G and the only responsible adult left in the room is your syntax highlighter. Funky EDM energy. Still readable. Still slap. **Every color is contrast-checked against WCAG on every commit.**
 
 > Not affiliated with Griz, Pretty Lights, Big G, T3 Tools, or anyone's light show. Just vibes + hex codes.
+
+![Brass Lasers](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/social-preview.png)
 
 ![Brass Lasers 4AM — TypeScript / React](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/tsx.png)
 
@@ -14,129 +16,167 @@ This is a dark color theme for **VS Code** and **Cursor** — built for that str
 
 ---
 
+## The lineup
+
+| Set | Vibe | |
+|---|---|---|
+| **4AM** | The original. Void purple, brass, hot-pink lasers. | ![4AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/4am.png) |
+| **Afterglow** | The comedown set. Same lot, lasers dimmed, softer saturation for long sessions. | ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/afterglow.png) |
+| **Strobe** | High contrast. Deeper void, brighter lasers, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
+| **Golden Hour** | The daytime set. Warm cream, burnished brass, deep-purple ink. A light theme. | ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/golden-hour.png) |
+
+Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean.
+
+---
+
 ## Install
 
-### VS Code (Marketplace)
-
-1. Open Extensions (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-2. Search **Brass Lasers 4AM**
-3. Install **heyoub.brass-lasers-4am**
-
-Or from the command line:
+**VS Code:** Extensions → search **Brass Lasers 4AM** (publisher `heyoub`), or:
 
 ```bash
 code --install-extension heyoub.brass-lasers-4am
 ```
 
-### Cursor (Open VSX)
+**Cursor / VSCodium:** these pull from [Open VSX](https://open-vsx.org/extension/heyoub/brass-lasers-4am). Search **Brass Lasers 4AM** in Extensions.
 
-Cursor pulls third-party extensions from **Open VSX**, not the Microsoft Marketplace.
+**From a VSIX:** grab it from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest) → Extensions → `…` → **Install from VSIX…**
 
-1. Open Extensions in Cursor
-2. Search **Brass Lasers 4AM**
-3. Install when it shows publisher **heyoub**
+Then `Ctrl+K Ctrl+T` (Mac: `Cmd+K Cmd+T`) and pick any **Brass Lasers** set. Let the void purple settle in. Hydrate. Maybe stretch.
 
-If search is being weird (or before Open VSX lists it), grab the `.vsix` from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest) and use **Install from VSIX…**
+### Follow the sun
 
-### From a VSIX (both editors)
-
-```bash
-npx @vscode/vsce package
-```
-
-Then in the editor: Extensions → `…` → **Install from VSIX…** → pick `brass-lasers-4am-<version>.vsix`.
-
----
-
-## Activate
-
-1. `Ctrl+K` then `Ctrl+T` (Mac: `Cmd+K` then `Cmd+T`)
-2. Pick **Brass Lasers 4AM**
-3. Let the void purple settle in. Hydrate. Maybe stretch.
-
-You can also set it permanently in settings:
+Let the editor swap between 4AM and Golden Hour with your OS light/dark mode:
 
 ```json
 {
-  "workbench.colorTheme": "Brass Lasers 4AM"
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredDarkColorTheme": "Brass Lasers 4AM",
+  "workbench.preferredLightColorTheme": "Brass Lasers Golden Hour"
 }
 ```
+
+### Recommended settings
+
+The theme looks good with anything. These make it look its best:
+
+```json
+{
+  "editor.fontFamily": "'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.6,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.minimumContrastRatio": 1
+}
+```
+
+`minimumContrastRatio: 1` keeps the terminal's lime exactly lime. The palette already passes contrast on its own.
+
+---
+
+## Everywhere else
+
+The whole family is ported to **25+ apps**, all generated from one palette, so they always match.
+
+| | |
+|---|---|
+| **Editors** | VS Code, Cursor, VSCodium, [Zed](zed/README.md), Neovim, Helix, Sublime Text, JetBrains IDEs, T3 Code |
+| **Terminals** | Windows Terminal, Ghostty, WezTerm, Kitty, Alacritty, iTerm2 |
+| **CLI** | bat, delta, fzf, Starship, plus a truecolor boot banner for bash/zsh/PowerShell |
+| **Apps** | Obsidian, Discord (Vencord / BetterDiscord), Firefox, Slack, Raycast |
+
+Install steps for each: **[ports/README.md](ports/README.md)**.
+
+**Neovim** in one line (lazy.nvim):
+
+```lua
+{ "heyoub/brass-lasers", lazy = false, priority = 1000, config = function() vim.cmd.colorscheme("brass-lasers-4am") end }
+```
+
+---
+
+## Neon Glow (experimental, opt-in)
+
+Want the lasers to actually glow? **[Brass Lasers Neon Glow](extensions/glow/README.md)** is a separate extension that adds a soft neon halo to keywords, strings, functions and types. It works by patching the editor's own files, so VS Code will complain that the install is "corrupt". That's expected, and the extension explains it before doing anything. One command turns it on, one turns it off.
+
+---
+
+## Wallpapers
+
+Synthwave sunsets in every set's colors, for desktop (4K) and phone, in [`media/wallpapers/`](media/wallpapers/).
+
+![4AM wallpaper](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/4am-desktop.png)
+
+---
+
+## The 4AM playlist
+
+🎺 **Coming soon.** The official Brass Lasers soundtrack is being assembled: brass stabs, glitch-hop, laser fog, one-more-song energy.
+
+<!-- PLAYLIST: replace this line with the Spotify / Apple Music / SoundCloud link -->
 
 ---
 
 ## Palette map (the useful part)
 
-| Role | Hex | What it does |
+| Role | 4AM hex | What it does |
 |------|-----|--------------|
 | Void canvas | `#0e0a17` | Editor / deep background |
 | Lot chrome | `#0a0711` | Sidebar, activity bar, terminal chrome |
-| Brass gold | `#ffb627` | Accents, active line numbers, find matches |
-| Hot pink laser | `#ff3d9a` | Focus rings, cursor, keywords, send-button energy |
-| Laser lime | `#b6ff5c` | Terminal text, git added, “this is good” green |
-| Afterglow lime | `#a6e85f` | Strings — a notch calmer so big JSON files don’t strobe |
+| Brass gold | `#ffb627` | Types, accents, active line numbers, find matches |
+| Hot pink laser | `#ff3d9a` | Keywords, focus rings, cursor, send-button energy |
+| Laser lime | `#b6ff5c` | Terminal text, git added, "this is good" green |
+| Afterglow lime | `#a6e85f` | Strings: a notch calmer so big JSON files don't strobe |
 | Cyan beam | `#3df2e0` | Functions, links, info |
-| Peach fuzz | `#ffb98a` | Generic type parameters (italic) — distinct from pale-gold params |
-| Soft cream | `#efe6d5` | UI foreground that doesn’t fight the purple |
+| Pale gold | `#ffd27a` | Parameters (italic) |
+| Peach fuzz | `#ffb98a` | Generic type parameters (italic) |
+| Ultraviolet | `#b18cff` | Namespaces, attributes, decorators |
+| Sunset | `#ff8a3d` | Numbers, constants, lifetimes |
+| Soft cream | `#efe6d5` | UI text that doesn't fight the purple |
 
-**Cursor / selection:** magenta-purple haze so you can still see what you highlighted after three hours of bass music.
+**Selection:** magenta-purple haze, so you can still see what you highlighted after three hours of bass music.
 
-**Errors:** `#ff4d6d` — the friend who lost the rail and needs a water.
+**Errors:** `#ff4d6d`, the friend who lost the rail and needs a water.
 
----
-
-## T3 Code twin
-
-Same party, different venue. A matching T3 Code theme lives in [`t3/brass-lasers-4am.json`](t3/brass-lasers-4am.json).
-
-1. Open that file, copy the JSON
-2. In T3 Code: **Settings → Themes → Import theme** (paste or drop)
-3. Or grab it from the community gallery once it’s live: [t3themes.com](https://www.t3themes.com/) → search **Brass Lasers 4AM**
-
-Gallery listing (after merge): `https://www.t3themes.com/themes/brass-lasers-4am/`
+The full palettes, every named color in every set, live in [`palette/`](palette/).
 
 ---
 
-## Zed port
+## How it's built
 
-Same palette, native Zed theme. It lives in [`zed/`](zed/README.md) as a self-contained Zed extension (`brass-lasers-4am-theme`).
+```
+palette/*.json  ──►  templates/**  ──►  themes/, zed/, t3/, colors/, ports/
+   (colors)          (one per app)        (generated: never edit by hand)
+```
 
-- **Before it's in the registry:** in Zed, run `zed: install dev extension` and pick the `zed/` folder.
-- **Then:** open the theme selector and pick **Brass Lasers 4AM**.
+- `npm run build` renders every palette through every template.
+- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs per palette; Strobe holds syntax to AAA).
+- `npm run art` redraws swatches, wallpapers and the social card from the palettes.
+- Tag a release (`git tag v0.3.0 && git push origin v0.3.0`) and CI publishes to Open VSX, the VS Marketplace and GitHub Releases.
 
-Zed has no semantic-token layer, so a few VS Code extras don't carry over: peach type parameters, Rust `mut` underline and bold `unsafe`. Everything else matches.
+Want a tweak? Change a hex in `palette/`, run `npm run build`, and every app updates together.
 
 ---
 
-## Smoke-check after install
+## Contributing
 
-Open any project and glance at:
+PRs welcome if you find a token that still looks sober. Keep the chaos; keep the contrast.
 
-- Editor background / foreground
-- Sidebar + activity bar
-- Selection + find highlight
-- Terminal (lime on near-black)
-- Focus border on an input (should be hot pink)
-
-If something still looks like factory-default gray, make sure the theme name is selected (not just installed).
+- **A color looks wrong?** Open an issue with the *Developer: Inspect Editor Tokens and Scopes* output. The issue template walks you through it.
+- **Want another app?** Add a template under `templates/ports/` and a line in `templates/ports/ports.json`, or open a port request.
 
 ---
 
 ## Influence
 
-Late-night funky EDM — think brass stabs, laser fog, and that “one more song” optimism. Griz / Pretty Lights / Big G energy as *palette inspiration*, not samples, logos, or official merch. Your mileage (and hydration) may vary.
-
----
-
-## Publisher
+Late-night funky EDM: brass stabs, laser fog, and that "one more song" optimism. Griz / Pretty Lights / Big G energy as *palette inspiration*, not samples, logos, or official merch. Your mileage (and hydration) may vary.
 
 - Extension ID: `heyoub.brass-lasers-4am`
 - GitHub: [heyoub/brass-lasers](https://github.com/heyoub/brass-lasers)
 - License: [MIT](LICENSE)
-
----
-
-## Contributing / tweaking
-
-PRs welcome if you find a token that still looks sober. Keep the chaos; keep the contrast. Open an issue if Cursor’s chat chrome needs a specific workbench key we missed.
 
 Stay weird. Ship code. Respect the lasers.

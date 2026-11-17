@@ -2,6 +2,43 @@
 
 All notable drops of **Brass Lasers 4AM** land here. Newest first. Hydrate accordingly.
 
+## 0.3.0 — the full lineup
+
+**One palette, every venue.** Brass Lasers is now a family: four sets, a No Italics flavor of each, a file icon theme, and ports to 25+ apps, all generated from a single palette and contrast-checked on every commit.
+
+### New sets
+
+- **Afterglow:** the comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+- **Strobe:** high contrast. Deeper void, brighter lasers, every syntax color at WCAG **AAA** (7:1).
+- **Golden Hour:** the daytime set, a light theme. Warm cream, burnished brass, deep-purple ink.
+- **No Italics** flavor for every set (8 themes in the picker).
+- Pair 4AM and Golden Hour with `window.autoDetectColorScheme` to follow your OS light/dark mode.
+
+### Brass Lasers Icons
+
+A file icon theme in the same colors: brass folders, pink when open, and tinted badges for 40+ languages and config files. Dark themes use 4AM colors and light themes switch to Golden Hour automatically. Pick it under **File Icon Theme**.
+
+### Ports (all four sets each)
+
+- **Editors:** Neovim (the repo works as a lazy.nvim plugin), Helix, Sublime Text, JetBrains. Zed now ships all 8 themes.
+- **Terminals:** Windows Terminal, Ghostty, WezTerm, Kitty, Alacritty, iTerm2.
+- **CLI:** bat, delta, fzf, Starship, truecolor boot banners for sh and PowerShell.
+- **Apps:** Obsidian, Discord (Vencord / BetterDiscord), Firefox, Slack, Raycast, T3 Code.
+
+### Extras
+
+- **Neon Glow** (experimental, separate opt-in extension in `extensions/glow/`): makes the lasers actually glow by patching the editor workbench. Fully reversible.
+- Wallpapers for every set, 4K desktop and phone, plus swatch cards and a social preview card.
+- Code previews rendered from the shipped theme files with Shiki.
+- A landing site with a live playground (`site/`).
+
+### Under the hood
+
+- `palette/*.json` is the single source of truth; `templates/` hold every target. `npm run build` regenerates everything and `npm run check` fails CI on stale output or contrast regressions (52 WCAG pairs per palette).
+- The 4AM output stays byte-identical to 0.2.0: nothing about the original changed.
+- Tagging a release now publishes to Open VSX, the VS Marketplace (when a token is set) and GitHub Releases automatically.
+- Issue templates for color bugs (with the scope inspector) and port requests.
+
 ## 0.2.0 — the afterglow set
 
 **Same party, easier on the eyes.** Readability fixes where colors were too dim, a calmer lime on strings, and coverage for UI areas that were still falling back to default gray. The lasers stay where they mean something.
