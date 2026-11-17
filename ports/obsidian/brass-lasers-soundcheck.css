@@ -1,0 +1,66 @@
+/* Brass Lasers Soundcheck for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/soundcheck.json. */
+.theme-dark {
+  --background-primary: #18181b;
+  --background-primary-alt: #1e1e22;
+  --background-secondary: #111113;
+  --background-secondary-alt: #0a0a0b;
+  --background-modifier-border: #34343c;
+  --background-modifier-hover: #26262d;
+  --background-modifier-active-hover: #32636c;
+  --background-modifier-form-field: #1e1e22;
+  --text-normal: #dedeea;
+  --text-muted: #9b9ba5;
+  --text-faint: #72727c;
+  --text-accent: #e580b3;
+  --text-accent-hover: #efafd1;
+  --text-on-accent: #1c0712;
+  --text-selection: #4297a766;
+  --text-highlight-bg: #f0c25f44;
+  --interactive-accent: #e580b3;
+  --interactive-accent-hover: #f098c3;
+  --interactive-normal: #25252a;
+  --interactive-hover: #26262d;
+  --caret-color: #e580b3;
+  --link-color: #60cfe3;
+  --link-color-hover: #87e4f1;
+  --link-external-color: #60cfe3;
+  --link-unresolved-color: #a591e7;
+  --h1-color: #f0c25f;
+  --h2-color: #f0c25f;
+  --h3-color: #ec9a5e;
+  --h4-color: #efafd1;
+  --h5-color: #a591e7;
+  --h6-color: #b5f0f7;
+  --bold-color: #ec9a5e;
+  --italic-color: #efafd1;
+  --blockquote-border-color: #a591e7;
+  --code-background: #131315;
+  --code-normal: #dedeea;
+  --code-comment: #808089;
+  --code-keyword: #e580b3;
+  --code-string: #55bf70;
+  --code-function: #60cfe3;
+  --code-value: #ec9a5e;
+  --code-property: #b5f0f7;
+  --code-tag: #e580b3;
+  --code-operator: #a1a1a8;
+  --code-punctuation: #9b9ba5;
+  --code-important: #f0c25f;
+  --tag-color: #f0c25f;
+  --tag-background: #342a14;
+  --graph-node: #a591e7;
+  --graph-node-focused: #e580b3;
+  --graph-node-tag: #f0c25f;
+  --graph-line: #565663;
+  --color-red: #e77f7c;
+  --color-orange: #ec9a5e;
+  --color-yellow: #f0c25f;
+  --color-green: #55bf70;
+  --color-cyan: #60cfe3;
+  --color-blue: #71a6e7;
+  --color-purple: #a591e7;
+  --color-pink: #e580b3;
+}

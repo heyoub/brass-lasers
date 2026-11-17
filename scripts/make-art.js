@@ -153,7 +153,8 @@ function socialSvg(palettes) {
   const p = palettes.find((v) => v.meta.slug === "4am"), c = p.colors, W = 1280, H = 640;
   const wall = wallpaperSvg(p, W, H, { sunX: 0.76 }).replace(/<text[^]*?<\/text>\n<\/svg>$/, "</svg>");
   const inner = wall.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
-  const chips = palettes.map((v, i) => `<g transform="translate(${64 + i * 150},508)"><rect width="136" height="44" rx="22" fill="${v.colors.base}" stroke="${v.colors.brass}" stroke-width="2"/><text x="68" y="29" text-anchor="middle" font-family="${SANS}" font-size="17" font-weight="700" fill="${v.colors.brass}">${v.meta.name}</text></g>`).join("");
+  const chipW = Math.min(136, Math.floor((W - 128) / palettes.length) - 8);
+  const chips = palettes.map((v, i) => `<g transform="translate(${64 + i * (chipW + 8)},508)"><rect width="${chipW}" height="44" rx="22" fill="${v.colors.base}" stroke="${v.colors.brass}" stroke-width="2"/><text x="${chipW / 2}" y="28" text-anchor="middle" font-family="${SANS}" font-size="13" font-weight="700" fill="${v.colors.brass}">${v.meta.name}</text></g>`).join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   ${inner}
   <text x="64" y="150" font-family="${SANS}" font-size="92" font-weight="900" fill="${c.brass}">Brass Lasers</text>

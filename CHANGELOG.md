@@ -2,6 +2,35 @@
 
 All notable drops of **Brass Lasers 4AM** land here. Newest first. Hydrate accordingly.
 
+## 0.5.0 — round the clock
+
+**Two house brands join the lineup, and the day now runs in order.** The family starts where it began, at 4AM, and runs the clock forward: dawn, sunrise, midday, golden hour, dusk, the headliner, midnight, the warehouse, and back around.
+
+### New sets
+
+- **Liquid Metal (10PM) · The Chrome Stage:** built from the Free Battery Factory brand tokens (`the-fbf`: `src/lib/palette.ts` and the metal gradients in `variables.css`). Graphite and chrome text, champagne strings, and FBF's yellow / cyan / purple spark spectrum. Every brand hex is used exactly as written (only the deep-purple namespace and the comment gray got contrast nudges).
+- **Soundcheck (12PM) · The Matte Stage:** built from the heyoub.dev brand palette (`src/lib/palette.ts`, dark key) with a **matte finish**: same hues and lightness, about 22% less saturation, on a lifted gaffer-tape charcoal. Pink keywords, cyan functions, amber types, green strings, orange numbers, nothing glossy.
+
+### Chronological order
+
+The theme picker, every port listing, the previews and the site now follow set time: **4AM → Atrium 5AM → Daybreak 6AM → Soundcheck 12PM → Golden Hour 5PM → Afterglow 8PM → Liquid Metal 10PM → Midnight 12AM → Strobe 2AM**. 18 themes in the picker.
+
+### Under the hood
+
+- `scripts/expand.js` learned finishes: `"finish": "matte"` sands the chroma off every accent before contrast repair.
+
+### The site
+
+- **Liquid Metal's world:** the valley becomes a rolling sea of mercury. It has smooth analytic wave normals, Fresnel chrome, a horizon glint, oil-slick iridescence cycling through the FBF spectrum, and a chrome orb laying its reflection across the swell.
+- **Soundcheck's world:** house lights at half, low bloom, a dim grid, no lasers, and a matte film grain.
+- **Earlier site upgrades in this release:**
+  - beat mode, with a per-set tempo clock and "Sync to my music" through screen/tab audio share or a microphone fallback;
+  - the Atrium glass conservatory with swaying fronds;
+  - weather: Golden Hour sun flare, Warehouse fog, Daybreak dew;
+  - a rate-limited lightning transition between sets;
+  - a restrained cursor ring;
+  - a fix for the black-square glitch: negative mote alpha under additive blending.
+
 ## 0.4.0 — a day at the festival
 
 **Seven sets, seven rooms.** The family is now a timeline: one set for every hour that matters, each with its own base hue and its own reason to exist, instead of four tints of the same night.

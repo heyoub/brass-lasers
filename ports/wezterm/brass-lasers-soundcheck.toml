@@ -1,0 +1,41 @@
+# Brass Lasers Soundcheck for WezTerm
+# A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.
+# Generated from palette/soundcheck.json. Do not edit by hand.
+
+[colors]
+background = "#0a0a0b"
+foreground = "#55bf70"
+cursor_bg = "#e580b3"
+cursor_border = "#e580b3"
+cursor_fg = "#0a0a0b"
+selection_bg = "#317784"
+selection_fg = "#e4e4e7"
+scrollbar_thumb = "#35353e"
+split = "#34343c"
+compose_cursor = "#f0c25f"
+ansi = ["#64646d", "#e77f7c", "#55bf70", "#f0c25f", "#71a6e7", "#e580b3", "#60cfe3", "#e3e2ee"]
+brights = ["#808089", "#f09f9b", "#6dd686", "#f2be89", "#93bcf0", "#efafd1", "#87e4f1", "#f4f4fe"]
+
+[colors.tab_bar]
+background = "#111113"
+
+[colors.tab_bar.active_tab]
+bg_color = "#18181b"
+fg_color = "#f0c25f"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#111113"
+fg_color = "#7f7f89"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#26262d"
+fg_color = "#e4e4e7"
+
+[colors.tab_bar.new_tab]
+bg_color = "#111113"
+fg_color = "#7f7f89"
+
+[metadata]
+name = "Brass Lasers Soundcheck"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

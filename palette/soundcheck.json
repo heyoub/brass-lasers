@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "name": "Soundcheck",
+    "slug": "soundcheck",
+    "appearance": "dark",
+    "time": "12PM",
+    "set": "The Matte Stage",
+    "source": "heyoub.dev brand tokens: src/lib/palette.ts (dark key), with a matte finish",
+    "tagline": "A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.",
+    "t3Description": "Brass Lasers Soundcheck: a matte charcoal set. Muted pink, cyan, warm amber and green with the gloss sanded off."
+  },
+  "spec": {
+    "base": "#18181b",
+    "text": "#e4e4e7",
+    "selection": "#22d3ee",
+    "finish": "matte",
+    "accents": {
+      "keyword": "#f472b6",
+      "string": "#22c55e",
+      "function": "#22d3ee",
+      "type": "#fbbf24",
+      "param": "#fdba74",
+      "generic": "#c4b5fd",
+      "number": "#fb923c",
+      "namespace": "#a78bfa",
+      "property": "#a5f3fc",
+      "operator": "#a1a1aa",
+      "self": "#f9a8d4",
+      "macro": "#67e8f9",
+      "comment": "#71717a",
+      "error": "#f87171",
+      "terminal": "#22c55e",
+      "blue": "#60a5fa"
+    },
+    "overrides": {
+      "crust": "#0a0a0b",
+      "mantle": "#111113"
+    }
+  }
+}

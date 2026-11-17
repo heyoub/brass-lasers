@@ -49,28 +49,37 @@ void main() {
 }`;
 
 const GROUND_VERT = /* glsl */ `
-uniform float uOff, uAmp;
-varying vec2 vGrid; varying float vDist; varying float vH;
+uniform float uOff, uAmp, uValley;
+varying vec2 vGrid; varying float vDist; varying float vH; varying vec3 vWP; varying vec3 vN;
 float hash(vec2 p) { return fract(sin(dot(p, vec2(41.3, 289.1))) * 13758.5453); }
 float noise(vec2 p) { vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
   return mix(mix(hash(i), hash(i + vec2(1, 0)), u.x), mix(hash(i + vec2(0, 1)), hash(i + vec2(1, 1)), u.x), u.y); }
+float height(vec2 xz) {
+  vec2 g = vec2(xz.x, xz.y + uOff);
+  // uValley 1 = flat path between hills; 0 = waves everywhere (the liquid-metal sea)
+  float valley = mix(0.55, smoothstep(3.0, 16.0, abs(xz.x)), uValley);
+  float h = (noise(g * 0.12) * 1.0 + noise(g * 0.31) * 0.45 + noise(g * 0.9) * 0.08) * valley * uAmp;
+  return h * (smoothstep(-64.0, -40.0, xz.y) * 0.6 + 0.4);
+}
 void main() {
   vec3 p = position;
   vec2 g = vec2(p.x, p.z + uOff);
-  float valley = smoothstep(3.0, 16.0, abs(p.x));
-  float hgt = (noise(g * 0.12) * 1.0 + noise(g * 0.31) * 0.45 + noise(g * 0.9) * 0.08) * valley * uAmp;
-  hgt *= smoothstep(-64.0, -40.0, p.z) * 0.6 + 0.4;
+  float hgt = height(p.xz);
+  // smooth analytic normal (central differences) so liquid surfaces don't facet
+  float e = 0.35;
+  vN = normalize(vec3(height(p.xz - vec2(e, 0.0)) - height(p.xz + vec2(e, 0.0)), 2.0 * e, height(p.xz - vec2(0.0, e)) - height(p.xz + vec2(0.0, e))));
   p.y += hgt;
   vGrid = g; vH = hgt;
   vec4 wp = modelMatrix * vec4(p, 1.0);
+  vWP = wp.xyz;
   vDist = -wp.z;
   gl_Position = projectionMatrix * viewMatrix * wp;
 }`;
 
 const GROUND_FRAG = /* glsl */ `
-uniform vec3 uFill, uGrid, uGrid2, uHorizon;
-uniform float uLine;
-varying vec2 vGrid; varying float vDist; varying float vH;
+uniform vec3 uFill, uGrid, uGrid2, uHorizon, uSheenA, uSheenB, uSheenC;
+uniform float uLine, uSheen;
+varying vec2 vGrid; varying float vDist; varying float vH; varying vec3 vWP; varying vec3 vN;
 float gridLine(vec2 g) { vec2 w = abs(fract(g - 0.5) - 0.5) / fwidth(g); return 1.0 - min(min(w.x, w.y), 1.0); }
 void main() {
   float l1 = gridLine(vGrid);
@@ -79,6 +88,20 @@ void main() {
   vec3 col = uFill * (0.85 + vH * 0.05);
   col += uGrid * l1 * uLine * (0.18 + 0.42 * near);
   col = mix(col, uGrid2, l4 * 0.4 * uLine);
+  if (uSheen > 0.001) {
+    // liquid metal: smooth wave normals, Fresnel chrome, a horizon glint,
+    // and oil-slick iridescence cycling through the three spark colors
+    vec3 n = normalize(vN);
+    vec3 v = normalize(cameraPosition - vWP);
+    float fres = pow(1.0 - max(dot(n, v), 0.0), 3.0);
+    vec3 h = normalize(normalize(vec3(0.0, 0.3, -1.0)) + v);
+    float spec = pow(max(dot(n, h), 0.0), 140.0);
+    float band = fract(vGrid.y * 0.025 + n.x * 1.4 + n.z * 0.9);
+    vec3 irid = band < 0.333 ? mix(uSheenA, uSheenB, band * 3.0) : band < 0.666 ? mix(uSheenB, uSheenC, band * 3.0 - 1.0) : mix(uSheenC, uSheenA, band * 3.0 - 2.0);
+    vec3 chrome = mix(uFill * 1.8 + vec3(0.035), uHorizon * 1.15, fres * 0.85);
+    vec3 metal = chrome + irid * (0.16 + fres * 0.6) + vec3(spec) * 0.35;
+    col = mix(col, metal + uGrid * l1 * uLine * 0.25, uSheen);
+  }
   float fog = smoothstep(18.0, 64.0, vDist);
   col = mix(col, uHorizon, fog * 0.92);
   gl_FragColor = vec4(max(col, 0.0), 1.0);
@@ -189,8 +212,8 @@ void main() {
 }`,
 };
 
-export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote", "frame", "glass", "leafA", "leafB", "leafDark", "fog", "flare", "flash"];
-export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh", "greenhouse", "flare", "fog", "dew", "sunGain"];
+export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote", "frame", "glass", "leafA", "leafB", "leafDark", "fog", "flare", "flash", "sheenA", "sheenB", "sheenC"];
+export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh", "greenhouse", "flare", "fog", "dew", "sunGain", "sheen", "valley", "grain"];
 
 export function createWorld(canvas, { reducedMotion, store, beat }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
@@ -223,7 +246,8 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     groundGeo,
     new THREE.ShaderMaterial({
       vertexShader: GROUND_VERT, fragmentShader: GROUND_FRAG,
-      uniforms: { uOff: { value: 0 }, uAmp: { value: 3 }, uFill: { value: c() }, uGrid: { value: c() }, uGrid2: { value: c() }, uHorizon: sky.material.uniforms.uHorizon, uLine: { value: 1 } },
+      uniforms: { uOff: { value: 0 }, uAmp: { value: 3 }, uValley: { value: 1 }, uFill: { value: c() }, uGrid: { value: c() }, uGrid2: { value: c() }, uHorizon: sky.material.uniforms.uHorizon, uLine: { value: 1 },
+        uSheen: { value: 0 }, uSheenA: { value: c() }, uSheenB: { value: c() }, uSheenC: { value: c() } },
     }),
   );
   scene.add(ground);
@@ -279,7 +303,9 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     su.uTop.value.copy(s.top); su.uMid.value.copy(s.mid); su.uHorizon.value.copy(s.horizon);
     su.uSunA.value.copy(s.sunA); su.uSunB.value.copy(s.sunB); su.uStar.value.copy(s.star);
     su.uSunY.value = n.sunY; su.uSunR.value = n.sunR; su.uStripes.value = n.stripes; su.uStars.value = n.stars; su.uGlow.value = n.glow; su.uSunGain.value = n.sunGain ?? 0.64;
-    gu.uFill.value.copy(s.fill); gu.uGrid.value.copy(s.grid); gu.uGrid2.value.copy(s.grid2); gu.uAmp.value = n.amp; gu.uLine.value = n.line;
+    gu.uFill.value.copy(s.fill); gu.uGrid.value.copy(s.grid); gu.uGrid2.value.copy(s.grid2); gu.uAmp.value = n.amp; gu.uLine.value = n.line; gu.uValley.value = n.valley ?? 1; gu.uSheen.value = n.sheen ?? 0;
+    gu.uSheenA.value.copy(s.sheenA); gu.uSheenB.value.copy(s.sheenB); gu.uSheenC.value.copy(s.sheenC);
+    post.uniforms.uGrain.value = n.grain ?? 0.02;
     beams.forEach((b) => { b.material.uniforms.uColor.value.copy(s[`beam${b.userData.colorIndex}`]); b.material.uniforms.uAmt.value = n.beams; b.position.y = n.sunY; });
     motes.material.uniforms.uColor.value.copy(s.mote); motes.material.uniforms.uAmt.value = n.motes; motes.material.uniforms.uRise.value = n.rise;
     bloom.strength = n.bloom * 0.62;

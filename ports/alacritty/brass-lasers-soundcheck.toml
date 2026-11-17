@@ -1,0 +1,61 @@
+# Brass Lasers Soundcheck for Alacritty
+# A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.
+# Generated from palette/soundcheck.json. Do not edit by hand.
+
+[colors.primary]
+background = "#0a0a0b"
+foreground = "#55bf70"
+dim_foreground = "#808089"
+bright_foreground = "#6dd686"
+
+[colors.cursor]
+text = "#0a0a0b"
+cursor = "#e580b3"
+
+[colors.vi_mode_cursor]
+text = "#0a0a0b"
+cursor = "#f0c25f"
+
+[colors.selection]
+text = "#e4e4e7"
+background = "#317784"
+
+[colors.search.matches]
+foreground = "#0a0a0b"
+background = "#f0c25f"
+
+[colors.search.focused_match]
+foreground = "#0a0a0b"
+background = "#e580b3"
+
+[colors.hints.start]
+foreground = "#0a0a0b"
+background = "#60cfe3"
+
+[colors.hints.end]
+foreground = "#0a0a0b"
+background = "#a591e7"
+
+[colors.footer_bar]
+foreground = "#e4e4e7"
+background = "#25252a"
+
+[colors.normal]
+black = "#64646d"
+red = "#e77f7c"
+green = "#55bf70"
+yellow = "#f0c25f"
+blue = "#71a6e7"
+magenta = "#e580b3"
+cyan = "#60cfe3"
+white = "#e3e2ee"
+
+[colors.bright]
+black = "#808089"
+red = "#f09f9b"
+green = "#6dd686"
+yellow = "#f2be89"
+blue = "#93bcf0"
+magenta = "#efafd1"
+cyan = "#87e4f1"
+white = "#f4f4fe"

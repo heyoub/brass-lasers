@@ -1,0 +1,26 @@
+# Brass Lasers Liquid Metal palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_liquid-metal"
+
+[palettes.brass_lasers_liquid-metal]
+crust = "#0a0a0b"
+mantle = "#0a0a0b"
+base = "#111113"
+surface = "#18181b"
+text = "#f4f4f5"
+subtext = "#a2a2ab"
+comment = "#7c7c85"
+brass = "#eab308"
+brass_light = "#67e8f9"
+pink = "#a78bfa"
+pink_light = "#c4b5fd"
+cyan = "#22d3ee"
+lime = "#22d3ee"
+afterglow = "#f3e3b5"
+sunset = "#ff6b6b"
+uv = "#8c5ef8"
+lavender = "#d1d5db"
+red = "#ef4444"
+blue = "#60a5fa"

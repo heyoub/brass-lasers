@@ -1,0 +1,66 @@
+/* Brass Lasers Liquid Metal for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/liquid-metal.json. */
+.theme-dark {
+  --background-primary: #111113;
+  --background-primary-alt: #17171a;
+  --background-secondary: #0a0a0b;
+  --background-secondary-alt: #0a0a0b;
+  --background-modifier-border: #2c2c31;
+  --background-modifier-hover: #1f1f23;
+  --background-modifier-active-hover: #544a75;
+  --background-modifier-form-field: #17171a;
+  --text-normal: #ededf8;
+  --text-muted: #a2a2ab;
+  --text-faint: #74747d;
+  --text-accent: #a78bfa;
+  --text-accent-hover: #c4b5fd;
+  --text-on-accent: #100b1f;
+  --text-selection: #846fc566;
+  --text-highlight-bg: #eab30844;
+  --interactive-accent: #a78bfa;
+  --interactive-accent-hover: #b7a2fe;
+  --interactive-normal: #18181b;
+  --interactive-hover: #1f1f23;
+  --caret-color: #a78bfa;
+  --link-color: #22d3ee;
+  --link-color-hover: #a5f3fc;
+  --link-external-color: #22d3ee;
+  --link-unresolved-color: #8c5ef8;
+  --h1-color: #eab308;
+  --h2-color: #eab308;
+  --h3-color: #ff6b6b;
+  --h4-color: #c4b5fd;
+  --h5-color: #8c5ef8;
+  --h6-color: #d1d5db;
+  --bold-color: #ff6b6b;
+  --italic-color: #c4b5fd;
+  --blockquote-border-color: #8c5ef8;
+  --code-background: #0c0c0d;
+  --code-normal: #ededf8;
+  --code-comment: #7c7c85;
+  --code-keyword: #a78bfa;
+  --code-string: #f3e3b5;
+  --code-function: #22d3ee;
+  --code-value: #ff6b6b;
+  --code-property: #d1d5db;
+  --code-tag: #a78bfa;
+  --code-operator: #a1a1aa;
+  --code-punctuation: #a2a2ab;
+  --code-important: #eab308;
+  --tag-color: #eab308;
+  --tag-background: #2e2202;
+  --graph-node: #8c5ef8;
+  --graph-node-focused: #a78bfa;
+  --graph-node-tag: #eab308;
+  --graph-line: #4d4d56;
+  --color-red: #ef4444;
+  --color-orange: #ff6b6b;
+  --color-yellow: #eab308;
+  --color-green: #22d3ee;
+  --color-cyan: #22d3ee;
+  --color-blue: #60a5fa;
+  --color-purple: #8c5ef8;
+  --color-pink: #a78bfa;
+}

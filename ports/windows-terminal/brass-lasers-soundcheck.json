@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Soundcheck",
+  "background": "#0A0A0B",
+  "foreground": "#55BF70",
+  "cursorColor": "#E580B3",
+  "selectionBackground": "#317784",
+  "black": "#64646D",
+  "red": "#E77F7C",
+  "green": "#55BF70",
+  "yellow": "#F0C25F",
+  "blue": "#71A6E7",
+  "purple": "#E580B3",
+  "cyan": "#60CFE3",
+  "white": "#E3E2EE",
+  "brightBlack": "#808089",
+  "brightRed": "#F09F9B",
+  "brightGreen": "#6DD686",
+  "brightYellow": "#F2BE89",
+  "brightBlue": "#93BCF0",
+  "brightPurple": "#EFAFD1",
+  "brightCyan": "#87E4F1",
+  "brightWhite": "#F4F4FE"
+}

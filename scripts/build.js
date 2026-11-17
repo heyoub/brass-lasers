@@ -21,8 +21,9 @@ const ROOT = path.resolve(__dirname, "..");
 const rel = (...p) => path.join(ROOT, ...p);
 const read = (p) => fs.readFileSync(rel(p), "utf8");
 
-// The family is a day at the festival: listings follow the set times.
-const VARIANTS = ["golden-hour", "afterglow", "midnight", "strobe", "4am", "atrium", "daybreak"];
+// The family is a day at the festival, starting from the OG at 4AM and running the
+// clock forward: dawn, sunrise, midday, golden hour, dusk, the headliner, midnight, the warehouse.
+const VARIANTS = ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "afterglow", "liquid-metal", "midnight", "strobe"];
 
 function loadPalettes() {
   const { expand } = require("./expand.js");

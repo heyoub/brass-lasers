@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers Soundcheck
+ * @author heyoub
+ * @version 1.0.0
+ * @description A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/soundcheck.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #18181b;
+  --background-secondary: #111113;
+  --background-secondary-alt: #0a0a0b;
+  --background-tertiary: #0a0a0b;
+  --background-accent: #35353e;
+  --background-floating: #25252a;
+  --background-modifier-hover: #26262d;
+  --background-modifier-active: #32636c;
+  --background-modifier-selected: #32636c;
+  --background-modifier-accent: #34343c;
+  --channeltextarea-background: #1e1e22;
+  --text-normal: #dedeea;
+  --text-muted: #9b9ba5;
+  --text-link: #60cfe3;
+  --header-primary: #e4e4e7;
+  --header-secondary: #b5b5c0;
+  --interactive-normal: #b5b5c0;
+  --interactive-hover: #e4e4e7;
+  --interactive-active: #f0c25f;
+  --interactive-muted: #64646d;
+  --channels-default: #7f7f89;
+  --brand-experiment: #e580b3;
+  --brand-500: #e580b3;
+  --mention-background: #f0c25f22;
+  --mention-foreground: #f0c25f;
+  --info-warning-foreground: #ec9a5e;
+  --info-danger-foreground: #e77f7c;
+  --info-positive-foreground: #55bf70;
+  --status-positive: #55bf70;
+  --status-warning: #f0c25f;
+  --status-danger: #e77f7c;
+  --scrollbar-auto-thumb: #35353e;
+  --scrollbar-thin-thumb: #35353e;
+}
+::selection { background: #4297a788; }
+code, pre { background: #131315 !important; color: #55bf70; }

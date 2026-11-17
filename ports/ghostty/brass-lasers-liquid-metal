@@ -1,0 +1,25 @@
+# Brass Lasers Liquid Metal for Ghostty
+# Molten chrome under the headliner. Graphite and mercury, with the yellow-cyan-purple spark spectrum of an oil slick.
+# Generated from palette/liquid-metal.json. Do not edit by hand.
+background = #0a0a0b
+foreground = #22d3ee
+cursor-color = #a78bfa
+cursor-text = #0a0a0b
+selection-background = #665796
+selection-foreground = #f4f4f5
+palette = 0=#64646c
+palette = 1=#ef4444
+palette = 2=#22d3ee
+palette = 3=#eab308
+palette = 4=#60a5fa
+palette = 5=#a78bfa
+palette = 6=#22d3ee
+palette = 7=#e2e2ed
+palette = 8=#7c7c85
+palette = 9=#fe6963
+palette = 10=#69e8ff
+palette = 11=#67e8f9
+palette = 12=#87bcff
+palette = 13=#c4b5fd
+palette = 14=#a5f3fc
+palette = 15=#f4f4fe

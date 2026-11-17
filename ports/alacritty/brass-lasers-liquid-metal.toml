@@ -1,0 +1,61 @@
+# Brass Lasers Liquid Metal for Alacritty
+# Molten chrome under the headliner. Graphite and mercury, with the yellow-cyan-purple spark spectrum of an oil slick.
+# Generated from palette/liquid-metal.json. Do not edit by hand.
+
+[colors.primary]
+background = "#0a0a0b"
+foreground = "#22d3ee"
+dim_foreground = "#7c7c85"
+bright_foreground = "#69e8ff"
+
+[colors.cursor]
+text = "#0a0a0b"
+cursor = "#a78bfa"
+
+[colors.vi_mode_cursor]
+text = "#0a0a0b"
+cursor = "#eab308"
+
+[colors.selection]
+text = "#f4f4f5"
+background = "#665796"
+
+[colors.search.matches]
+foreground = "#0a0a0b"
+background = "#eab308"
+
+[colors.search.focused_match]
+foreground = "#0a0a0b"
+background = "#a78bfa"
+
+[colors.hints.start]
+foreground = "#0a0a0b"
+background = "#22d3ee"
+
+[colors.hints.end]
+foreground = "#0a0a0b"
+background = "#8c5ef8"
+
+[colors.footer_bar]
+foreground = "#f4f4f5"
+background = "#18181b"
+
+[colors.normal]
+black = "#64646c"
+red = "#ef4444"
+green = "#22d3ee"
+yellow = "#eab308"
+blue = "#60a5fa"
+magenta = "#a78bfa"
+cyan = "#22d3ee"
+white = "#e2e2ed"
+
+[colors.bright]
+black = "#7c7c85"
+red = "#fe6963"
+green = "#69e8ff"
+yellow = "#67e8f9"
+blue = "#87bcff"
+magenta = "#c4b5fd"
+cyan = "#a5f3fc"
+white = "#f4f4fe"

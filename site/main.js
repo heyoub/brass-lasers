@@ -29,6 +29,15 @@ const MOOD = {
   atrium: { sunY: -3, sunR: 8, stripes: 0, stars: 0.6, glow: 1.6, beams: 0.0, motes: 1.0, bloom: 0.8, speed: 0.3, amp: 0.5, line: 0.55, rise: 0.08, thresh: 0.22, bpm: 92, greenhouse: 1, flare: 0, fog: 0.14, dew: 0.3, sunGain: 0.64 },
   daybreak: { sunY: 1.6, sunR: 6.2, stripes: 0, stars: 0.12, glow: 1.5, beams: 0.06, motes: 0.3, bloom: 0.3, speed: 0.4, amp: 2.4, line: 0.7, rise: 0.06, thresh: 0.92, bpm: 86, greenhouse: 0, flare: 0.6, fog: 0.12, dew: 0.8, sunGain: 1 },
 };
+// every set gets every knob, so nothing set by one mood lingers into the next
+const MOOD_DEFAULTS = { greenhouse: 0, flare: 0, fog: 0, dew: 0, sunGain: 0.64, sheen: 0, valley: 1, grain: 0.02 };
+Object.assign(MOOD, {
+  // 12PM, heyoub.dev: house lights at half, matte everything, no lasers yet
+  soundcheck: { sunY: 9, sunR: 4.6, stripes: 0, stars: 0, glow: 0.45, beams: 0, motes: 0.55, bloom: 0.22, speed: 0.32, amp: 1.6, line: 0.45, rise: 0.05, thresh: 0.6, bpm: 96, fog: 0.18, sunGain: 0.8, grain: 0.032 },
+  // 10PM, FBF: the headliner on a chrome stage over a sea of mercury
+  "liquid-metal": { sunY: 6.5, sunR: 6.2, stripes: 0, stars: 0.5, glow: 1.1, beams: 0.6, motes: 0.35, bloom: 0.6, speed: 0.85, amp: 2.2, line: 0.35, rise: 0.18, thresh: 0.42, bpm: 128, flare: 0.25, sunGain: 0.55, sheen: 1, valley: 0 },
+});
+for (const k in MOOD) MOOD[k] = { ...MOOD_DEFAULTS, ...MOOD[k] };
 const MOON = new Set(["midnight", "strobe"]);
 
 function worldFor(p) {
@@ -51,6 +60,17 @@ function worldFor(p) {
   Object.assign(colors, {
     frame: c.brass, glass: mix(c.pink, c.text, 0.25), leafA: mix(c.afterglow, c.crust, 0.4), leafB: mix(mix(c.afterglow, c.pink, 0.4), c.crust, 0.3), leafDark: mix(c.crust, c.afterglow, 0.08),
     fog: light ? mix(c.base, c.text, 0.05) : mix(c.selection, c.text, 0.35), flare: light ? mix(c.sunset, c.brass, 0.4) : mix(colors.sunA, W, 0.35), flash: mix(c.text, c.cyan, 0.25),
+  });
+  // liquid metal sheen: the FBF spark spectrum (purple/cyan/yellow slots in that palette)
+  Object.assign(colors, { sheenA: c.brass, sheenB: c.cyan, sheenC: c.pink });
+  if (slug === "liquid-metal") Object.assign(colors, {
+    top: c.crust, mid: mix(c.crust, c.uv, 0.12), horizon: mix(c.mantle, c.lavender, 0.32),
+    sunA: mix(c.text, c.lavender, 0.25), sunB: mix(c.pink, c.cyan, 0.5), fill: mix(c.crust, c.lavender, 0.06),
+    grid: mix(c.lavender, c.crust, 0.4), grid2: c.cyan, beam0: c.brass, beam1: c.cyan, beam2: c.pink, beam3: c.lavender, mote: c.lavender, flare: c.cyanLight,
+  });
+  if (slug === "soundcheck") Object.assign(colors, {
+    top: c.mantle, mid: c.base, horizon: mix(c.base, c.brass, 0.14), sunA: mix(c.brass, c.text, 0.35), sunB: mix(c.brass, c.pink, 0.4),
+    fill: c.crust, grid: mix(c.subtext0, c.crust, 0.35), grid2: mix(c.cyan, c.crust, 0.35), mote: c.text, fog: mix(c.base, c.text, 0.12),
   });
   if (slug === "atrium") Object.assign(colors, { horizon: mix(c.base, c.cyan, 0.35), sunA: mix(c.brass, W, 0.2), sunB: c.brass, grid: c.pink, grid2: c.afterglow, mote: c.brass });
   if (slug === "strobe") Object.assign(colors, { horizon: mix(c.base, c.pink, 0.3), mid: mix(c.crust, c.pink, 0.08) });

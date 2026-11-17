@@ -116,7 +116,7 @@ async function main() {
   }
 
   // lineup grid of every set, in set-time order
-  const cols = 4, rows = Math.ceil(lineup.length / cols);
+  const cols = 3, rows = Math.ceil(lineup.length / cols);
   const cw = 900, gap = 28, cards = lineup.map(({ p, tokens, sample }) => cardSvg(p, tokens, sample, cw, 13));
   const ch = Math.max(...cards.map((c) => c.H)), W = cw * cols + gap * (cols + 1), H = ch * rows + gap * (rows + 1);
   const inner = cards.map((c, i) => `<g transform="translate(${gap + (i % cols) * (cw + gap)},${gap + Math.floor(i / cols) * (ch + gap)})">${c.svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "")}</g>`).join("");

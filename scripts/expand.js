@@ -19,7 +19,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { hexToOklch, oklchToHex, lighten, mix } = require("./color.js");
+const { hexToOklch, oklchToHex, lighten, mix, adjust } = require("./color.js");
 const { ratio, PAIRS, floorFor } = require("./contrast-lib.js");
 
 const REF = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "palette", "4am.json"), "utf8")).colors;
@@ -89,6 +89,13 @@ function expand(meta, spec) {
   // --- text on accent fills (buttons, badges)
   const on = (hex) => { const h = hexToOklch(hex).h; return oklchToHex(dark ? { L: 0.17, C: 0.04, h } : { L: 0.985, C: 0.012, h }); };
   c.onPink = on(a.keyword); c.onBrass = on(a.type); c.onSunset = on(a.number); c.onRed = on(a.error);
+
+  // finishes: "matte" sands the shine off every accent (less chroma, same lightness),
+  // so the palette reads like gaffer tape and powder coat rather than neon.
+  if (spec.finish === "matte") {
+    const ACCENT_KEYS = ["pink", "pinkLight", "pinkHover", "orchid", "cyan", "cyanLight", "brass", "brassLight", "brassHover", "peach", "sand", "sunset", "uv", "lavender", "red", "redLight", "redSoft", "lime", "limeLight", "afterglow", "blue", "blueLight", "selection", "selectionActive", "terminalSelection", "errorSurface", "warningSurface", "infoSurface", "accentSurface"];
+    for (const k of ACCENT_KEYS) c[k] = adjust(c[k], (o) => ({ ...o, C: o.C * 0.78 }));
+  }
 
   Object.assign(c, spec.overrides || {});
 

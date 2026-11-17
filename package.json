@@ -1,8 +1,8 @@
 {
   "name": "brass-lasers-4am",
   "displayName": "Brass Lasers 4AM — Neon Synthwave Dark Theme",
-  "description": "Seven synthwave-to-biophilic color themes, one for every hour of the festival: Golden Hour, Afterglow, Midnight, Strobe (AAA), 4AM, Atrium 5AM and Daybreak, plus matching file icons. Contrast-checked, readable at 4AM.",
-  "version": "0.4.0",
+  "description": "Nine color themes, one for every hour of the festival: 4AM, Atrium 5AM, Daybreak, Soundcheck (matte), Golden Hour, Afterglow, Liquid Metal, Midnight and Strobe (AAA), plus matching file icons. Contrast-checked, readable at 4AM.",
+  "version": "0.5.0",
   "publisher": "heyoub",
   "engines": {
     "vscode": "^1.85.0"
@@ -47,7 +47,11 @@
     "solarized",
     "atrium",
     "midnight",
-    "daybreak"
+    "daybreak",
+    "matte",
+    "chrome",
+    "liquid metal",
+    "soundcheck"
   ],
   "galleryBanner": {
     "color": "#0e0a17",
@@ -65,46 +69,6 @@
   "homepage": "https://github.com/heyoub/brass-lasers#readme",
   "contributes": {
     "themes": [
-      {
-        "label": "Brass Lasers Golden Hour",
-        "uiTheme": "vs",
-        "path": "./themes/Brass-Lasers-Golden-Hour-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Golden Hour No Italics",
-        "uiTheme": "vs",
-        "path": "./themes/Brass-Lasers-Golden-Hour-No-Italics-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Afterglow",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Afterglow-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Afterglow No Italics",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Afterglow-No-Italics-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Midnight",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Midnight-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Midnight No Italics",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Midnight-No-Italics-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Strobe",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Strobe-color-theme.json"
-      },
-      {
-        "label": "Brass Lasers Strobe No Italics",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Brass-Lasers-Strobe-No-Italics-color-theme.json"
-      },
       {
         "label": "Brass Lasers 4AM",
         "uiTheme": "vs-dark",
@@ -134,6 +98,66 @@
         "label": "Brass Lasers Daybreak No Italics",
         "uiTheme": "vs",
         "path": "./themes/Brass-Lasers-Daybreak-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Soundcheck",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Soundcheck-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Soundcheck No Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Soundcheck-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Golden Hour",
+        "uiTheme": "vs",
+        "path": "./themes/Brass-Lasers-Golden-Hour-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Golden Hour No Italics",
+        "uiTheme": "vs",
+        "path": "./themes/Brass-Lasers-Golden-Hour-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Afterglow",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Afterglow-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Afterglow No Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Afterglow-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Liquid Metal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Liquid-Metal-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Liquid Metal No Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Liquid-Metal-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Midnight-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Midnight No Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Midnight-No-Italics-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Strobe",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Strobe-color-theme.json"
+      },
+      {
+        "label": "Brass Lasers Strobe No Italics",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Brass-Lasers-Strobe-No-Italics-color-theme.json"
       }
     ],
     "iconThemes": [

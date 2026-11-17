@@ -1,0 +1,25 @@
+# Brass Lasers Soundcheck for Ghostty
+# A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.
+# Generated from palette/soundcheck.json. Do not edit by hand.
+background = #0a0a0b
+foreground = #55bf70
+cursor-color = #e580b3
+cursor-text = #0a0a0b
+selection-background = #317784
+selection-foreground = #e4e4e7
+palette = 0=#64646d
+palette = 1=#e77f7c
+palette = 2=#55bf70
+palette = 3=#f0c25f
+palette = 4=#71a6e7
+palette = 5=#e580b3
+palette = 6=#60cfe3
+palette = 7=#e3e2ee
+palette = 8=#808089
+palette = 9=#f09f9b
+palette = 10=#6dd686
+palette = 11=#f2be89
+palette = 12=#93bcf0
+palette = 13=#efafd1
+palette = 14=#87e4f1
+palette = 15=#f4f4fe

@@ -1,0 +1,118 @@
+# Brass Lasers Soundcheck for Helix
+# A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.
+# Generated from palette/soundcheck.json. Do not edit by hand.
+
+"attribute" = { fg = "uv", modifiers = ["italic"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"constant" = "sunset"
+"constant.character.escape" = "cyan"
+"constant.numeric" = "sunset"
+"constructor" = "brass"
+"function" = "cyan"
+"function.macro" = { fg = "cyan_light", modifiers = ["bold"] }
+"keyword" = "pink"
+"keyword.control" = { fg = "pink", modifiers = ["italic"] }
+"keyword.storage" = "pink"
+"label" = { fg = "sunset", modifiers = ["italic"] }
+"namespace" = "uv"
+"operator" = "orchid"
+"punctuation" = "sub0"
+"special" = "cyan"
+"string" = "afterglow"
+"string.regexp" = "cyan"
+"string.special.url" = { fg = "cyan", modifiers = ["underlined"] }
+"tag" = "pink"
+"type" = "brass"
+"type.builtin" = "brass"
+"type.parameter" = { fg = "peach", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "pink_light", modifiers = ["italic"] }
+"variable.parameter" = { fg = "brass_light", modifiers = ["italic"] }
+"variable.other.member" = "lavender"
+
+"markup.heading" = { fg = "brass", modifiers = ["bold"] }
+"markup.bold" = { fg = "sunset", modifiers = ["bold"] }
+"markup.italic" = { fg = "pink_light", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.quote" = "uv"
+"markup.raw" = "afterglow"
+"markup.list" = "uv"
+
+"diff.plus" = "lime"
+"diff.minus" = "red"
+"diff.delta" = "brass"
+
+"ui.background" = { bg = "base" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "text", bg = "sel_active" }
+"ui.cursor" = { fg = "base", bg = "pink" }
+"ui.cursor.primary" = { fg = "base", bg = "pink" }
+"ui.cursor.match" = { fg = "pink", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "brass", modifiers = ["bold"] }
+"ui.statusline" = { fg = "sub1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "mantle" }
+"ui.statusline.normal" = { fg = "on_brass", bg = "brass", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "on_pink", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "crust", bg = "cyan", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "surface1" }
+"ui.window" = "border"
+"ui.help" = { fg = "text", bg = "surface1" }
+"ui.menu" = { fg = "text", bg = "surface1" }
+"ui.menu.selected" = { fg = "text", bg = "sel_active", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "whitespace"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.inlay-hint" = { fg = "inlay", bg = "surface1" }
+"ui.bufferline" = { fg = "ghost", bg = "mantle" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold"] }
+
+"error" = "red"
+"warning" = "sunset"
+"info" = "cyan"
+"hint" = "uv"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "sunset", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "uv", style = "curl" } }
+
+[palette]
+crust = "#0a0a0b"
+mantle = "#111113"
+base = "#18181b"
+surface0 = "#1e1e22"
+surface1 = "#25252a"
+line = "#212126"
+border = "#34343c"
+whitespace = "#3a3a43"
+selection = "#4297a7"
+sel_active = "#32636c"
+line_nr = "#56565f"
+text = "#e4e4e7"
+fg = "#dedeea"
+sub1 = "#b5b5c0"
+sub0 = "#9b9ba5"
+comment = "#808089"
+doc = "#85858d"
+inlay = "#8b8b95"
+ghost = "#7f7f89"
+brass = "#f0c25f"
+brass_light = "#f2be89"
+peach = "#c3b8f0"
+pink = "#e580b3"
+pink_light = "#efafd1"
+orchid = "#a1a1a8"
+cyan = "#60cfe3"
+cyan_light = "#87e4f1"
+sunset = "#ec9a5e"
+uv = "#a591e7"
+lavender = "#b5f0f7"
+red = "#e77f7c"
+lime = "#55bf70"
+afterglow = "#55bf70"
+on_pink = "#1c0712"
+on_brass = "#160e00"

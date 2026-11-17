@@ -1,0 +1,41 @@
+# Brass Lasers Liquid Metal for WezTerm
+# Molten chrome under the headliner. Graphite and mercury, with the yellow-cyan-purple spark spectrum of an oil slick.
+# Generated from palette/liquid-metal.json. Do not edit by hand.
+
+[colors]
+background = "#0a0a0b"
+foreground = "#22d3ee"
+cursor_bg = "#a78bfa"
+cursor_border = "#a78bfa"
+cursor_fg = "#0a0a0b"
+selection_bg = "#665796"
+selection_fg = "#f4f4f5"
+scrollbar_thumb = "#2d2d34"
+split = "#2c2c31"
+compose_cursor = "#eab308"
+ansi = ["#64646c", "#ef4444", "#22d3ee", "#eab308", "#60a5fa", "#a78bfa", "#22d3ee", "#e2e2ed"]
+brights = ["#7c7c85", "#fe6963", "#69e8ff", "#67e8f9", "#87bcff", "#c4b5fd", "#a5f3fc", "#f4f4fe"]
+
+[colors.tab_bar]
+background = "#0a0a0b"
+
+[colors.tab_bar.active_tab]
+bg_color = "#111113"
+fg_color = "#eab308"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#0a0a0b"
+fg_color = "#82828b"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#1f1f23"
+fg_color = "#f4f4f5"
+
+[colors.tab_bar.new_tab]
+bg_color = "#0a0a0b"
+fg_color = "#82828b"
+
+[metadata]
+name = "Brass Lasers Liquid Metal"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

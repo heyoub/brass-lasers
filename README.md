@@ -20,22 +20,23 @@ A family of neon synthwave color themes, built for that stretch of night when th
 
 ## The lineup: a day at the festival
 
-Seven sets, one for every hour that matters. Each has its own room, its own light, its own reason to exist.
+Nine sets, starting where it all began, at 4AM, and running the clock forward through dawn, the afternoon, golden hour, dusk, the headliner and back into the night. Each has its own room, its own light, its own reason to exist.
 
 | Time | Set | Room | |
 |---|---|---|---|
-| 5PM | **Golden Hour** · light | The Lagoon Stage. Solarized-subtropical daylight: papaya-cream paper, lagoon ink, hibiscus, palm and mango. | ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/golden-hour.png) |
-| 8PM | **Afterglow** | The Dusk Set. Wine-plum sky, coral clouds, mint grass, blue-hour light. | ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/afterglow.png) |
-| 12AM | **Midnight** | The Night Market. Navy ink, moonlight text, sodium-orange streetlights. | ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/midnight.png) |
-| 2AM | **Strobe** · high contrast | The Warehouse. Pure black, UV magenta, electric cyan, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
 | 4AM | **4AM** · the original | The Main Stage. Void purple, brass, hot-pink lasers. | ![4AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/4am.png) |
 | 5AM | **Atrium 5AM** | The Greenhouse. A biophilic sci-fi workspace: forest-charcoal, lagoon holograms, moss, orchid displays, lantern light. Soft but legible. | ![Atrium 5AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/atrium.png) |
 | 6AM | **Daybreak** · light | The Sunrise Walk. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings. | ![Daybreak](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/daybreak.png) |
+| 12PM | **Soundcheck** · matte | The Matte Stage. Built from the [heyoub.dev](https://heyoub.dev) brand palette with the shine sanded off: gaffer-tape charcoal, muted pink, cyan, amber and green. | ![Soundcheck](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/soundcheck.png) |
+| 5PM | **Golden Hour** · light | The Lagoon Stage. Solarized-subtropical daylight: papaya-cream paper, lagoon ink, hibiscus, palm and mango. | ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/golden-hour.png) |
+| 8PM | **Afterglow** | The Dusk Set. Wine-plum sky, coral clouds, mint grass, blue-hour light. | ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/afterglow.png) |
+| 10PM | **Liquid Metal** | The Chrome Stage. Built from the Free Battery Factory brand tokens: graphite, chrome text, champagne strings, and the yellow-cyan-purple spark spectrum of an oil slick. | ![Liquid Metal](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/liquid-metal.png) |
+| 12AM | **Midnight** | The Night Market. Navy ink, moonlight text, sodium-orange streetlights. | ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/midnight.png) |
+| 2AM | **Strobe** · high contrast | The Warehouse. Pure black, UV magenta, electric cyan, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
 
-Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's 14 themes in the picker.
+Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's 18 themes in the picker.
 
-![All seven sets](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/previews/lineup.png)
-
+![All nine sets](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/previews/lineup.png)
 ---
 
 ## Install
@@ -89,7 +90,7 @@ The theme looks good with anything. These make it look its best:
 
 ## Everywhere else
 
-All seven sets are ported to **25+ apps**, all generated from one palette, so they always match.
+All nine sets are ported to **25+ apps**, all generated from one palette, so they always match.
 
 | | |
 |---|---|
@@ -164,7 +165,7 @@ palette/*.json  ──►  scripts/expand.js  ──►  templates/**  ──►
 ```
 
 - `npm run build` renders every palette through every template.
-- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs × 7 sets; Strobe holds syntax to AAA).
+- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs × 9 sets; Strobe holds syntax to AAA).
 - `npm run art` redraws swatches, wallpapers and the social card from the palettes.
 - Tag a release (`git tag v0.3.0 && git push origin v0.3.0`) and CI publishes to Open VSX, the VS Marketplace and GitHub Releases.
 

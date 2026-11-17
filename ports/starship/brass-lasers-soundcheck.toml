@@ -1,0 +1,26 @@
+# Brass Lasers Soundcheck palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_soundcheck"
+
+[palettes.brass_lasers_soundcheck]
+crust = "#0a0a0b"
+mantle = "#111113"
+base = "#18181b"
+surface = "#25252a"
+text = "#e4e4e7"
+subtext = "#9b9ba5"
+comment = "#808089"
+brass = "#f0c25f"
+brass_light = "#f2be89"
+pink = "#e580b3"
+pink_light = "#efafd1"
+cyan = "#60cfe3"
+lime = "#55bf70"
+afterglow = "#55bf70"
+sunset = "#ec9a5e"
+uv = "#a591e7"
+lavender = "#b5f0f7"
+red = "#e77f7c"
+blue = "#71a6e7"

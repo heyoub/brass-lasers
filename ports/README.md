@@ -2,7 +2,7 @@
 
 Every file in this folder (and in `../colors/`) is **generated** from `palette/*.json` by `node scripts/build.js`. Don't edit them by hand. Change a palette or a template in `templates/ports/`, rebuild, and every port updates together.
 
-Each port ships all seven sets: **Golden Hour** (5PM, light), **Afterglow** (8PM), **Midnight** (12AM), **Strobe** (2AM, high contrast), **4AM** (the original), **Atrium 5AM** and **Daybreak** (6AM, light). Swap `4am` in any file name for `golden-hour`, `afterglow`, `midnight`, `strobe`, `atrium` or `daybreak`.
+Each port ships all nine sets, in set-time order: **4AM** (the original), **Atrium 5AM**, **Daybreak** (6AM, light), **Soundcheck** (12PM, matte), **Golden Hour** (5PM, light), **Afterglow** (8PM), **Liquid Metal** (10PM), **Midnight** (12AM) and **Strobe** (2AM, high contrast). Swap `4am` in any file name for `atrium`, `daybreak`, `soundcheck`, `golden-hour`, `afterglow`, `liquid-metal`, `midnight` or `strobe`.
 
 ## Terminals
 

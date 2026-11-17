@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Liquid Metal",
+  "background": "#0A0A0B",
+  "foreground": "#22D3EE",
+  "cursorColor": "#A78BFA",
+  "selectionBackground": "#665796",
+  "black": "#64646C",
+  "red": "#EF4444",
+  "green": "#22D3EE",
+  "yellow": "#EAB308",
+  "blue": "#60A5FA",
+  "purple": "#A78BFA",
+  "cyan": "#22D3EE",
+  "white": "#E2E2ED",
+  "brightBlack": "#7C7C85",
+  "brightRed": "#FE6963",
+  "brightGreen": "#69E8FF",
+  "brightYellow": "#67E8F9",
+  "brightBlue": "#87BCFF",
+  "brightPurple": "#C4B5FD",
+  "brightCyan": "#A5F3FC",
+  "brightWhite": "#F4F4FE"
+}
