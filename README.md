@@ -49,6 +49,7 @@ Every set also ships a **No Italics** flavor, for people who'd rather not see co
 | **Midnight** ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/midnight.png) | **Strobe** ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/screenshots/sets/strobe.png) |
 
 </details>
+
 ---
 
 ## Install
@@ -60,6 +61,8 @@ code --install-extension brass-lasers-4am-0.5.0.vsix
 ```
 
 **Cursor / VSCodium:** these pull from [Open VSX](https://open-vsx.org/extension/heyoub/brass-lasers-4am). Search **Brass Lasers 4AM** in Extensions.
+
+**Zed:** submitted to the Zed extension registry ([zed-industries/extensions#8369](https://github.com/zed-industries/extensions/pull/8369), all checks passing, awaiting review). Once it merges, search **Brass Lasers** in `zed: extensions`. Until then, run `zed: install dev extension` and pick this repo's [`zed/`](zed/README.md) folder.
 
 **From a VSIX:** grab it from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest) → Extensions → `…` → **Install from VSIX…**
 

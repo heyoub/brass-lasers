@@ -16,7 +16,7 @@ The Zed port of [Brass Lasers](https://github.com/heyoub/brass-lasers): nine col
 
 ## Install
 
-- **From the Zed extension registry:** `zed: extensions` → search **Brass Lasers** → Install.
+- **From the Zed extension registry** (submitted in [zed-industries/extensions#8369](https://github.com/zed-industries/extensions/pull/8369), awaiting review): `zed: extensions` → search **Brass Lasers** → Install.
 - **Local / dev install:** run `zed: install dev extension` from the command palette and pick this `zed/` folder.
 
 Then open the theme selector (`theme selector: toggle`) and pick any **Brass Lasers** theme.

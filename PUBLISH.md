@@ -16,7 +16,7 @@ Extension ID on every registry: **`heyoub.brass-lasers-4am`**. Site: https://hey
 | GitHub Releases | **Live**, VSIX attached on every tag | nothing |
 | GitHub Pages site | **Live**, redeploys on site changes and after the Art bot redraws | nothing |
 | VS Marketplace | **Not published** | Make an Azure DevOps PAT (step 1 below) and save it as the `VSCE_PAT` repo secret. The next tag publishes. |
-| Zed registry | **Not submitted** | Test `zed/` as a dev extension in Zed, then the PR in step 4 |
+| Zed registry | **Submitted:** [zed-industries/extensions#8369](https://github.com/zed-industries/extensions/pull/8369). CLA signed, all checks green (cla, package, danger), awaiting maintainer review | Reply to review comments within 3 weeks. For later versions, see step 4's "Updating later" |
 | T3 Themes gallery | **4AM live**; the other 8 sets are open PRs [#94](https://github.com/SunkenInTime/t3-themes/pull/94) to [#101](https://github.com/SunkenInTime/t3-themes/pull/101) | Merge (the gallery auto-merges theme PRs when checks pass) |
 | Neon Glow (`heyoub.brass-lasers-glow`) | **Live on Open VSX** v0.1.0, tested end to end in Cursor (enable, glow, disable restores the install byte for byte) | Publish manually: `cd extensions/glow && npx @vscode/vsce package`, then `npx ovsx publish <vsix> -p $OVSX_PAT` |
 
@@ -111,54 +111,28 @@ Manual path: PR only `themes/brass-lasers-4am.json` into https://github.com/Sunk
 
 ## 4) Zed extension registry
 
-The extension lives in `zed/` (`id = "brass-lasers-4am-theme"`, MIT license copied into `zed/LICENSE`, since Zed requires it inside the extension folder). Publishing is a PR to `zed-industries/extensions`.
+**Status:** submitted as [zed-industries/extensions#8369](https://github.com/zed-industries/extensions/pull/8369). The CLA is signed, and all checks pass (cla-signed, package, danger). It's waiting on maintainer review. Zed asks for replies to review feedback within 3 weeks.
+
+The extension lives in `zed/` (`id = "brass-lasers-theme"`, name **Brass Lasers**, all 18 themes in `zed/themes/brass-lasers.json`). The MIT license is copied into `zed/LICENSE`, since Zed requires it inside the extension folder. The fork is `heyoub/extensions`, branch `add-brass-lasers-theme`. The submodule is pinned to `ab5bc1f`, the commit that was tested as a dev extension (screenshots in `media/screenshots/zed/`).
 
 **Rules:**
 - One extension per PR, at most three open PRs.
 - Respond to maintainer feedback within 3 weeks.
 - Fork to your personal account, not an org.
 
-**Steps:**
-
-1. **Test first.** In Zed, run `zed: install dev extension`, pick `zed/`, and select the theme. Zed requires a manual test at the exact commit you submit.
-2. **Push this repo**, so the commit containing `zed/` is on a branch on GitHub.
-3. **Fork and clone** `zed-industries/extensions`, then:
-
-   ```bash
-   git clone https://github.com/heyoub/extensions
-   cd extensions
-   git submodule init
-   git submodule update
-   git submodule add https://github.com/heyoub/brass-lasers.git extensions/brass-lasers-4am-theme
-   ```
-
-4. **Add an entry to the top-level `extensions.toml`.** The version must match `zed/extension.toml`:
-
-   ```toml
-   [brass-lasers-4am-theme]
-   submodule = "extensions/brass-lasers-4am-theme"
-   path = "zed"
-   version = "0.2.0"
-   ```
-
-5. **Sort, commit and open the PR:**
+**Updating later** (after #8369 merges):
+1. Bump `version` in `zed/extension.toml` (the release workflow requires it to match `package.json`), regenerate with `npm run build`, push, and tag the release.
+2. In Zed, run `zed: install dev extension` on `zed/` at that commit and check the themes.
+3. In your fork of `zed-industries/extensions`, sync with upstream, then:
 
    ```bash
-   pnpm sort-extensions
-   git add -A
-   git commit -m "Add brass-lasers-4am-theme"
+   git -C extensions/brass-lasers-theme fetch
+   git -C extensions/brass-lasers-theme checkout <new commit>
    ```
 
-   Then push and open the PR.
-
-**Updating later:**
-1. Bump `version` in `zed/extension.toml`.
-2. Push.
-3. In your fork, update the submodule to the new commit and bump the version in `extensions.toml`.
-4. Open a PR.
+   Set the same `version` under `[brass-lasers-theme]` in `extensions.toml`, then commit and open a PR titled `Update brass-lasers-theme to <version>`.
 
 ---
-
 ## Repo checklist
 
 - Push this folder to https://github.com/heyoub/brass-lasers so `repository` / `bugs` links resolve

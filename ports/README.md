@@ -21,7 +21,7 @@ Each port ships all nine sets, in set-time order: **4AM** (the original), **Atri
 |---|---|
 | **Cursor / VSCodium** | Search **Brass Lasers 4AM** in Extensions (Open VSX). All variants, plus **No Italics** versions, appear in the theme picker. |
 | **VS Code** | Install the `.vsix` from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest) (Marketplace listing coming). |
-| **Zed** | Run `zed: install dev extension` and pick the `zed/` folder (registry listing coming). |
+| **Zed** | Registry submission [#8369](https://github.com/zed-industries/extensions/pull/8369) is awaiting review; once merged, search **Brass Lasers** in `zed: extensions`. Until then, run `zed: install dev extension` and pick the `zed/` folder. |
 | **Neovim** | lazy.nvim: `{ "heyoub/brass-lasers", lazy = false, priority = 1000, config = function() vim.cmd.colorscheme("brass-lasers-4am") end }`. Set `vim.g.brass_lasers_no_italics = true` before loading to drop italics. |
 | **Helix** | Copy `helix/brass_lasers_<variant>.toml` into `~/.config/helix/themes/` and set `theme = "brass_lasers_4am"`. |
 | **Sublime Text** | Copy `sublime/Brass Lasers <Variant>.sublime-color-scheme` into your `Packages/User/` folder, then pick it in **UI: Select Color Scheme**. |
