@@ -147,9 +147,13 @@ Want the lasers to actually glow? **[Brass Lasers Neon Glow](https://open-vsx.or
 
 ## Wallpapers
 
-Synthwave sunsets in every set's colors, for desktop (4K) and phone, in [`media/wallpapers/`](media/wallpapers/).
+One for every stage of the day, for desktop (4K) and phone (composed for the tall frame, not cropped), in [`media/wallpapers/`](media/wallpapers/). Each world uses the same materials as the icons: enamel, resin glass and matte.
 
-![4AM wallpaper](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/4am-desktop.png)
+| | | |
+|---|---|---|
+| **4AM** · the original synthwave sunset ![4AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/4am.png) | **Atrium 5AM** · a brass-and-glass greenhouse over a lagoon ![Atrium 5AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/atrium.png) | **Daybreak** · porcelain ridges in morning mist ![Daybreak](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/daybreak.png) |
+| **Soundcheck** · the matte stage, house lights at half ![Soundcheck](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/soundcheck.png) | **Golden Hour** · palms over a glittering lagoon ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/golden-hour.png) | **Afterglow** · a coral sun behind plum hills ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/afterglow.png) |
+| **Liquid Metal** · a chrome ring over a mercury sea ![Liquid Metal](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/liquid-metal.png) | **Midnight** · moon, skyline, sodium streetlights ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/midnight.png) | **Strobe** · UV beams crossing in a warehouse ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/wallpapers/thumbs/strobe.png) |
 
 ---
 

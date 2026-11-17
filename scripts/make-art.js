@@ -11,6 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const { Resvg } = require("@resvg/resvg-js");
 const { loadPalettes } = require("./build.js");
+const { worldSvg } = require("./worlds.js");
 
 const ROOT = path.resolve(__dirname, "..");
 const SUN_4AM = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "palette", "4am.json"), "utf8")).colors;
@@ -168,9 +169,11 @@ function main() {
   const palettes = loadPalettes();
   for (const p of palettes) {
     png(swatchSvg(p), path.join(ROOT, "media/swatches", `${p.meta.slug}.png`));
-    png(wallpaperSvg(p, 3840, 2160), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-desktop.png`));
-    png(wallpaperSvg(p, 1290, 2796), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-phone.png`));
-    png(wallpaperSvg(p, 960, 600), path.join(ROOT, "media/wallpapers/thumbs", `${p.meta.slug}.png`));
+    // 4AM keeps the original synthwave composition; every other set gets its own world
+    const wall = (W, H) => worldSvg(p, W, H, SUN_4AM) || wallpaperSvg(p, W, H);
+    png(wall(3840, 2160), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-desktop.png`));
+    png(wall(1290, 2796), path.join(ROOT, "media/wallpapers", `${p.meta.slug}-phone.png`));
+    png(wall(960, 600), path.join(ROOT, "media/wallpapers/thumbs", `${p.meta.slug}.png`));
   }
   png(socialSvg(palettes), path.join(ROOT, "media/social-preview.png"));
 }

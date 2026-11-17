@@ -6,7 +6,7 @@ name: Art
 on:
   push:
     branches: [master]
-    paths: ["palette/**", "templates/**", "scripts/make-art.js", "scripts/make-previews.js", "media/screenshots/samples/**"]
+    paths: ["palette/**", "templates/**", "scripts/make-art.js", "scripts/worlds.js", "scripts/make-previews.js", "media/screenshots/samples/**"]
   workflow_dispatch:
 
 permissions:
