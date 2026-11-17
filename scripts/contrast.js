@@ -6,15 +6,13 @@
 //
 const fs = require("fs");
 const path = require("path");
-const { VARIANTS } = require("./build.js");
+const { loadPalettes } = require("./build.js");
 const { ratio, PAIRS, floorFor } = require("./contrast-lib.js");
 
 const report = process.argv.includes("--report");
 let failures = 0;
-for (const slug of VARIANTS) {
-  const file = path.join(__dirname, "..", "palette", `${slug}.json`);
-  if (!fs.existsSync(file)) continue;
-  const { meta, colors } = JSON.parse(fs.readFileSync(file, "utf8"));
+for (const { meta, colors } of loadPalettes()) {
+  const slug = meta.slug;
   const rows = [];
   for (const [fg, bg, baseMin, what, only] of PAIRS) {
     if (only && only !== meta.appearance) continue;

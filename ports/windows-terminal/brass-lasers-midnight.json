@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Midnight",
+  "background": "#0A0E18",
+  "foreground": "#C9E2FF",
+  "cursorColor": "#FF9F43",
+  "selectionBackground": "#366C9F",
+  "black": "#59637A",
+  "red": "#FF5C6C",
+  "green": "#C9E2FF",
+  "yellow": "#F5D76E",
+  "blue": "#6CB6FF",
+  "purple": "#FF9F43",
+  "cyan": "#6CB6FF",
+  "white": "#CFE1FE",
+  "brightBlack": "#7486A6",
+  "brightRed": "#FE8B90",
+  "brightGreen": "#F1F7FE",
+  "brightYellow": "#FFC98F",
+  "brightBlue": "#9ACCFF",
+  "brightPurple": "#FFB87A",
+  "brightCyan": "#8FDCFF",
+  "brightWhite": "#F0F5FE"
+}

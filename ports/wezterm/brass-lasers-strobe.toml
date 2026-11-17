@@ -1,39 +1,39 @@
 # Brass Lasers Strobe for WezTerm
-# High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+# High contrast. Pure black, UV magenta, electric cyan, laser yellow. Every syntax color at WCAG AAA (7:1).
 # Generated from palette/strobe.json. Do not edit by hand.
 
 [colors]
-background = "#020104"
-foreground = "#c0ff7b"
-cursor_bg = "#fe7aaf"
-cursor_border = "#fe7aaf"
-cursor_fg = "#020104"
-selection_bg = "#26003f"
-selection_fg = "#fcf7ed"
-scrollbar_thumb = "#13052e"
-split = "#120728"
-compose_cursor = "#ffd595"
-ansi = ["#5f5485", "#ff818e", "#c0ff7b", "#ffd595", "#97a7fe", "#fe7aaf", "#92fff1", "#e8e2f5"]
-brights = ["#a398d0", "#fea6b3", "#cafb8a", "#ffe4b3", "#c1c9ff", "#ffa9d1", "#90fff3", "#fffdfa"]
+background = "#020202"
+foreground = "#86ff6a"
+cursor_bg = "#ff5fdc"
+cursor_border = "#ff5fdc"
+cursor_fg = "#020202"
+selection_bg = "#743964"
+selection_fg = "#ffffff"
+scrollbar_thumb = "#1e1e27"
+split = "#1d1d24"
+compose_cursor = "#ffe24d"
+ansi = ["#5e5e67", "#fe6679", "#86ff6a", "#ffe24d", "#8ab4ff", "#ff5fdc", "#2ee8ff", "#eeeade"]
+brights = ["#b9b4cf", "#ff818c", "#e1ffda", "#ffd38a", "#aecbff", "#ff8de2", "#7cf7ff", "#f9f5ea"]
 
 [colors.tab_bar]
-background = "#030106"
+background = "#030304"
 
 [colors.tab_bar.active_tab]
-bg_color = "#040209"
-fg_color = "#ffd595"
+bg_color = "#050507"
+fg_color = "#ffe24d"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#030106"
-fg_color = "#9b8fc3"
+bg_color = "#030304"
+fg_color = "#7f7f89"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#0a041c"
-fg_color = "#fcf7ed"
+bg_color = "#111116"
+fg_color = "#ffffff"
 
 [colors.tab_bar.new_tab]
-bg_color = "#030106"
-fg_color = "#9b8fc3"
+bg_color = "#030304"
+fg_color = "#7f7f89"
 
 [metadata]
 name = "Brass Lasers Strobe"

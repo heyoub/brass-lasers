@@ -1,6 +1,6 @@
 # Brass Lasers Strobe for fzf. Source this from your shell rc.
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --color=bg:#020104,bg+:#1e0123,fg:#f5effe,fg+:#fcf7ed \
-  --color=hl:#ffd595,hl+:#ffe4b3,info:#c3abff,marker:#c0ff7b \
-  --color=prompt:#fe7aaf,spinner:#92fff1,pointer:#fe7aaf,header:#92fff1 \
-  --color=border:#120728,label:#ffd595,query:#fcf7ed,gutter:#020104"
+  --color=bg:#020202,bg+:#59324e,fg:#fdf8ec,fg+:#ffffff \
+  --color=hl:#ffe24d,hl+:#ffd38a,info:#c2a8ff,marker:#86ff6a \
+  --color=prompt:#ff5fdc,spinner:#2ee8ff,pointer:#ff5fdc,header:#2ee8ff \
+  --color=border:#1d1d24,label:#ffe24d,query:#ffffff,gutter:#020202"

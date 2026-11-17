@@ -1,39 +1,39 @@
 # Brass Lasers Afterglow for WezTerm
-# The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+# The sky right after the sun drops. Wine-plum dusk, coral clouds, mint grass, blue-hour light.
 # Generated from palette/afterglow.json. Do not edit by hand.
 
 [colors]
-background = "#0c0a10"
-foreground = "#beea92"
-cursor_bg = "#e476a1"
-cursor_border = "#e476a1"
-cursor_fg = "#0c0a10"
-selection_bg = "#4c2f66"
-selection_fg = "#e2dbcc"
-scrollbar_thumb = "#30284d"
-split = "#2f2846"
-compose_cursor = "#e5ba78"
-ansi = ["#554c75", "#e37c86", "#beea92", "#e5ba78", "#8e9bdf", "#e476a1", "#8adfd4", "#cdc5df"]
-brights = ["#7f76a9", "#e496a1", "#ceebad", "#e7cd9c", "#acb4e3", "#e598bc", "#abe4dd", "#f2ece1"]
+background = "#130e10"
+foreground = "#ffd6a5"
+cursor_bg = "#ff7a6b"
+cursor_border = "#ff7a6b"
+cursor_fg = "#130e10"
+selection_bg = "#9c5249"
+selection_fg = "#f4e4d6"
+scrollbar_thumb = "#472b38"
+split = "#432b36"
+compose_cursor = "#f29bb2"
+ansi = ["#735e67", "#ff5f6d", "#ffd6a5", "#f29bb2", "#8fb8ff", "#ff7a6b", "#8fb8ff", "#f3decb"]
+brights = ["#9a8089", "#fe8e91", "#fff3e5", "#f7d28c", "#b3cfff", "#ff9e8f", "#aecdff", "#fdf3eb"]
 
 [colors.tab_bar]
-background = "#0f0d15"
+background = "#171114"
 
 [colors.tab_bar.active_tab]
-bg_color = "#13101a"
-fg_color = "#e5ba78"
+bg_color = "#1d1418"
+fg_color = "#f29bb2"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#0f0d15"
-fg_color = "#7e74aa"
+bg_color = "#171114"
+fg_color = "#907983"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#211c34"
-fg_color = "#e2dbcc"
+bg_color = "#321f28"
+fg_color = "#f4e4d6"
 
 [colors.tab_bar.new_tab]
-bg_color = "#0f0d15"
-fg_color = "#7e74aa"
+bg_color = "#171114"
+fg_color = "#907983"
 
 [metadata]
 name = "Brass Lasers Afterglow"

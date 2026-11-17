@@ -2,11 +2,11 @@
   "name": "Brass Lasers Golden Hour",
   "author": "heyoub",
   "variables": {
-    "base": "#fef9f1", "fg": "#251e2e", "line": "#f4ebdd", "selection": "#b790e0",
-    "comment": "#6f6591", "doc": "#665c8a", "sub0": "#61577c", "brass": "#835a03",
-    "brassLight": "#876605", "peach": "#a26335", "pink": "#b20965", "pinkLight": "#b73d81",
-    "orchid": "#a85285", "cyan": "#01736a", "cyanLight": "#017973", "sunset": "#9b4801",
-    "uv": "#6f47b4", "lavender": "#7968a9", "red": "#b9003d", "lime": "#487102", "afterglow": "#477204"
+    "base": "#fcf4dc", "fg": "#1a3f43", "line": "#f5e8c3", "selection": "#31c5ba",
+    "comment": "#6b6b55", "doc": "#6a725d", "sub0": "#6e654c", "brass": "#9d5901",
+    "brassLight": "#a8502a", "peach": "#7a5fc0", "pink": "#c02e6d", "pinkLight": "#b8385f",
+    "orchid": "#99577a", "cyan": "#00757a", "cyanLight": "#037769", "sunset": "#ba4c0d",
+    "uv": "#6455b8", "lavender": "#246f94", "red": "#c9262c", "lime": "#1f3a3d", "afterglow": "#5a7a08"
   },
   "globals": {
     "background": "var(base)",
@@ -15,16 +15,16 @@
     "line_highlight": "var(line)",
     "selection": "var(selection)",
     "selection_border": "var(selection)",
-    "gutter_foreground": "#a8a2c1",
+    "gutter_foreground": "#c0ab6c",
     "gutter_foreground_highlight": "var(brass)",
     "find_highlight": "var(brass)",
-    "find_highlight_foreground": "#fff9f1",
+    "find_highlight_foreground": "#fef9f5",
     "brackets_foreground": "var(pink)",
     "bracket_contents_foreground": "var(pink)",
     "tags_foreground": "var(pink)",
-    "invisibles": "#c9c5e3",
-    "guide": "#dad7f1",
-    "active_guide": "#988ec7",
+    "invisibles": "#ddc98d",
+    "guide": "#ead9a6",
+    "active_guide": "#b49e5b",
     "accent": "var(pink)"
   },
   "rules": [

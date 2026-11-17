@@ -111,15 +111,16 @@ async function main() {
       const { tokens } = hl.codeToTokens(sample.code, { lang: sample.lang, theme: `brass-lasers-${p.meta.slug}` });
       const { svg } = cardSvg(p, tokens, sample, 980, 15);
       png(svg, path.join(ROOT, "media/previews", `${p.meta.slug}-${key}.png`));
-      if (key === "tsx") lineup.push({ p, tokens: tokens.slice(0, 22), sample: { ...sample, cur: 1 } });
+      if (key === "tsx") lineup.push({ p, tokens: tokens.slice(0, 18), sample: { ...sample, cur: 1 } });
     }
   }
 
-  // 2x2 lineup of the four sets
+  // lineup grid of every set, in set-time order
+  const cols = 4, rows = Math.ceil(lineup.length / cols);
   const cw = 900, gap = 28, cards = lineup.map(({ p, tokens, sample }) => cardSvg(p, tokens, sample, cw, 13));
-  const ch = Math.max(...cards.map((c) => c.H)), W = cw * 2 + gap * 3, H = ch * 2 + gap * 3;
-  const inner = cards.map((c, i) => `<g transform="translate(${gap + (i % 2) * (cw + gap)},${gap + Math.floor(i / 2) * (ch + gap)})">${c.svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "")}</g>`).join("");
-  png(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${palettes[0].colors.crust}"/>${inner}</svg>`, path.join(ROOT, "media/previews/lineup.png"));
+  const ch = Math.max(...cards.map((c) => c.H)), W = cw * cols + gap * (cols + 1), H = ch * rows + gap * (rows + 1);
+  const inner = cards.map((c, i) => `<g transform="translate(${gap + (i % cols) * (cw + gap)},${gap + Math.floor(i / cols) * (ch + gap)})">${c.svg.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "")}</g>`).join("");
+  png(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#08060c"/>${inner}</svg>`, path.join(ROOT, "media/previews/lineup.png"));
 }
 
 main().catch((e) => {

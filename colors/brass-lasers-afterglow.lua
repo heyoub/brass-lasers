@@ -1,5 +1,5 @@
 -- Brass Lasers Afterglow for Neovim
--- The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+-- The sky right after the sun drops. Wine-plum dusk, coral clouds, mint grass, blue-hour light.
 -- Generated from palette/afterglow.json by scripts/build.js. Do not edit by hand.
 -- https://github.com/heyoub/brass-lasers
 
@@ -10,16 +10,16 @@ vim.o.termguicolors = true
 vim.g.colors_name = "brass-lasers-afterglow"
 
 local c = {
-  crust = "#0c0a10", mantle = "#0f0d15", base = "#13101a", surface0 = "#191624", surface1 = "#201c2f",
-  line = "#1c172a", hover = "#211c34", border = "#2f2846", border2 = "#50467a", whitespace = "#352e4f",
-  selection = "#6b4190", selActive = "#3c2241", lineNr = "#51496e",
-  text = "#e2dbcc", fg = "#dad1e6", sub1 = "#ada3c8", sub0 = "#9187ad", comment = "#7f76a9",
-  doc = "#897fad", ghost = "#7e74aa", dim = "#685f8a",
-  brass = "#e5ba78", brassLight = "#e7cd9c", peach = "#e6bca1", pink = "#e476a1", pinkLight = "#e598bc",
-  orchid = "#d59dbb", cyan = "#8adfd4", cyanLight = "#abe4dd", sunset = "#e49e75", uv = "#b09de1",
-  lavender = "#c4bae5", red = "#e37c86", lime = "#beea92", afterglow = "#b2d98e", blue = "#8e9bdf",
-  errorBg = "#391d2a", warnBg = "#3a281d", infoBg = "#1d3239",
-  onPink = "#1a0410", onBrass = "#170f02",
+  crust = "#130e10", mantle = "#171114", base = "#1d1418", surface0 = "#251a1f", surface1 = "#2f1f26",
+  line = "#291b22", hover = "#321f28", border = "#432b36", border2 = "#6f475a", whitespace = "#4a313c",
+  selection = "#ca6559", selActive = "#7c4a43", lineNr = "#684b59",
+  text = "#f4e4d6", fg = "#f3ddca", sub1 = "#cab0bb", sub0 = "#ad95a0", comment = "#9a8089",
+  doc = "#ab9195", ghost = "#907983", dim = "#826d76",
+  brass = "#f29bb2", brassLight = "#f7d28c", peach = "#ffcfa6", pink = "#ff7a6b", pinkLight = "#ff9e8f",
+  orchid = "#e59aa7", cyan = "#8fb8ff", cyanLight = "#aecdff", sunset = "#ffb07a", uv = "#c3a6ff",
+  lavender = "#ead0dc", red = "#ff5f6d", lime = "#ffd6a5", afterglow = "#a8dcb4", blue = "#8fb8ff",
+  errorBg = "#3f1f20", warnBg = "#3d2310", infoBg = "#1c2a43",
+  onPink = "#1e0806", onBrass = "#1d070e",
 }
 local italic = true -- set vim.g.brass_lasers_no_italics = true to disable
 if vim.g.brass_lasers_no_italics then italic = false end
@@ -91,7 +91,7 @@ local groups = {
   DiagnosticVirtualTextWarn = { fg = c.sunset, bg = c.warnBg }, DiagnosticVirtualTextInfo = { fg = c.cyan, bg = c.infoBg },
   DiagnosticVirtualTextHint = { fg = c.uv, bg = c.surface0 }, DiagnosticUnderlineError = { undercurl = true, sp = c.red },
   DiagnosticUnderlineWarn = { undercurl = true, sp = c.sunset }, DiagnosticUnderlineInfo = { undercurl = true, sp = c.cyan },
-  DiagnosticUnderlineHint = { undercurl = true, sp = c.uv }, LspInlayHint = { fg = "#7f769f", bg = c.surface1 },
+  DiagnosticUnderlineHint = { undercurl = true, sp = c.uv }, LspInlayHint = { fg = "#9d8690", bg = c.surface1 },
   LspReferenceText = { bg = c.hover }, LspReferenceRead = { bg = c.hover }, LspReferenceWrite = { bg = c.selActive },
 
   -- diff and git
@@ -105,11 +105,11 @@ local groups = {
   NvimTreeFolderName = { fg = c.cyan }, NvimTreeRootFolder = { fg = c.brass, bold = true },
   NeoTreeRootName = { fg = c.brass, bold = true }, WhichKey = { fg = c.pink }, WhichKeyGroup = { fg = c.brass },
   WhichKeyDesc = { fg = c.text }, IndentBlanklineChar = { fg = c.whitespace }, IblIndent = { fg = c.whitespace },
-  IblScope = { fg = "#5f4e96" }, FlashLabel = { fg = c.onPink, bg = c.pink, bold = true },
+  IblScope = { fg = "#854f69" }, FlashLabel = { fg = c.onPink, bg = c.pink, bold = true },
 }
 for group, spec in pairs(groups) do hl(group, spec) end
 
 -- terminal
-local term = { "#554c75", "#e37c86", "#beea92", "#e5ba78", "#8e9bdf", "#e476a1", "#8adfd4", "#cdc5df",
-  "#7f76a9", "#e496a1", "#ceebad", "#e7cd9c", "#acb4e3", "#e598bc", "#abe4dd", "#f2ece1" }
+local term = { "#735e67", "#ff5f6d", "#ffd6a5", "#f29bb2", "#8fb8ff", "#ff7a6b", "#8fb8ff", "#f3decb",
+  "#9a8089", "#fe8e91", "#fff3e5", "#f7d28c", "#b3cfff", "#ff9e8f", "#aecdff", "#fdf3eb" }
 for i, color in ipairs(term) do vim.g["terminal_color_" .. (i - 1)] = color end

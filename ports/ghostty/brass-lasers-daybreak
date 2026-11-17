@@ -1,0 +1,25 @@
+# Brass Lasers Daybreak for Ghostty
+# First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.
+# Generated from palette/daybreak.json. Do not edit by hand.
+background = #ebecef
+foreground = #262a4a
+cursor-color = #be3278
+cursor-text = #ebecef
+selection-background = #b9c5fd
+selection-foreground = #262a4a
+palette = 0=#3f4466
+palette = 1=#c62828
+palette = 2=#262a4a
+palette = 3=#8a5a00
+palette = 4=#3a5fc8
+palette = 5=#be3278
+palette = 6=#2563a8
+palette = 7=#c8cbd9
+palette = 8=#636a82
+palette = 9=#ac0212
+palette = 10=#161937
+palette = 11=#a6541d
+palette = 12=#2849b1
+palette = 13=#b0306b
+palette = 14=#047583
+palette = 15=#dfe2f0

@@ -1,0 +1,41 @@
+# Brass Lasers Daybreak for WezTerm
+# First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.
+# Generated from palette/daybreak.json. Do not edit by hand.
+
+[colors]
+background = "#ebecef"
+foreground = "#262a4a"
+cursor_bg = "#be3278"
+cursor_border = "#be3278"
+cursor_fg = "#ebecef"
+selection_bg = "#b9c5fd"
+selection_fg = "#262a4a"
+scrollbar_thumb = "#cfd1df"
+split = "#d1d3de"
+compose_cursor = "#8a5a00"
+ansi = ["#3f4466", "#c62828", "#262a4a", "#8a5a00", "#3a5fc8", "#be3278", "#2563a8", "#c8cbd9"]
+brights = ["#636a82", "#ac0212", "#161937", "#a6541d", "#2849b1", "#b0306b", "#047583", "#dfe2f0"]
+
+[colors.tab_bar]
+background = "#f0f1f4"
+
+[colors.tab_bar.active_tab]
+bg_color = "#f5f6fb"
+fg_color = "#8a5a00"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#f0f1f4"
+fg_color = "#666d83"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#e1e3ed"
+fg_color = "#262a4a"
+
+[colors.tab_bar.new_tab]
+bg_color = "#f0f1f4"
+fg_color = "#666d83"
+
+[metadata]
+name = "Brass Lasers Daybreak"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

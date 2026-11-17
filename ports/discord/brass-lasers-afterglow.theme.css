@@ -2,45 +2,45 @@
  * @name Brass Lasers Afterglow
  * @author heyoub
  * @version 1.0.0
- * @description The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+ * @description The sky right after the sun drops. Wine-plum dusk, coral clouds, mint grass, blue-hour light.
  * @source https://github.com/heyoub/brass-lasers
  */
 /* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
    looks off, open an issue with a screenshot. Generated from palette/afterglow.json. */
 .theme-dark, .theme-light, :root {
-  --background-primary: #13101a;
-  --background-secondary: #0f0d15;
-  --background-secondary-alt: #0c0a10;
-  --background-tertiary: #0c0a10;
-  --background-accent: #30284d;
-  --background-floating: #201c2f;
-  --background-modifier-hover: #211c34;
-  --background-modifier-active: #3c2241;
-  --background-modifier-selected: #3c2241;
-  --background-modifier-accent: #2f2846;
-  --channeltextarea-background: #191624;
-  --text-normal: #dad1e6;
-  --text-muted: #9187ad;
-  --text-link: #8adfd4;
-  --header-primary: #e2dbcc;
-  --header-secondary: #ada3c8;
-  --interactive-normal: #ada3c8;
-  --interactive-hover: #e2dbcc;
-  --interactive-active: #e5ba78;
-  --interactive-muted: #554c75;
-  --channels-default: #7e74aa;
-  --brand-experiment: #e476a1;
-  --brand-500: #e476a1;
-  --mention-background: #e5ba7822;
-  --mention-foreground: #e5ba78;
-  --info-warning-foreground: #e49e75;
-  --info-danger-foreground: #e37c86;
-  --info-positive-foreground: #beea92;
-  --status-positive: #beea92;
-  --status-warning: #e5ba78;
-  --status-danger: #e37c86;
-  --scrollbar-auto-thumb: #30284d;
-  --scrollbar-thin-thumb: #30284d;
+  --background-primary: #1d1418;
+  --background-secondary: #171114;
+  --background-secondary-alt: #130e10;
+  --background-tertiary: #130e10;
+  --background-accent: #472b38;
+  --background-floating: #2f1f26;
+  --background-modifier-hover: #321f28;
+  --background-modifier-active: #7c4a43;
+  --background-modifier-selected: #7c4a43;
+  --background-modifier-accent: #432b36;
+  --channeltextarea-background: #251a1f;
+  --text-normal: #f3ddca;
+  --text-muted: #ad95a0;
+  --text-link: #8fb8ff;
+  --header-primary: #f4e4d6;
+  --header-secondary: #cab0bb;
+  --interactive-normal: #cab0bb;
+  --interactive-hover: #f4e4d6;
+  --interactive-active: #f29bb2;
+  --interactive-muted: #735e67;
+  --channels-default: #907983;
+  --brand-experiment: #ff7a6b;
+  --brand-500: #ff7a6b;
+  --mention-background: #f29bb222;
+  --mention-foreground: #f29bb2;
+  --info-warning-foreground: #ffb07a;
+  --info-danger-foreground: #ff5f6d;
+  --info-positive-foreground: #ffd6a5;
+  --status-positive: #ffd6a5;
+  --status-warning: #f29bb2;
+  --status-danger: #ff5f6d;
+  --scrollbar-auto-thumb: #472b38;
+  --scrollbar-thin-thumb: #472b38;
 }
-::selection { background: #6b419088; }
-code, pre { background: #0e0b13 !important; color: #b2d98e; }
+::selection { background: #ca655988; }
+code, pre { background: #160f12 !important; color: #a8dcb4; }

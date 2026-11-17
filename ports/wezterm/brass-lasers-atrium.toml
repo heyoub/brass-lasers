@@ -1,0 +1,41 @@
+# Brass Lasers Atrium 5AM for WezTerm
+# A biophilic sci-fi workspace. Wood-and-concrete observatory, subtropical plants, amber lamps, turquoise holograms.
+# Generated from palette/atrium.json. Do not edit by hand.
+
+[colors]
+background = "#101413"
+foreground = "#a6c6a0"
+cursor_bg = "#79c9c3"
+cursor_border = "#79c9c3"
+cursor_fg = "#101413"
+selection_bg = "#067f7a"
+selection_fg = "#e9e4d6"
+scrollbar_thumb = "#293331"
+split = "#293331"
+compose_cursor = "#e7ad70"
+ansi = ["#566b68", "#e07b7b", "#a6c6a0", "#e7ad70", "#8fb0e0", "#79c9c3", "#c4a2d8", "#ede5d1"]
+brights = ["#7e8f88", "#f89190", "#bcddb6", "#d18e99", "#a5c6f7", "#dba9b3", "#a6e2dc", "#f9f5ea"]
+
+[colors.tab_bar]
+background = "#121717"
+
+[colors.tab_bar.active_tab]
+bg_color = "#151c1b"
+fg_color = "#e7ad70"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#121717"
+fg_color = "#708683"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#1e2d2b"
+fg_color = "#e9e4d6"
+
+[colors.tab_bar.new_tab]
+bg_color = "#121717"
+fg_color = "#708683"
+
+[metadata]
+name = "Brass Lasers Atrium 5AM"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

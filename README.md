@@ -16,16 +16,23 @@ A family of neon synthwave color themes, built for that stretch of night when th
 
 ---
 
-## The lineup
+## The lineup: a day at the festival
 
-| Set | Vibe | |
-|---|---|---|
-| **4AM** | The original. Void purple, brass, hot-pink lasers. | ![4AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/4am.png) |
-| **Afterglow** | The comedown set. Same lot, lasers dimmed, softer saturation for long sessions. | ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/afterglow.png) |
-| **Strobe** | High contrast. Deeper void, brighter lasers, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
-| **Golden Hour** | The daytime set. Warm cream, burnished brass, deep-purple ink. A light theme. | ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/golden-hour.png) |
+Seven sets, one for every hour that matters. Each has its own room, its own light, its own reason to exist.
 
-Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean.
+| Time | Set | Room | |
+|---|---|---|---|
+| 5PM | **Golden Hour** · light | The Lagoon Stage. Solarized-subtropical daylight: papaya-cream paper, lagoon ink, hibiscus, palm and mango. | ![Golden Hour](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/golden-hour.png) |
+| 8PM | **Afterglow** | The Dusk Set. Wine-plum sky, coral clouds, mint grass, blue-hour light. | ![Afterglow](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/afterglow.png) |
+| 12AM | **Midnight** | The Night Market. Navy ink, moonlight text, sodium-orange streetlights. | ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/midnight.png) |
+| 2AM | **Strobe** · high contrast | The Warehouse. Pure black, UV magenta, electric cyan, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
+| 4AM | **4AM** · the original | The Main Stage. Void purple, brass, hot-pink lasers. | ![4AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/4am.png) |
+| 5AM | **Atrium 5AM** | The Greenhouse. A biophilic sci-fi workspace: forest-charcoal, lagoon holograms, moss, orchid displays, lantern light. Soft but legible. | ![Atrium 5AM](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/atrium.png) |
+| 6AM | **Daybreak** · light | The Sunrise Walk. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings. | ![Daybreak](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/daybreak.png) |
+
+Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's 14 themes in the picker.
+
+![All seven sets](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/previews/lineup.png)
 
 ---
 
@@ -45,7 +52,7 @@ Then `Ctrl+K Ctrl+T` (Mac: `Cmd+K Cmd+T`) and pick any **Brass Lasers** set. Let
 
 ### Follow the sun
 
-Let the editor swap between 4AM and Golden Hour with your OS light/dark mode:
+Let the editor swap between a night set and a day set with your OS light/dark mode (any pair works; Atrium 5AM + Daybreak is lovely too):
 
 ```json
 {
@@ -80,7 +87,7 @@ The theme looks good with anything. These make it look its best:
 
 ## Everywhere else
 
-The whole family is ported to **25+ apps**, all generated from one palette, so they always match.
+All seven sets are ported to **25+ apps**, all generated from one palette, so they always match.
 
 | | |
 |---|---|
@@ -121,7 +128,7 @@ Synthwave sunsets in every set's colors, for desktop (4K) and phone, in [`media/
 
 ---
 
-## Palette map (the useful part)
+## Palette map: 4AM (the useful part)
 
 | Role | 4AM hex | What it does |
 |------|-----|--------------|
@@ -142,19 +149,20 @@ Synthwave sunsets in every set's colors, for desktop (4K) and phone, in [`media/
 
 **Errors:** `#ff4d6d`, the friend who lost the rail and needs a water.
 
-The full palettes, every named color in every set, live in [`palette/`](palette/).
+Every set lives in [`palette/`](palette/). 4AM is hand-written in full; the other sets are short specs (a canvas, an ink, and one color per syntax role) that `scripts/expand.js` grows into the full ~70-color palette in OKLCH, keeping 4AM's proportions between surfaces, borders, selections and dim text.
 
 ---
 
 ## How it's built
 
 ```
-palette/*.json  ──►  templates/**  ──►  themes/, zed/, t3/, colors/, ports/
-   (colors)          (one per app)        (generated: never edit by hand)
+palette/*.json  ──►  scripts/expand.js  ──►  templates/**  ──►  themes/, zed/, t3/, icons/, colors/, ports/
+ (specs + 4AM)      (OKLCH + contrast      (one per app)        (generated: never edit by hand)
+                     repair)
 ```
 
 - `npm run build` renders every palette through every template.
-- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs per palette; Strobe holds syntax to AAA).
+- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs × 7 sets; Strobe holds syntax to AAA).
 - `npm run art` redraws swatches, wallpapers and the social card from the palettes.
 - Tag a release (`git tag v0.3.0 && git push origin v0.3.0`) and CI publishes to Open VSX, the VS Marketplace and GitHub Releases.
 

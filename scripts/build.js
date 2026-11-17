@@ -21,13 +21,16 @@ const ROOT = path.resolve(__dirname, "..");
 const rel = (...p) => path.join(ROOT, ...p);
 const read = (p) => fs.readFileSync(rel(p), "utf8");
 
-// Variant order = order in the theme picker and every listing.
-const VARIANTS = ["4am", "afterglow", "strobe", "golden-hour"];
+// The family is a day at the festival: listings follow the set times.
+const VARIANTS = ["golden-hour", "afterglow", "midnight", "strobe", "4am", "atrium", "daybreak"];
 
 function loadPalettes() {
+  const { expand } = require("./expand.js");
   return VARIANTS.map((slug) => {
     const p = JSON.parse(read(`palette/${slug}.json`));
     if (p.meta.slug !== slug) throw new Error(`palette/${slug}.json has meta.slug ${p.meta.slug}`);
+    // hand-written palettes carry "colors"; designed sets carry a short "spec" to expand
+    if (!p.colors) p.colors = expand(p.meta, p.spec);
     // computed meta, available to every template
     p.meta.jetbrainsParent = p.meta.appearance === "light" ? "Default" : "Darcula";
     return p;
@@ -134,7 +137,7 @@ function buildAll() {
   files["site/palettes.json"] = JSON.stringify(palettes.map((p) => ({ meta: p.meta, colors: p.colors })), null, 2) + "\n";
 
   // Neon Glow extension reads the palettes to know which colors are lasers
-  for (const slug of VARIANTS) files[`extensions/glow/palettes/${slug}.json`] = read(`palette/${slug}.json`).replace(/\r\n/g, "\n");
+  for (const p of palettes) files[`extensions/glow/palettes/${p.meta.slug}.json`] = JSON.stringify({ meta: p.meta, colors: p.colors }, null, 2) + "\n";
 
   // File icon theme
   Object.assign(files, require("./icons.js").iconFiles(palettes));

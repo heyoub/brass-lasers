@@ -3,8 +3,11 @@
     "name": "4AM",
     "slug": "4am",
     "appearance": "dark",
+    "time": "4AM",
+    "set": "The Main Stage",
     "tagline": "Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.",
-    "t3Description": "Void-purple lot lights, brass-gold accents, hot-pink lasers — funky EDM energy for T3 Code at 4AM. Still readable. Still slap."
+    "t3Description": "Void-purple lot lights, brass-gold accents, hot-pink lasers — funky EDM energy for T3 Code at 4AM. Still readable. Still slap.",
+    "jetbrainsParent": "Darcula"
   },
   "colors": {
     "brass": "#ffb627",
@@ -29,7 +32,6 @@
     "afterglow": "#a6e85f",
     "blue": "#7c8cff",
     "blueLight": "#a5b0ff",
-
     "crust": "#07050c",
     "codeBlock": "#09060f",
     "mantle": "#0a0711",
@@ -53,12 +55,10 @@
     "border2": "#4b3a80",
     "indentActive": "#5a3fa0",
     "selection": "#6a2c9a",
-
     "errorSurface": "#3a1226",
     "warningSurface": "#3a2010",
     "infoSurface": "#0d2e38",
     "accentSurface": "#33230a",
-
     "text": "#efe6d5",
     "textEditor": "#e6dcf5",
     "textSidebar": "#d9cfee",
@@ -76,7 +76,6 @@
     "black": "#000000",
     "ansiBlack": "#5f5485",
     "ansiWhite": "#d9cfee",
-
     "onPink": "#1a0410",
     "onBrass": "#170f02",
     "onSunset": "#1a0d02",

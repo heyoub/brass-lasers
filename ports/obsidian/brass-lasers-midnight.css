@@ -1,0 +1,66 @@
+/* Brass Lasers Midnight for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/midnight.json. */
+.theme-dark {
+  --background-primary: #0e1526;
+  --background-primary-alt: #131b30;
+  --background-secondary: #0c111d;
+  --background-secondary-alt: #0a0e18;
+  --background-modifier-border: #1d2f5c;
+  --background-modifier-hover: #142245;
+  --background-modifier-active-hover: #385a7d;
+  --background-modifier-form-field: #131b30;
+  --text-normal: #d1e2ff;
+  --text-muted: #909cb6;
+  --text-faint: #68728a;
+  --text-accent: #ff9f43;
+  --text-accent-hover: #ffb87a;
+  --text-on-accent: #1c0a00;
+  --text-selection: #3f8ad066;
+  --text-highlight-bg: #f5d76e44;
+  --interactive-accent: #ff9f43;
+  --interactive-accent-hover: #ffba81;
+  --interactive-normal: #16213f;
+  --interactive-hover: #142245;
+  --caret-color: #ff9f43;
+  --link-color: #6cb6ff;
+  --link-color-hover: #8fdcff;
+  --link-external-color: #6cb6ff;
+  --link-unresolved-color: #a7a6ff;
+  --h1-color: #f5d76e;
+  --h2-color: #f5d76e;
+  --h3-color: #ff7b72;
+  --h4-color: #ffb87a;
+  --h5-color: #a7a6ff;
+  --h6-color: #b5d3ff;
+  --bold-color: #ff7b72;
+  --italic-color: #ffb87a;
+  --blockquote-border-color: #a7a6ff;
+  --code-background: #0b101b;
+  --code-normal: #d1e2ff;
+  --code-comment: #7486a6;
+  --code-keyword: #ff9f43;
+  --code-string: #9be3a0;
+  --code-function: #6cb6ff;
+  --code-value: #ff7b72;
+  --code-property: #b5d3ff;
+  --code-tag: #ff9f43;
+  --code-operator: #9fb3d6;
+  --code-punctuation: #909cb6;
+  --code-important: #f5d76e;
+  --tag-color: #f5d76e;
+  --tag-background: #312807;
+  --graph-node: #a7a6ff;
+  --graph-node-focused: #ff9f43;
+  --graph-node-tag: #f5d76e;
+  --graph-line: #3c5186;
+  --color-red: #ff5c6c;
+  --color-orange: #ff7b72;
+  --color-yellow: #f5d76e;
+  --color-green: #c9e2ff;
+  --color-cyan: #6cb6ff;
+  --color-blue: #6cb6ff;
+  --color-purple: #a7a6ff;
+  --color-pink: #ff9f43;
+}

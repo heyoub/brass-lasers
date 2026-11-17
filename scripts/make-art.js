@@ -150,7 +150,7 @@ function wallpaperSvg(p, W, H, opts = {}) {
 
 // ---------- social preview (GitHub repo card, 1280x640) ----------
 function socialSvg(palettes) {
-  const p = palettes[0], c = p.colors, W = 1280, H = 640;
+  const p = palettes.find((v) => v.meta.slug === "4am"), c = p.colors, W = 1280, H = 640;
   const wall = wallpaperSvg(p, W, H, { sunX: 0.76 }).replace(/<text[^]*?<\/text>\n<\/svg>$/, "</svg>");
   const inner = wall.replace(/^<svg[^>]*>/, "").replace(/<\/svg>$/, "");
   const chips = palettes.map((v, i) => `<g transform="translate(${64 + i * 150},508)"><rect width="136" height="44" rx="22" fill="${v.colors.base}" stroke="${v.colors.brass}" stroke-width="2"/><text x="68" y="29" text-anchor="middle" font-family="${SANS}" font-size="17" font-weight="700" fill="${v.colors.brass}">${v.meta.name}</text></g>`).join("");

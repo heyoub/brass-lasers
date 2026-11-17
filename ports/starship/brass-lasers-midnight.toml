@@ -1,0 +1,26 @@
+# Brass Lasers Midnight palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_midnight"
+
+[palettes.brass_lasers_midnight]
+crust = "#0a0e18"
+mantle = "#0c111d"
+base = "#0e1526"
+surface = "#16213f"
+text = "#dfe7f4"
+subtext = "#909cb6"
+comment = "#7486a6"
+brass = "#f5d76e"
+brass_light = "#ffc98f"
+pink = "#ff9f43"
+pink_light = "#ffb87a"
+cyan = "#6cb6ff"
+lime = "#c9e2ff"
+afterglow = "#9be3a0"
+sunset = "#ff7b72"
+uv = "#a7a6ff"
+lavender = "#b5d3ff"
+red = "#ff5c6c"
+blue = "#6cb6ff"

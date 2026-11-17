@@ -1,61 +1,61 @@
 # Brass Lasers Strobe for Alacritty
-# High contrast. Deeper void, brighter lasers, every syntax color at WCAG AAA (7:1).
+# High contrast. Pure black, UV magenta, electric cyan, laser yellow. Every syntax color at WCAG AAA (7:1).
 # Generated from palette/strobe.json. Do not edit by hand.
 
 [colors.primary]
-background = "#020104"
-foreground = "#c0ff7b"
-dim_foreground = "#a398d0"
-bright_foreground = "#cafb8a"
+background = "#020202"
+foreground = "#86ff6a"
+dim_foreground = "#b9b4cf"
+bright_foreground = "#e1ffda"
 
 [colors.cursor]
-text = "#020104"
-cursor = "#fe7aaf"
+text = "#020202"
+cursor = "#ff5fdc"
 
 [colors.vi_mode_cursor]
-text = "#020104"
-cursor = "#ffd595"
+text = "#020202"
+cursor = "#ffe24d"
 
 [colors.selection]
-text = "#fcf7ed"
-background = "#26003f"
+text = "#ffffff"
+background = "#743964"
 
 [colors.search.matches]
-foreground = "#020104"
-background = "#ffd595"
+foreground = "#020202"
+background = "#ffe24d"
 
 [colors.search.focused_match]
-foreground = "#020104"
-background = "#fe7aaf"
+foreground = "#020202"
+background = "#ff5fdc"
 
 [colors.hints.start]
-foreground = "#020104"
-background = "#92fff1"
+foreground = "#020202"
+background = "#2ee8ff"
 
 [colors.hints.end]
-foreground = "#020104"
-background = "#c3abff"
+foreground = "#020202"
+background = "#c2a8ff"
 
 [colors.footer_bar]
-foreground = "#fcf7ed"
-background = "#090418"
+foreground = "#ffffff"
+background = "#101015"
 
 [colors.normal]
-black = "#5f5485"
-red = "#ff818e"
-green = "#c0ff7b"
-yellow = "#ffd595"
-blue = "#97a7fe"
-magenta = "#fe7aaf"
-cyan = "#92fff1"
-white = "#e8e2f5"
+black = "#5e5e67"
+red = "#fe6679"
+green = "#86ff6a"
+yellow = "#ffe24d"
+blue = "#8ab4ff"
+magenta = "#ff5fdc"
+cyan = "#2ee8ff"
+white = "#eeeade"
 
 [colors.bright]
-black = "#a398d0"
-red = "#fea6b3"
-green = "#cafb8a"
-yellow = "#ffe4b3"
-blue = "#c1c9ff"
-magenta = "#ffa9d1"
-cyan = "#90fff3"
-white = "#fffdfa"
+black = "#b9b4cf"
+red = "#ff818c"
+green = "#e1ffda"
+yellow = "#ffd38a"
+blue = "#aecbff"
+magenta = "#ff8de2"
+cyan = "#7cf7ff"
+white = "#f9f5ea"

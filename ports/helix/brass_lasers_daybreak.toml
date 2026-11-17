@@ -1,0 +1,118 @@
+# Brass Lasers Daybreak for Helix
+# First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.
+# Generated from palette/daybreak.json. Do not edit by hand.
+
+"attribute" = { fg = "uv", modifiers = ["italic"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"constant" = "sunset"
+"constant.character.escape" = "cyan"
+"constant.numeric" = "sunset"
+"constructor" = "brass"
+"function" = "cyan"
+"function.macro" = { fg = "cyan_light", modifiers = ["bold"] }
+"keyword" = "pink"
+"keyword.control" = { fg = "pink", modifiers = ["italic"] }
+"keyword.storage" = "pink"
+"label" = { fg = "sunset", modifiers = ["italic"] }
+"namespace" = "uv"
+"operator" = "orchid"
+"punctuation" = "sub0"
+"special" = "cyan"
+"string" = "afterglow"
+"string.regexp" = "cyan"
+"string.special.url" = { fg = "cyan", modifiers = ["underlined"] }
+"tag" = "pink"
+"type" = "brass"
+"type.builtin" = "brass"
+"type.parameter" = { fg = "peach", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "pink_light", modifiers = ["italic"] }
+"variable.parameter" = { fg = "brass_light", modifiers = ["italic"] }
+"variable.other.member" = "lavender"
+
+"markup.heading" = { fg = "brass", modifiers = ["bold"] }
+"markup.bold" = { fg = "sunset", modifiers = ["bold"] }
+"markup.italic" = { fg = "pink_light", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.quote" = "uv"
+"markup.raw" = "afterglow"
+"markup.list" = "uv"
+
+"diff.plus" = "lime"
+"diff.minus" = "red"
+"diff.delta" = "brass"
+
+"ui.background" = { bg = "base" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "text", bg = "sel_active" }
+"ui.cursor" = { fg = "base", bg = "pink" }
+"ui.cursor.primary" = { fg = "base", bg = "pink" }
+"ui.cursor.match" = { fg = "pink", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "brass", modifiers = ["bold"] }
+"ui.statusline" = { fg = "sub1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "mantle" }
+"ui.statusline.normal" = { fg = "on_brass", bg = "brass", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "on_pink", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "crust", bg = "cyan", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "surface1" }
+"ui.window" = "border"
+"ui.help" = { fg = "text", bg = "surface1" }
+"ui.menu" = { fg = "text", bg = "surface1" }
+"ui.menu.selected" = { fg = "text", bg = "sel_active", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "whitespace"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.inlay-hint" = { fg = "inlay", bg = "surface1" }
+"ui.bufferline" = { fg = "ghost", bg = "mantle" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold"] }
+
+"error" = "red"
+"warning" = "sunset"
+"info" = "cyan"
+"hint" = "uv"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "sunset", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "uv", style = "curl" } }
+
+[palette]
+crust = "#ebecef"
+mantle = "#f0f1f4"
+base = "#f5f6fb"
+surface0 = "#edeef4"
+surface1 = "#e3e5ed"
+line = "#e9eaf2"
+border = "#d1d3de"
+whitespace = "#c9ccd8"
+selection = "#99a9fb"
+sel_active = "#c9d3fe"
+line_nr = "#acaeba"
+text = "#262a4a"
+fg = "#292d53"
+sub1 = "#484d74"
+sub0 = "#5e6489"
+comment = "#636a82"
+doc = "#5e6483"
+inlay = "#6c7398"
+ghost = "#666d83"
+brass = "#8a5a00"
+brass_light = "#a6541d"
+peach = "#7a4fb0"
+pink = "#be3278"
+pink_light = "#b0306b"
+orchid = "#8c5a85"
+cyan = "#2563a8"
+cyan_light = "#047583"
+sunset = "#c2410c"
+uv = "#5b4fc4"
+lavender = "#2e6f8e"
+red = "#c62828"
+lime = "#262a4a"
+afterglow = "#2f7d5b"
+on_pink = "#fff8fa"
+on_brass = "#fef9f3"

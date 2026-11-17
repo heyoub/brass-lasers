@@ -1,6 +1,6 @@
 # Brass Lasers Afterglow for fzf. Source this from your shell rc.
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --color=bg:#0c0a10,bg+:#3c2241,fg:#dad1e6,fg+:#e2dbcc \
-  --color=hl:#e5ba78,hl+:#e7cd9c,info:#b09de1,marker:#beea92 \
-  --color=prompt:#e476a1,spinner:#8adfd4,pointer:#e476a1,header:#8adfd4 \
-  --color=border:#2f2846,label:#e5ba78,query:#e2dbcc,gutter:#0c0a10"
+  --color=bg:#130e10,bg+:#7c4a43,fg:#f3ddca,fg+:#f4e4d6 \
+  --color=hl:#f29bb2,hl+:#f7d28c,info:#c3a6ff,marker:#ffd6a5 \
+  --color=prompt:#ff7a6b,spinner:#8fb8ff,pointer:#ff7a6b,header:#8fb8ff \
+  --color=border:#432b36,label:#f29bb2,query:#f4e4d6,gutter:#130e10"

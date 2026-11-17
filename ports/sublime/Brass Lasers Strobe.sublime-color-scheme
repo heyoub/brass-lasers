@@ -2,11 +2,11 @@
   "name": "Brass Lasers Strobe",
   "author": "heyoub",
   "variables": {
-    "base": "#040209", "fg": "#f5effe", "line": "#070314", "selection": "#38015a",
-    "comment": "#a398d0", "doc": "#b3a7e0", "sub0": "#bbafde", "brass": "#ffd595",
-    "brassLight": "#ffe4b3", "peach": "#fed9c1", "pink": "#fe7aaf", "pinkLight": "#ffa9d1",
-    "orchid": "#ffa3d6", "cyan": "#92fff1", "cyanLight": "#90fff3", "sunset": "#feaf81",
-    "uv": "#c3abff", "lavender": "#ded4ff", "red": "#ff818e", "lime": "#c0ff7b", "afterglow": "#beff7d"
+    "base": "#050507", "fg": "#fdf8ec", "line": "#0c0c10", "selection": "#9c4c87",
+    "comment": "#b9b4cf", "doc": "#c5c1d8", "sub0": "#a2a2ad", "brass": "#ffe24d",
+    "brassLight": "#ffd38a", "peach": "#ffb8f0", "pink": "#ff5fdc", "pinkLight": "#ff8de2",
+    "orchid": "#ff9ad6", "cyan": "#2ee8ff", "cyanLight": "#7cf7ff", "sunset": "#ffa24d",
+    "uv": "#c2a8ff", "lavender": "#a8f2ff", "red": "#fe6679", "lime": "#86ff6a", "afterglow": "#86ff6a"
   },
   "globals": {
     "background": "var(base)",
@@ -15,16 +15,16 @@
     "line_highlight": "var(line)",
     "selection": "var(selection)",
     "selection_border": "var(selection)",
-    "gutter_foreground": "#3f345c",
+    "gutter_foreground": "#3d3d46",
     "gutter_foreground_highlight": "var(brass)",
     "find_highlight": "var(brass)",
-    "find_highlight_foreground": "#040200",
+    "find_highlight_foreground": "#140f00",
     "brackets_foreground": "var(pink)",
     "bracket_contents_foreground": "var(pink)",
     "tags_foreground": "var(pink)",
-    "invisibles": "#150a2e",
-    "guide": "#0d0522",
-    "active_guide": "#2e0e64",
+    "invisibles": "#23232b",
+    "guide": "#17171d",
+    "active_guide": "#48485a",
     "accent": "var(pink)"
   },
   "rules": [

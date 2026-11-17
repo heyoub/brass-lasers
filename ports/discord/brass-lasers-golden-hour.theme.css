@@ -2,45 +2,45 @@
  * @name Brass Lasers Golden Hour
  * @author heyoub
  * @version 1.0.0
- * @description The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+ * @description Solarized-subtropical daylight. Papaya-cream paper, deep lagoon ink, hibiscus, palm and mango.
  * @source https://github.com/heyoub/brass-lasers
  */
 /* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
    looks off, open an issue with a screenshot. Generated from palette/golden-hour.json. */
 .theme-dark, .theme-light, :root {
-  --background-primary: #fef9f1;
-  --background-secondary: #fcf2e4;
-  --background-secondary-alt: #f6edde;
-  --background-tertiary: #f6edde;
-  --background-accent: #d0cbed;
-  --background-floating: #eee5d6;
-  --background-modifier-hover: #ece3d4;
-  --background-modifier-active: #e8cdec;
-  --background-modifier-selected: #e8cdec;
-  --background-modifier-accent: #d2cdea;
-  --channeltextarea-background: #f8efe0;
-  --text-normal: #251e2e;
-  --text-muted: #61577c;
-  --text-link: #01736a;
-  --header-primary: #231d11;
-  --header-secondary: #483e5f;
-  --interactive-normal: #483e5f;
-  --interactive-hover: #231d11;
-  --interactive-active: #835a03;
-  --interactive-muted: #9b91c1;
-  --channels-default: #73698c;
-  --brand-experiment: #b20965;
-  --brand-500: #b20965;
-  --mention-background: #835a0322;
-  --mention-foreground: #835a03;
-  --info-warning-foreground: #9b4801;
-  --info-danger-foreground: #b9003d;
-  --info-positive-foreground: #487102;
-  --status-positive: #487102;
-  --status-warning: #835a03;
-  --status-danger: #b9003d;
-  --scrollbar-auto-thumb: #d0cbed;
-  --scrollbar-thin-thumb: #d0cbed;
+  --background-primary: #fcf4dc;
+  --background-secondary: #f4efdd;
+  --background-secondary-alt: #efeadc;
+  --background-tertiary: #efeadc;
+  --background-accent: #e5cf8b;
+  --background-floating: #f0e3bb;
+  --background-modifier-hover: #f1e1b3;
+  --background-modifier-active: #a6e1da;
+  --background-modifier-selected: #a6e1da;
+  --background-modifier-accent: #e4d198;
+  --channeltextarea-background: #f5eccf;
+  --text-normal: #1a3f43;
+  --text-muted: #6e654c;
+  --text-link: #00757a;
+  --header-primary: #1f3a3d;
+  --header-secondary: #5f573d;
+  --interactive-normal: #5f573d;
+  --interactive-hover: #1f3a3d;
+  --interactive-active: #9d5901;
+  --interactive-muted: #a79f86;
+  --channels-default: #726c53;
+  --brand-experiment: #c02e6d;
+  --brand-500: #c02e6d;
+  --mention-background: #9d590122;
+  --mention-foreground: #9d5901;
+  --info-warning-foreground: #ba4c0d;
+  --info-danger-foreground: #c9262c;
+  --info-positive-foreground: #1f3a3d;
+  --status-positive: #1f3a3d;
+  --status-warning: #9d5901;
+  --status-danger: #c9262c;
+  --scrollbar-auto-thumb: #e5cf8b;
+  --scrollbar-thin-thumb: #e5cf8b;
 }
-::selection { background: #b790e088; }
-code, pre { background: #f9f0e1 !important; color: #477204; }
+::selection { background: #31c5ba88; }
+code, pre { background: #f2eddc !important; color: #5a7a08; }

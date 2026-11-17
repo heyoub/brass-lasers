@@ -1,0 +1,118 @@
+# Brass Lasers Midnight for Helix
+# Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.
+# Generated from palette/midnight.json. Do not edit by hand.
+
+"attribute" = { fg = "uv", modifiers = ["italic"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"constant" = "sunset"
+"constant.character.escape" = "cyan"
+"constant.numeric" = "sunset"
+"constructor" = "brass"
+"function" = "cyan"
+"function.macro" = { fg = "cyan_light", modifiers = ["bold"] }
+"keyword" = "pink"
+"keyword.control" = { fg = "pink", modifiers = ["italic"] }
+"keyword.storage" = "pink"
+"label" = { fg = "sunset", modifiers = ["italic"] }
+"namespace" = "uv"
+"operator" = "orchid"
+"punctuation" = "sub0"
+"special" = "cyan"
+"string" = "afterglow"
+"string.regexp" = "cyan"
+"string.special.url" = { fg = "cyan", modifiers = ["underlined"] }
+"tag" = "pink"
+"type" = "brass"
+"type.builtin" = "brass"
+"type.parameter" = { fg = "peach", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "pink_light", modifiers = ["italic"] }
+"variable.parameter" = { fg = "brass_light", modifiers = ["italic"] }
+"variable.other.member" = "lavender"
+
+"markup.heading" = { fg = "brass", modifiers = ["bold"] }
+"markup.bold" = { fg = "sunset", modifiers = ["bold"] }
+"markup.italic" = { fg = "pink_light", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.quote" = "uv"
+"markup.raw" = "afterglow"
+"markup.list" = "uv"
+
+"diff.plus" = "lime"
+"diff.minus" = "red"
+"diff.delta" = "brass"
+
+"ui.background" = { bg = "base" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "text", bg = "sel_active" }
+"ui.cursor" = { fg = "base", bg = "pink" }
+"ui.cursor.primary" = { fg = "base", bg = "pink" }
+"ui.cursor.match" = { fg = "pink", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "brass", modifiers = ["bold"] }
+"ui.statusline" = { fg = "sub1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "mantle" }
+"ui.statusline.normal" = { fg = "on_brass", bg = "brass", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "on_pink", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "crust", bg = "cyan", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "surface1" }
+"ui.window" = "border"
+"ui.help" = { fg = "text", bg = "surface1" }
+"ui.menu" = { fg = "text", bg = "surface1" }
+"ui.menu.selected" = { fg = "text", bg = "sel_active", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "whitespace"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.inlay-hint" = { fg = "inlay", bg = "surface1" }
+"ui.bufferline" = { fg = "ghost", bg = "mantle" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold"] }
+
+"error" = "red"
+"warning" = "sunset"
+"info" = "cyan"
+"hint" = "uv"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "sunset", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "uv", style = "curl" } }
+
+[palette]
+crust = "#0a0e18"
+mantle = "#0c111d"
+base = "#0e1526"
+surface0 = "#131b30"
+surface1 = "#16213f"
+line = "#121d39"
+border = "#1d2f5c"
+whitespace = "#223566"
+selection = "#3f8ad0"
+sel_active = "#385a7d"
+line_nr = "#3c5185"
+text = "#dfe7f4"
+fg = "#d1e2ff"
+sub1 = "#aab7d4"
+sub0 = "#909cb6"
+comment = "#7486a6"
+doc = "#8697b4"
+inlay = "#818ca5"
+ghost = "#747f98"
+brass = "#f5d76e"
+brass_light = "#ffc98f"
+peach = "#f0b8ff"
+pink = "#ff9f43"
+pink_light = "#ffb87a"
+orchid = "#9fb3d6"
+cyan = "#6cb6ff"
+cyan_light = "#8fdcff"
+sunset = "#ff7b72"
+uv = "#a7a6ff"
+lavender = "#b5d3ff"
+red = "#ff5c6c"
+lime = "#c9e2ff"
+afterglow = "#9be3a0"
+on_pink = "#1c0a00"
+on_brass = "#140f00"

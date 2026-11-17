@@ -1,0 +1,61 @@
+# Brass Lasers Daybreak for Alacritty
+# First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.
+# Generated from palette/daybreak.json. Do not edit by hand.
+
+[colors.primary]
+background = "#ebecef"
+foreground = "#262a4a"
+dim_foreground = "#636a82"
+bright_foreground = "#161937"
+
+[colors.cursor]
+text = "#ebecef"
+cursor = "#be3278"
+
+[colors.vi_mode_cursor]
+text = "#ebecef"
+cursor = "#8a5a00"
+
+[colors.selection]
+text = "#262a4a"
+background = "#b9c5fd"
+
+[colors.search.matches]
+foreground = "#ebecef"
+background = "#8a5a00"
+
+[colors.search.focused_match]
+foreground = "#ebecef"
+background = "#be3278"
+
+[colors.hints.start]
+foreground = "#ebecef"
+background = "#2563a8"
+
+[colors.hints.end]
+foreground = "#ebecef"
+background = "#5b4fc4"
+
+[colors.footer_bar]
+foreground = "#262a4a"
+background = "#e3e5ed"
+
+[colors.normal]
+black = "#3f4466"
+red = "#c62828"
+green = "#262a4a"
+yellow = "#8a5a00"
+blue = "#3a5fc8"
+magenta = "#be3278"
+cyan = "#2563a8"
+white = "#c8cbd9"
+
+[colors.bright]
+black = "#636a82"
+red = "#ac0212"
+green = "#161937"
+yellow = "#a6541d"
+blue = "#2849b1"
+magenta = "#b0306b"
+cyan = "#047583"
+white = "#dfe2f0"

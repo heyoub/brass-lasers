@@ -1,25 +1,25 @@
 # Brass Lasers Afterglow for Ghostty
-# The comedown set. Same lot, lasers dimmed, softer saturation for long sessions.
+# The sky right after the sun drops. Wine-plum dusk, coral clouds, mint grass, blue-hour light.
 # Generated from palette/afterglow.json. Do not edit by hand.
-background = #0c0a10
-foreground = #beea92
-cursor-color = #e476a1
-cursor-text = #0c0a10
-selection-background = #4c2f66
-selection-foreground = #e2dbcc
-palette = 0=#554c75
-palette = 1=#e37c86
-palette = 2=#beea92
-palette = 3=#e5ba78
-palette = 4=#8e9bdf
-palette = 5=#e476a1
-palette = 6=#8adfd4
-palette = 7=#cdc5df
-palette = 8=#7f76a9
-palette = 9=#e496a1
-palette = 10=#ceebad
-palette = 11=#e7cd9c
-palette = 12=#acb4e3
-palette = 13=#e598bc
-palette = 14=#abe4dd
-palette = 15=#f2ece1
+background = #130e10
+foreground = #ffd6a5
+cursor-color = #ff7a6b
+cursor-text = #130e10
+selection-background = #9c5249
+selection-foreground = #f4e4d6
+palette = 0=#735e67
+palette = 1=#ff5f6d
+palette = 2=#ffd6a5
+palette = 3=#f29bb2
+palette = 4=#8fb8ff
+palette = 5=#ff7a6b
+palette = 6=#8fb8ff
+palette = 7=#f3decb
+palette = 8=#9a8089
+palette = 9=#fe8e91
+palette = 10=#fff3e5
+palette = 11=#f7d28c
+palette = 12=#b3cfff
+palette = 13=#ff9e8f
+palette = 14=#aecdff
+palette = 15=#fdf3eb

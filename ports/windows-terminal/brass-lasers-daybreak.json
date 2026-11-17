@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Daybreak",
+  "background": "#EBECEF",
+  "foreground": "#262A4A",
+  "cursorColor": "#BE3278",
+  "selectionBackground": "#B9C5FD",
+  "black": "#3F4466",
+  "red": "#C62828",
+  "green": "#262A4A",
+  "yellow": "#8A5A00",
+  "blue": "#3A5FC8",
+  "purple": "#BE3278",
+  "cyan": "#2563A8",
+  "white": "#C8CBD9",
+  "brightBlack": "#636A82",
+  "brightRed": "#AC0212",
+  "brightGreen": "#161937",
+  "brightYellow": "#A6541D",
+  "brightBlue": "#2849B1",
+  "brightPurple": "#B0306B",
+  "brightCyan": "#047583",
+  "brightWhite": "#DFE2F0"
+}

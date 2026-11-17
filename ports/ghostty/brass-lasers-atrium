@@ -1,0 +1,25 @@
+# Brass Lasers Atrium 5AM for Ghostty
+# A biophilic sci-fi workspace. Wood-and-concrete observatory, subtropical plants, amber lamps, turquoise holograms.
+# Generated from palette/atrium.json. Do not edit by hand.
+background = #101413
+foreground = #a6c6a0
+cursor-color = #79c9c3
+cursor-text = #101413
+selection-background = #067f7a
+selection-foreground = #e9e4d6
+palette = 0=#566b68
+palette = 1=#e07b7b
+palette = 2=#a6c6a0
+palette = 3=#e7ad70
+palette = 4=#8fb0e0
+palette = 5=#79c9c3
+palette = 6=#c4a2d8
+palette = 7=#ede5d1
+palette = 8=#7e8f88
+palette = 9=#f89190
+palette = 10=#bcddb6
+palette = 11=#d18e99
+palette = 12=#a5c6f7
+palette = 13=#dba9b3
+palette = 14=#a6e2dc
+palette = 15=#f9f5ea

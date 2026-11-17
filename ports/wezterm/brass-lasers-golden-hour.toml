@@ -1,39 +1,39 @@
 # Brass Lasers Golden Hour for WezTerm
-# The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+# Solarized-subtropical daylight. Papaya-cream paper, deep lagoon ink, hibiscus, palm and mango.
 # Generated from palette/golden-hour.json. Do not edit by hand.
 
 [colors]
-background = "#f6edde"
-foreground = "#487102"
-cursor_bg = "#b20965"
-cursor_border = "#b20965"
-cursor_fg = "#f6edde"
-selection_bg = "#e0cff2"
-selection_fg = "#231d11"
-scrollbar_thumb = "#d0cbed"
-split = "#d2cdea"
-compose_cursor = "#835a03"
-ansi = ["#2f2945", "#b9003d", "#487102", "#835a03", "#4b54c1", "#b20965", "#01736a", "#d4cde2"]
-brights = ["#6f6591", "#ba3e5d", "#547601", "#876605", "#5e66a8", "#b73d81", "#017973", "#efe7d9"]
+background = "#efeadc"
+foreground = "#1f3a3d"
+cursor_bg = "#c02e6d"
+cursor_border = "#c02e6d"
+cursor_fg = "#efeadc"
+selection_bg = "#87d8cf"
+selection_fg = "#1f3a3d"
+scrollbar_thumb = "#e5cf8b"
+split = "#e4d198"
+compose_cursor = "#9d5901"
+ansi = ["#395558", "#c9262c", "#1f3a3d", "#9d5901", "#2867b2", "#c02e6d", "#00757a", "#cec9bb"]
+brights = ["#6b6b55", "#b6001c", "#0d282b", "#a8502a", "#0f529b", "#b8385f", "#037769", "#e5e0d2"]
 
 [colors.tab_bar]
-background = "#fcf2e4"
+background = "#f4efdd"
 
 [colors.tab_bar.active_tab]
-bg_color = "#fef9f1"
-fg_color = "#835a03"
+bg_color = "#fcf4dc"
+fg_color = "#9d5901"
 
 [colors.tab_bar.inactive_tab]
-bg_color = "#fcf2e4"
-fg_color = "#73698c"
+bg_color = "#f4efdd"
+fg_color = "#726c53"
 
 [colors.tab_bar.inactive_tab_hover]
-bg_color = "#ece3d4"
-fg_color = "#231d11"
+bg_color = "#f1e1b3"
+fg_color = "#1f3a3d"
 
 [colors.tab_bar.new_tab]
-bg_color = "#fcf2e4"
-fg_color = "#73698c"
+bg_color = "#f4efdd"
+fg_color = "#726c53"
 
 [metadata]
 name = "Brass Lasers Golden Hour"

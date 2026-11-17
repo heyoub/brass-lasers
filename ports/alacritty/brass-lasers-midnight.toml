@@ -1,0 +1,61 @@
+# Brass Lasers Midnight for Alacritty
+# Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.
+# Generated from palette/midnight.json. Do not edit by hand.
+
+[colors.primary]
+background = "#0a0e18"
+foreground = "#c9e2ff"
+dim_foreground = "#7486a6"
+bright_foreground = "#f1f7fe"
+
+[colors.cursor]
+text = "#0a0e18"
+cursor = "#ff9f43"
+
+[colors.vi_mode_cursor]
+text = "#0a0e18"
+cursor = "#f5d76e"
+
+[colors.selection]
+text = "#dfe7f4"
+background = "#366c9f"
+
+[colors.search.matches]
+foreground = "#0a0e18"
+background = "#f5d76e"
+
+[colors.search.focused_match]
+foreground = "#0a0e18"
+background = "#ff9f43"
+
+[colors.hints.start]
+foreground = "#0a0e18"
+background = "#6cb6ff"
+
+[colors.hints.end]
+foreground = "#0a0e18"
+background = "#a7a6ff"
+
+[colors.footer_bar]
+foreground = "#dfe7f4"
+background = "#16213f"
+
+[colors.normal]
+black = "#59637a"
+red = "#ff5c6c"
+green = "#c9e2ff"
+yellow = "#f5d76e"
+blue = "#6cb6ff"
+magenta = "#ff9f43"
+cyan = "#6cb6ff"
+white = "#cfe1fe"
+
+[colors.bright]
+black = "#7486a6"
+red = "#fe8b90"
+green = "#f1f7fe"
+yellow = "#ffc98f"
+blue = "#9accff"
+magenta = "#ffb87a"
+cyan = "#8fdcff"
+white = "#f0f5fe"

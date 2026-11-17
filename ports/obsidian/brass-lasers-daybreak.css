@@ -1,0 +1,66 @@
+/* Brass Lasers Daybreak for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to light.
+   Generated from palette/daybreak.json. */
+.theme-light {
+  --background-primary: #f5f6fb;
+  --background-primary-alt: #edeef4;
+  --background-secondary: #f0f1f4;
+  --background-secondary-alt: #ebecef;
+  --background-modifier-border: #d1d3de;
+  --background-modifier-hover: #e1e3ed;
+  --background-modifier-active-hover: #c9d3fe;
+  --background-modifier-form-field: #edeef4;
+  --text-normal: #292d53;
+  --text-muted: #5e6489;
+  --text-faint: #8185aa;
+  --text-accent: #be3278;
+  --text-accent-hover: #b0306b;
+  --text-on-accent: #fff8fa;
+  --text-selection: #99a9fb66;
+  --text-highlight-bg: #8a5a0044;
+  --interactive-accent: #be3278;
+  --interactive-accent-hover: #af206a;
+  --interactive-normal: #e3e5ed;
+  --interactive-hover: #e1e3ed;
+  --caret-color: #be3278;
+  --link-color: #2563a8;
+  --link-color-hover: #047583;
+  --link-external-color: #2563a8;
+  --link-unresolved-color: #5b4fc4;
+  --h1-color: #8a5a00;
+  --h2-color: #8a5a00;
+  --h3-color: #c2410c;
+  --h4-color: #b0306b;
+  --h5-color: #5b4fc4;
+  --h6-color: #2e6f8e;
+  --bold-color: #c2410c;
+  --italic-color: #b0306b;
+  --blockquote-border-color: #5b4fc4;
+  --code-background: #eeeff2;
+  --code-normal: #292d53;
+  --code-comment: #636a82;
+  --code-keyword: #be3278;
+  --code-string: #2f7d5b;
+  --code-function: #2563a8;
+  --code-value: #c2410c;
+  --code-property: #2e6f8e;
+  --code-tag: #be3278;
+  --code-operator: #8c5a85;
+  --code-punctuation: #5e6489;
+  --code-important: #8a5a00;
+  --tag-color: #8a5a00;
+  --tag-background: #f9e2c6;
+  --graph-node: #5b4fc4;
+  --graph-node-focused: #be3278;
+  --graph-node-tag: #8a5a00;
+  --graph-line: #aaaebf;
+  --color-red: #c62828;
+  --color-orange: #c2410c;
+  --color-yellow: #8a5a00;
+  --color-green: #262a4a;
+  --color-cyan: #2563a8;
+  --color-blue: #3a5fc8;
+  --color-purple: #5b4fc4;
+  --color-pink: #be3278;
+}

@@ -1,0 +1,118 @@
+# Brass Lasers Atrium 5AM for Helix
+# A biophilic sci-fi workspace. Wood-and-concrete observatory, subtropical plants, amber lamps, turquoise holograms.
+# Generated from palette/atrium.json. Do not edit by hand.
+
+"attribute" = { fg = "uv", modifiers = ["italic"] }
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "doc", modifiers = ["italic"] }
+"constant" = "sunset"
+"constant.character.escape" = "cyan"
+"constant.numeric" = "sunset"
+"constructor" = "brass"
+"function" = "cyan"
+"function.macro" = { fg = "cyan_light", modifiers = ["bold"] }
+"keyword" = "pink"
+"keyword.control" = { fg = "pink", modifiers = ["italic"] }
+"keyword.storage" = "pink"
+"label" = { fg = "sunset", modifiers = ["italic"] }
+"namespace" = "uv"
+"operator" = "orchid"
+"punctuation" = "sub0"
+"special" = "cyan"
+"string" = "afterglow"
+"string.regexp" = "cyan"
+"string.special.url" = { fg = "cyan", modifiers = ["underlined"] }
+"tag" = "pink"
+"type" = "brass"
+"type.builtin" = "brass"
+"type.parameter" = { fg = "peach", modifiers = ["italic"] }
+"variable" = "fg"
+"variable.builtin" = { fg = "pink_light", modifiers = ["italic"] }
+"variable.parameter" = { fg = "brass_light", modifiers = ["italic"] }
+"variable.other.member" = "lavender"
+
+"markup.heading" = { fg = "brass", modifiers = ["bold"] }
+"markup.bold" = { fg = "sunset", modifiers = ["bold"] }
+"markup.italic" = { fg = "pink_light", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "cyan"
+"markup.quote" = "uv"
+"markup.raw" = "afterglow"
+"markup.list" = "uv"
+
+"diff.plus" = "lime"
+"diff.minus" = "red"
+"diff.delta" = "brass"
+
+"ui.background" = { bg = "base" }
+"ui.text" = "fg"
+"ui.text.focus" = { fg = "text", bg = "sel_active" }
+"ui.cursor" = { fg = "base", bg = "pink" }
+"ui.cursor.primary" = { fg = "base", bg = "pink" }
+"ui.cursor.match" = { fg = "pink", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "line" }
+"ui.selection" = { bg = "selection" }
+"ui.linenr" = "line_nr"
+"ui.linenr.selected" = { fg = "brass", modifiers = ["bold"] }
+"ui.statusline" = { fg = "sub1", bg = "mantle" }
+"ui.statusline.inactive" = { fg = "ghost", bg = "mantle" }
+"ui.statusline.normal" = { fg = "on_brass", bg = "brass", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "on_pink", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "crust", bg = "cyan", modifiers = ["bold"] }
+"ui.popup" = { fg = "text", bg = "surface1" }
+"ui.window" = "border"
+"ui.help" = { fg = "text", bg = "surface1" }
+"ui.menu" = { fg = "text", bg = "surface1" }
+"ui.menu.selected" = { fg = "text", bg = "sel_active", modifiers = ["bold"] }
+"ui.virtual.whitespace" = "whitespace"
+"ui.virtual.indent-guide" = "whitespace"
+"ui.virtual.ruler" = { bg = "surface0" }
+"ui.virtual.inlay-hint" = { fg = "inlay", bg = "surface1" }
+"ui.bufferline" = { fg = "ghost", bg = "mantle" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold"] }
+
+"error" = "red"
+"warning" = "sunset"
+"info" = "cyan"
+"hint" = "uv"
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "sunset", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "uv", style = "curl" } }
+
+[palette]
+crust = "#101413"
+mantle = "#121717"
+base = "#151c1b"
+surface0 = "#1a2322"
+surface1 = "#1f2726"
+line = "#1b2625"
+border = "#293331"
+whitespace = "#2e423f"
+selection = "#04a19a"
+sel_active = "#226a66"
+line_nr = "#485f5c"
+text = "#e9e4d6"
+fg = "#e6dfca"
+sub1 = "#a4bdb9"
+sub0 = "#8ba29f"
+comment = "#7e8f88"
+doc = "#909e94"
+inlay = "#7c938f"
+ghost = "#708683"
+brass = "#e7ad70"
+brass_light = "#d18e99"
+peach = "#e9c79c"
+pink = "#79c9c3"
+pink_light = "#dba9b3"
+orchid = "#8fb7b1"
+cyan = "#c4a2d8"
+cyan_light = "#a6e2dc"
+sunset = "#e3977a"
+uv = "#9db8d6"
+lavender = "#bcd6d0"
+red = "#e07b7b"
+lime = "#a6c6a0"
+afterglow = "#a6c6a0"
+on_pink = "#001312"
+on_brass = "#1a0b00"

@@ -1,0 +1,66 @@
+/* Brass Lasers Atrium 5AM for Obsidian — a CSS snippet.
+   Drop into <vault>/.obsidian/snippets/, enable it under Settings → Appearance → CSS snippets,
+   and set the base theme to dark.
+   Generated from palette/atrium.json. */
+.theme-dark {
+  --background-primary: #151c1b;
+  --background-primary-alt: #1a2322;
+  --background-secondary: #121717;
+  --background-secondary-alt: #101413;
+  --background-modifier-border: #293331;
+  --background-modifier-hover: #1e2d2b;
+  --background-modifier-active-hover: #226a66;
+  --background-modifier-form-field: #1a2322;
+  --text-normal: #e6dfca;
+  --text-muted: #8ba29f;
+  --text-faint: #647a77;
+  --text-accent: #79c9c3;
+  --text-accent-hover: #dba9b3;
+  --text-on-accent: #001312;
+  --text-selection: #04a19a66;
+  --text-highlight-bg: #e7ad7044;
+  --interactive-accent: #79c9c3;
+  --interactive-accent-hover: #8bdbd5;
+  --interactive-normal: #1f2726;
+  --interactive-hover: #1e2d2b;
+  --caret-color: #79c9c3;
+  --link-color: #c4a2d8;
+  --link-color-hover: #a6e2dc;
+  --link-external-color: #c4a2d8;
+  --link-unresolved-color: #9db8d6;
+  --h1-color: #e7ad70;
+  --h2-color: #e7ad70;
+  --h3-color: #e3977a;
+  --h4-color: #dba9b3;
+  --h5-color: #9db8d6;
+  --h6-color: #bcd6d0;
+  --bold-color: #e3977a;
+  --italic-color: #dba9b3;
+  --blockquote-border-color: #9db8d6;
+  --code-background: #111615;
+  --code-normal: #e6dfca;
+  --code-comment: #7e8f88;
+  --code-keyword: #79c9c3;
+  --code-string: #a6c6a0;
+  --code-function: #c4a2d8;
+  --code-value: #e3977a;
+  --code-property: #bcd6d0;
+  --code-tag: #79c9c3;
+  --code-operator: #8fb7b1;
+  --code-punctuation: #8ba29f;
+  --code-important: #e7ad70;
+  --tag-color: #e7ad70;
+  --tag-background: #3e2810;
+  --graph-node: #9db8d6;
+  --graph-node-focused: #79c9c3;
+  --graph-node-tag: #e7ad70;
+  --graph-line: #40615d;
+  --color-red: #e07b7b;
+  --color-orange: #e3977a;
+  --color-yellow: #e7ad70;
+  --color-green: #a6c6a0;
+  --color-cyan: #c4a2d8;
+  --color-blue: #8fb0e0;
+  --color-purple: #9db8d6;
+  --color-pink: #79c9c3;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Brass Lasers Atrium 5AM",
+  "background": "#101413",
+  "foreground": "#A6C6A0",
+  "cursorColor": "#79C9C3",
+  "selectionBackground": "#067F7A",
+  "black": "#566B68",
+  "red": "#E07B7B",
+  "green": "#A6C6A0",
+  "yellow": "#E7AD70",
+  "blue": "#8FB0E0",
+  "purple": "#79C9C3",
+  "cyan": "#C4A2D8",
+  "white": "#EDE5D1",
+  "brightBlack": "#7E8F88",
+  "brightRed": "#F89190",
+  "brightGreen": "#BCDDB6",
+  "brightYellow": "#D18E99",
+  "brightBlue": "#A5C6F7",
+  "brightPurple": "#DBA9B3",
+  "brightCyan": "#A6E2DC",
+  "brightWhite": "#F9F5EA"
+}

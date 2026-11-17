@@ -1,0 +1,46 @@
+/**
+ * @name Brass Lasers Daybreak
+ * @author heyoub
+ * @version 1.0.0
+ * @description First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.
+ * @source https://github.com/heyoub/brass-lasers
+ */
+/* For Vencord / BetterDiscord. Discord renames its CSS variables often; if something
+   looks off, open an issue with a screenshot. Generated from palette/daybreak.json. */
+.theme-dark, .theme-light, :root {
+  --background-primary: #f5f6fb;
+  --background-secondary: #f0f1f4;
+  --background-secondary-alt: #ebecef;
+  --background-tertiary: #ebecef;
+  --background-accent: #cfd1df;
+  --background-floating: #e3e5ed;
+  --background-modifier-hover: #e1e3ed;
+  --background-modifier-active: #c9d3fe;
+  --background-modifier-selected: #c9d3fe;
+  --background-modifier-accent: #d1d3de;
+  --channeltextarea-background: #edeef4;
+  --text-normal: #292d53;
+  --text-muted: #5e6489;
+  --text-link: #2563a8;
+  --header-primary: #262a4a;
+  --header-secondary: #484d74;
+  --interactive-normal: #484d74;
+  --interactive-hover: #262a4a;
+  --interactive-active: #8a5a00;
+  --interactive-muted: #939abe;
+  --channels-default: #666d83;
+  --brand-experiment: #be3278;
+  --brand-500: #be3278;
+  --mention-background: #8a5a0022;
+  --mention-foreground: #8a5a00;
+  --info-warning-foreground: #c2410c;
+  --info-danger-foreground: #c62828;
+  --info-positive-foreground: #262a4a;
+  --status-positive: #262a4a;
+  --status-warning: #8a5a00;
+  --status-danger: #c62828;
+  --scrollbar-auto-thumb: #cfd1df;
+  --scrollbar-thin-thumb: #cfd1df;
+}
+::selection { background: #99a9fb88; }
+code, pre { background: #eeeff2 !important; color: #2f7d5b; }

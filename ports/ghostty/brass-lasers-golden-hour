@@ -1,25 +1,25 @@
 # Brass Lasers Golden Hour for Ghostty
-# The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+# Solarized-subtropical daylight. Papaya-cream paper, deep lagoon ink, hibiscus, palm and mango.
 # Generated from palette/golden-hour.json. Do not edit by hand.
-background = #f6edde
-foreground = #487102
-cursor-color = #b20965
-cursor-text = #f6edde
-selection-background = #e0cff2
-selection-foreground = #231d11
-palette = 0=#2f2945
-palette = 1=#b9003d
-palette = 2=#487102
-palette = 3=#835a03
-palette = 4=#4b54c1
-palette = 5=#b20965
-palette = 6=#01736a
-palette = 7=#d4cde2
-palette = 8=#6f6591
-palette = 9=#ba3e5d
-palette = 10=#547601
-palette = 11=#876605
-palette = 12=#5e66a8
-palette = 13=#b73d81
-palette = 14=#017973
-palette = 15=#efe7d9
+background = #efeadc
+foreground = #1f3a3d
+cursor-color = #c02e6d
+cursor-text = #efeadc
+selection-background = #87d8cf
+selection-foreground = #1f3a3d
+palette = 0=#395558
+palette = 1=#c9262c
+palette = 2=#1f3a3d
+palette = 3=#9d5901
+palette = 4=#2867b2
+palette = 5=#c02e6d
+palette = 6=#00757a
+palette = 7=#cec9bb
+palette = 8=#6b6b55
+palette = 9=#b6001c
+palette = 10=#0d282b
+palette = 11=#a8502a
+palette = 12=#0f529b
+palette = 13=#b8385f
+palette = 14=#037769
+palette = 15=#e5e0d2

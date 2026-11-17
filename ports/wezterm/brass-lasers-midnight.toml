@@ -1,0 +1,41 @@
+# Brass Lasers Midnight for WezTerm
+# Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.
+# Generated from palette/midnight.json. Do not edit by hand.
+
+[colors]
+background = "#0a0e18"
+foreground = "#c9e2ff"
+cursor_bg = "#ff9f43"
+cursor_border = "#ff9f43"
+cursor_fg = "#0a0e18"
+selection_bg = "#366c9f"
+selection_fg = "#dfe7f4"
+scrollbar_thumb = "#1d3060"
+split = "#1d2f5c"
+compose_cursor = "#f5d76e"
+ansi = ["#59637a", "#ff5c6c", "#c9e2ff", "#f5d76e", "#6cb6ff", "#ff9f43", "#6cb6ff", "#cfe1fe"]
+brights = ["#7486a6", "#fe8b90", "#f1f7fe", "#ffc98f", "#9accff", "#ffb87a", "#8fdcff", "#f0f5fe"]
+
+[colors.tab_bar]
+background = "#0c111d"
+
+[colors.tab_bar.active_tab]
+bg_color = "#0e1526"
+fg_color = "#f5d76e"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#0c111d"
+fg_color = "#747f98"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#142245"
+fg_color = "#dfe7f4"
+
+[colors.tab_bar.new_tab]
+bg_color = "#0c111d"
+fg_color = "#747f98"
+
+[metadata]
+name = "Brass Lasers Midnight"
+author = "heyoub"
+origin_url = "https://github.com/heyoub/brass-lasers"

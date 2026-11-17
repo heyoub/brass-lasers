@@ -4,10 +4,10 @@ Slack → **Preferences → Appearance → Themes → Create a custom theme**, t
 
 | Field | Color |
 |---|---|
-| Window background | `#0f0d15` |
-| System navigation | `#0c0a10` |
-| Selected items | `#e476a1` |
-| Presence indication | `#beea92` |
-| Notifications | `#e5ba78` |
+| Window background | `#171114` |
+| System navigation | `#130e10` |
+| Selected items | `#ff7a6b` |
+| Presence indication | `#ffd6a5` |
+| Notifications | `#f29bb2` |
 
 Set **Mode** to **dark**.

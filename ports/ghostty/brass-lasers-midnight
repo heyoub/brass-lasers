@@ -1,0 +1,25 @@
+# Brass Lasers Midnight for Ghostty
+# Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.
+# Generated from palette/midnight.json. Do not edit by hand.
+background = #0a0e18
+foreground = #c9e2ff
+cursor-color = #ff9f43
+cursor-text = #0a0e18
+selection-background = #366c9f
+selection-foreground = #dfe7f4
+palette = 0=#59637a
+palette = 1=#ff5c6c
+palette = 2=#c9e2ff
+palette = 3=#f5d76e
+palette = 4=#6cb6ff
+palette = 5=#ff9f43
+palette = 6=#6cb6ff
+palette = 7=#cfe1fe
+palette = 8=#7486a6
+palette = 9=#fe8b90
+palette = 10=#f1f7fe
+palette = 11=#ffc98f
+palette = 12=#9accff
+palette = 13=#ffb87a
+palette = 14=#8fdcff
+palette = 15=#f0f5fe

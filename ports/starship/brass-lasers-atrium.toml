@@ -1,0 +1,26 @@
+# Brass Lasers Atrium 5AM palette for Starship.
+# Paste into ~/.config/starship.toml, then use these names anywhere a color goes,
+# e.g. style = "bold brass" or format = "[$directory](pink)".
+
+palette = "brass_lasers_atrium"
+
+[palettes.brass_lasers_atrium]
+crust = "#101413"
+mantle = "#121717"
+base = "#151c1b"
+surface = "#1f2726"
+text = "#e9e4d6"
+subtext = "#8ba29f"
+comment = "#7e8f88"
+brass = "#e7ad70"
+brass_light = "#d18e99"
+pink = "#79c9c3"
+pink_light = "#dba9b3"
+cyan = "#c4a2d8"
+lime = "#a6c6a0"
+afterglow = "#a6c6a0"
+sunset = "#e3977a"
+uv = "#9db8d6"
+lavender = "#bcd6d0"
+red = "#e07b7b"
+blue = "#8fb0e0"

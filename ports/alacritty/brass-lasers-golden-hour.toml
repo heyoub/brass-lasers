@@ -1,61 +1,61 @@
 # Brass Lasers Golden Hour for Alacritty
-# The daytime set. Warm cream, burnished brass, deep-purple ink, lasers you can see in the sun.
+# Solarized-subtropical daylight. Papaya-cream paper, deep lagoon ink, hibiscus, palm and mango.
 # Generated from palette/golden-hour.json. Do not edit by hand.
 
 [colors.primary]
-background = "#f6edde"
-foreground = "#487102"
-dim_foreground = "#6f6591"
-bright_foreground = "#547601"
+background = "#efeadc"
+foreground = "#1f3a3d"
+dim_foreground = "#6b6b55"
+bright_foreground = "#0d282b"
 
 [colors.cursor]
-text = "#f6edde"
-cursor = "#b20965"
+text = "#efeadc"
+cursor = "#c02e6d"
 
 [colors.vi_mode_cursor]
-text = "#f6edde"
-cursor = "#835a03"
+text = "#efeadc"
+cursor = "#9d5901"
 
 [colors.selection]
-text = "#231d11"
-background = "#e0cff2"
+text = "#1f3a3d"
+background = "#87d8cf"
 
 [colors.search.matches]
-foreground = "#f6edde"
-background = "#835a03"
+foreground = "#efeadc"
+background = "#9d5901"
 
 [colors.search.focused_match]
-foreground = "#f6edde"
-background = "#b20965"
+foreground = "#efeadc"
+background = "#c02e6d"
 
 [colors.hints.start]
-foreground = "#f6edde"
-background = "#01736a"
+foreground = "#efeadc"
+background = "#00757a"
 
 [colors.hints.end]
-foreground = "#f6edde"
-background = "#6f47b4"
+foreground = "#efeadc"
+background = "#6455b8"
 
 [colors.footer_bar]
-foreground = "#231d11"
-background = "#eee5d6"
+foreground = "#1f3a3d"
+background = "#f0e3bb"
 
 [colors.normal]
-black = "#2f2945"
-red = "#b9003d"
-green = "#487102"
-yellow = "#835a03"
-blue = "#4b54c1"
-magenta = "#b20965"
-cyan = "#01736a"
-white = "#d4cde2"
+black = "#395558"
+red = "#c9262c"
+green = "#1f3a3d"
+yellow = "#9d5901"
+blue = "#2867b2"
+magenta = "#c02e6d"
+cyan = "#00757a"
+white = "#cec9bb"
 
 [colors.bright]
-black = "#6f6591"
-red = "#ba3e5d"
-green = "#547601"
-yellow = "#876605"
-blue = "#5e66a8"
-magenta = "#b73d81"
-cyan = "#017973"
-white = "#efe7d9"
+black = "#6b6b55"
+red = "#b6001c"
+green = "#0d282b"
+yellow = "#a8502a"
+blue = "#0f529b"
+magenta = "#b8385f"
+cyan = "#037769"
+white = "#e5e0d2"

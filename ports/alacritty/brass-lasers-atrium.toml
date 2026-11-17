@@ -1,0 +1,61 @@
+# Brass Lasers Atrium 5AM for Alacritty
+# A biophilic sci-fi workspace. Wood-and-concrete observatory, subtropical plants, amber lamps, turquoise holograms.
+# Generated from palette/atrium.json. Do not edit by hand.
+
+[colors.primary]
+background = "#101413"
+foreground = "#a6c6a0"
+dim_foreground = "#7e8f88"
+bright_foreground = "#bcddb6"
+
+[colors.cursor]
+text = "#101413"
+cursor = "#79c9c3"
+
+[colors.vi_mode_cursor]
+text = "#101413"
+cursor = "#e7ad70"
+
+[colors.selection]
+text = "#e9e4d6"
+background = "#067f7a"
+
+[colors.search.matches]
+foreground = "#101413"
+background = "#e7ad70"
+
+[colors.search.focused_match]
+foreground = "#101413"
+background = "#79c9c3"
+
+[colors.hints.start]
+foreground = "#101413"
+background = "#c4a2d8"
+
+[colors.hints.end]
+foreground = "#101413"
+background = "#9db8d6"
+
+[colors.footer_bar]
+foreground = "#e9e4d6"
+background = "#1f2726"
+
+[colors.normal]
+black = "#566b68"
+red = "#e07b7b"
+green = "#a6c6a0"
+yellow = "#e7ad70"
+blue = "#8fb0e0"
+magenta = "#79c9c3"
+cyan = "#c4a2d8"
+white = "#ede5d1"
+
+[colors.bright]
+black = "#7e8f88"
+red = "#f89190"
+green = "#bcddb6"
+yellow = "#d18e99"
+blue = "#a5c6f7"
+magenta = "#dba9b3"
+cyan = "#a6e2dc"
+white = "#f9f5ea"

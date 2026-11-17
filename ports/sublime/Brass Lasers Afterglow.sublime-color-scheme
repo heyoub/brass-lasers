@@ -2,11 +2,11 @@
   "name": "Brass Lasers Afterglow",
   "author": "heyoub",
   "variables": {
-    "base": "#13101a", "fg": "#dad1e6", "line": "#1c172a", "selection": "#6b4190",
-    "comment": "#7f76a9", "doc": "#897fad", "sub0": "#9187ad", "brass": "#e5ba78",
-    "brassLight": "#e7cd9c", "peach": "#e6bca1", "pink": "#e476a1", "pinkLight": "#e598bc",
-    "orchid": "#d59dbb", "cyan": "#8adfd4", "cyanLight": "#abe4dd", "sunset": "#e49e75",
-    "uv": "#b09de1", "lavender": "#c4bae5", "red": "#e37c86", "lime": "#beea92", "afterglow": "#b2d98e"
+    "base": "#1d1418", "fg": "#f3ddca", "line": "#291b22", "selection": "#ca6559",
+    "comment": "#9a8089", "doc": "#ab9195", "sub0": "#ad95a0", "brass": "#f29bb2",
+    "brassLight": "#f7d28c", "peach": "#ffcfa6", "pink": "#ff7a6b", "pinkLight": "#ff9e8f",
+    "orchid": "#e59aa7", "cyan": "#8fb8ff", "cyanLight": "#aecdff", "sunset": "#ffb07a",
+    "uv": "#c3a6ff", "lavender": "#ead0dc", "red": "#ff5f6d", "lime": "#ffd6a5", "afterglow": "#a8dcb4"
   },
   "globals": {
     "background": "var(base)",
@@ -15,16 +15,16 @@
     "line_highlight": "var(line)",
     "selection": "var(selection)",
     "selection_border": "var(selection)",
-    "gutter_foreground": "#51496e",
+    "gutter_foreground": "#684b59",
     "gutter_foreground_highlight": "var(brass)",
     "find_highlight": "var(brass)",
-    "find_highlight_foreground": "#170f02",
+    "find_highlight_foreground": "#1d070e",
     "brackets_foreground": "var(pink)",
     "bracket_contents_foreground": "var(pink)",
     "tags_foreground": "var(pink)",
-    "invisibles": "#352e4f",
-    "guide": "#27223d",
-    "active_guide": "#5f4e96",
+    "invisibles": "#4a313c",
+    "guide": "#3a252f",
+    "active_guide": "#854f69",
     "accent": "var(pink)"
   },
   "rules": [
