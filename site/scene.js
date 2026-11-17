@@ -6,6 +6,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
 
 const SKY_VERT = /* glsl */ `
 varying vec3 vPos;
@@ -42,7 +43,7 @@ void main() {
   disc *= 1.0 - gap * uStripes;
   // keep the disc under the bloom threshold that would clip red and shift brass toward lemon
   col = mix(col, sunCol * 0.64, disc);
-  gl_FragColor = vec4(col, 1.0);
+  gl_FragColor = vec4(max(col, 0.0), 1.0);
 }`;
 
 const GROUND_VERT = /* glsl */ `
@@ -78,7 +79,7 @@ void main() {
   col = mix(col, uGrid2, l4 * 0.4 * uLine);
   float fog = smoothstep(18.0, 64.0, vDist);
   col = mix(col, uHorizon, fog * 0.92);
-  gl_FragColor = vec4(col, 1.0);
+  gl_FragColor = vec4(max(col, 0.0), 1.0);
 }`;
 
 const BEAM_FRAG = /* glsl */ `
@@ -87,8 +88,8 @@ varying vec2 vUv;
 void main() {
   float edge = 1.0 - abs(vUv.x - 0.5) * 2.0;
   // beams emerge from behind the disc instead of piling up (additively) on its center
-  float a = pow(edge, 2.5) * pow(1.0 - vUv.y, 1.6) * smoothstep(0.05, 0.11, vUv.y) * uAmt;
-  gl_FragColor = vec4(uColor * a, a);
+  float a = clamp(pow(max(edge, 0.0), 2.5) * pow(max(1.0 - vUv.y, 0.0), 1.6) * smoothstep(0.05, 0.11, vUv.y) * uAmt, 0.0, 4.0);
+  gl_FragColor = vec4(max(uColor, 0.0) * a, a);
 }`;
 const BEAM_VERT = /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`;
 
@@ -101,21 +102,53 @@ void main() {
   p.y = mod(p.y + uTime * uRise * (0.4 + aSeed), 16.0) - 1.0;
   p.x += sin(uTime * 0.4 + aSeed * 30.0) * 0.6;
   vec4 mv = modelViewMatrix * vec4(p, 1.0);
-  gl_PointSize = uSize * (0.5 + aSeed) * (30.0 / -mv.z);
-  vA = 0.45 + 0.55 * sin(uTime * (1.5 + aSeed * 3.0) + aSeed * 50.0);
+  float depth = max(-mv.z, 0.5);
+  // capped sprite size: near-camera motes used to balloon into big squares
+  gl_PointSize = clamp(uSize * (0.5 + aSeed) * (30.0 / depth), 0.0, 14.0);
+  // twinkle stays in 0..1 (a negative alpha under additive blending *subtracts* light:
+  // that was the black squares), and motes fade out as they reach the lens
+  vA = (0.5 + 0.5 * sin(uTime * (1.5 + aSeed * 3.0) + aSeed * 50.0)) * smoothstep(2.0, 7.0, depth);
   gl_Position = projectionMatrix * mv;
 }`;
 const MOTE_FRAG = /* glsl */ `
 uniform vec3 uColor; uniform float uAmt;
 varying float vA;
-void main() { float d = length(gl_PointCoord - 0.5); float a = smoothstep(0.5, 0.0, d) * vA * uAmt; gl_FragColor = vec4(uColor * a, a); }`;
+void main() {
+  float d = length(gl_PointCoord - 0.5);
+  float a = clamp(smoothstep(0.5, 0.0, d) * vA * uAmt, 0.0, 1.0);
+  if (a < 0.003) discard;
+  gl_FragColor = vec4(max(uColor, 0.0) * a, a);
+}`;
+
+// Film grain + chromatic aberration that opens up with scroll velocity.
+// Also the last line of defense: no NaN or negative value reaches the screen.
+const POST = {
+  uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uGrain: { value: 0.02 }, uAberration: { value: 0 } },
+  vertexShader: /* glsl */ `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: /* glsl */ `
+uniform sampler2D tDiffuse; uniform float uTime, uGrain, uAberration;
+varying vec2 vUv;
+float hash(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+void main() {
+  vec2 dir = vUv - 0.5;
+  float ab = uAberration * dot(dir, dir) * 4.0;
+  vec3 col = vec3(texture2D(tDiffuse, vUv + dir * ab).r, texture2D(tDiffuse, vUv).g, texture2D(tDiffuse, vUv - dir * ab).b);
+  col += (hash(vUv * vec2(1920.0, 1080.0) + fract(uTime) * 61.0) - 0.5) * uGrain;
+  col = clamp(col, 0.0, 64.0);
+  if (any(isnan(col))) col = vec3(0.0);
+  gl_FragColor = vec4(col, 1.0);
+}`,
+};
 
 export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote"];
 export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh"];
 
-export function createWorld(canvas, { reducedMotion }) {
+export function createWorld(canvas, { reducedMotion, store }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  // adaptive resolution: start sharp, step down if frames run long, step back up when there's headroom
+  const DPR_STEPS = [0.6, 0.75, 0.9, 1, 1.25, 1.5].filter((d) => d <= Math.max(1, window.devicePixelRatio));
+  let dprIndex = DPR_STEPS.length - 1;
+  renderer.setPixelRatio(DPR_STEPS[dprIndex]);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 200);
   camera.position.set(0, 2.4, 8);
@@ -182,6 +215,8 @@ export function createWorld(canvas, { reducedMotion }) {
   composer.addPass(new RenderPass(scene, camera));
   const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.6, 0.5, 0.3);
   composer.addPass(bloom);
+  const post = new ShaderPass(POST);
+  composer.addPass(post);
   composer.addPass(new OutputPass());
 
   // live state: everything below is lerped toward by the page's tweens
@@ -202,9 +237,10 @@ export function createWorld(canvas, { reducedMotion }) {
   const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
   window.addEventListener("pointermove", (e) => { pointer.tx = e.clientX / innerWidth - 0.5; pointer.ty = e.clientY / innerHeight - 0.5; }, { passive: true });
 
-  let scrollKick = 0;
   function resize() {
     const w = innerWidth, h = innerHeight;
+    renderer.setPixelRatio(DPR_STEPS[dprIndex]);
+    composer.setPixelRatio(DPR_STEPS[dprIndex]);
     renderer.setSize(w, h, false);
     composer.setSize(w, h);
     bloom.resolution.set(w, h);
@@ -217,34 +253,53 @@ export function createWorld(canvas, { reducedMotion }) {
   resize();
 
   const clock = new THREE.Clock();
-  let travel = 0, running = true;
+  let travel = 0, rafId = 0, energy = 0;
+  // frame-time watchdog for adaptive resolution
+  let acc = 0, count = 0, cool = 0;
+  function adapt(dt) {
+    acc += dt; count++;
+    if (count < 45) return;
+    const avg = acc / count;
+    acc = 0; count = 0;
+    if (cool > 0) { cool--; return; }
+    if (avg > 1 / 45 && dprIndex > 0) { dprIndex--; resize(); cool = 2; }
+    else if (avg < 1 / 75 && dprIndex < DPR_STEPS.length - 1) { dprIndex++; resize(); cool = 4; }
+  }
+
   function frame() {
-    if (!running) return;
-    const dt = Math.min(clock.getDelta(), 0.05), t = clock.elapsedTime;
+    rafId = requestAnimationFrame(frame);
+    const raw = clock.getDelta(), dt = Math.min(raw, 0.05), t = clock.elapsedTime;
     apply();
     const motion = reducedMotion ? 0 : 1;
-    travel += dt * state.nums.speed * (1 + scrollKick) * 4 * motion;
-    scrollKick *= 0.92;
+    // scroll velocity (from the store) becomes "energy": faster travel, beam surge, lens split
+    const v = Math.abs(store?.get().velocity || 0);
+    energy += (Math.min(1, v / 60) - energy) * (v / 60 > energy ? 0.25 : 0.05);
+    travel += dt * state.nums.speed * (1 + energy * 3) * 4 * motion;
     ground.material.uniforms.uOff.value = travel;
     sky.material.uniforms.uTime.value = t * motion;
     motes.material.uniforms.uTime.value = t * motion;
-    beams.forEach((b) => { b.rotation.z = b.userData.base + Math.sin(t * 0.35 * motion + b.userData.phase) * 0.12; });
+    beams.forEach((b) => {
+      b.rotation.z = b.userData.base + Math.sin(t * (0.35 + energy * 1.5) * motion + b.userData.phase) * (0.12 + energy * 0.1);
+      b.material.uniforms.uAmt.value = state.nums.beams * (1 + energy * 1.4);
+    });
+    post.uniforms.uTime.value = t;
+    post.uniforms.uAberration.value = reducedMotion ? 0 : energy * 0.035;
     pointer.x += (pointer.tx - pointer.x) * 0.04;
     pointer.y += (pointer.ty - pointer.y) * 0.04;
     camera.position.x = pointer.x * 1.6;
     camera.position.y = 2.4 - pointer.y * 0.6;
     camera.lookAt(0, 9.5, -60);
     composer.render();
-    requestAnimationFrame(frame);
+    if (!reducedMotion) adapt(raw);
   }
-  document.addEventListener("visibilitychange", () => {
-    running = !document.hidden;
-    if (running) { clock.getDelta(); requestAnimationFrame(frame); }
-  });
+  // exactly one loop, paused while the tab is hidden
+  const stop = () => { cancelAnimationFrame(rafId); rafId = 0; };
+  const go = () => { if (!rafId) { clock.getDelta(); rafId = requestAnimationFrame(frame); } };
+  document.addEventListener("visibilitychange", () => (document.hidden ? stop() : go()));
 
   return {
     state,
-    start() { apply(); requestAnimationFrame(frame); },
-    kick(v) { scrollKick = Math.min(3, scrollKick + v); },
+    start() { apply(); go(); },
+    get quality() { return DPR_STEPS[dprIndex]; },
   };
 }
