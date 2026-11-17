@@ -10,7 +10,7 @@ This folder holds the sample files and the instructions for capturing the three 
 
 The samples are real code, not mockups:
 
-- `samples/neon-setlist.tsx` type-checks cleanly with strict mode on (`npx tsc -p media/screenshots/samples`, 0 errors).
+- `samples/neon-setlist.tsx` type-checks cleanly with strict mode on (`npm exec --prefix media/screenshots/samples -- tsc -p media/screenshots/samples`, 0 errors). From the repo root, a bare `npx tsc` resolves to the unrelated npm package named `tsc` and prints an error banner.
 - `samples/laser-rig` passes `cargo check` with 0 warnings.
 - `samples/laser-check.ps1` prints **simulated** output for color demonstration. Every line says so (banner plus a `[demo]` prefix).
 
@@ -92,7 +92,7 @@ The samples are real code, not mockups:
 
    ```bash
    git log --oneline --graph --decorate --color -n 6
-   npx tsc -p media/screenshots/samples
+   npm exec --prefix media/screenshots/samples -- tsc -p media/screenshots/samples
    ```
 
 7. Capture the **whole window** (no crop) and save as **`media/screenshots/full-window.png`**.
