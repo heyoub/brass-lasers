@@ -1,8 +1,8 @@
 {
   "name": "brass-lasers-4am",
-  "displayName": "Brass Lasers 4AM",
-  "description": "Void-purple chrome, brass-gold accents, hot-pink lasers — a dark theme for late-night code sessions that still slap at sunrise. Funky EDM energy for VS Code & Cursor.",
-  "version": "0.1.0",
+  "displayName": "Brass Lasers 4AM — Neon Synthwave Dark Theme",
+  "description": "Neon synthwave dark theme for VS Code & Cursor — void-purple chrome, brass-gold accents, hot-pink lasers, lime strings. Vibrant, cyberpunk-retro EDM energy that's still readable at 4AM.",
+  "version": "0.2.0",
   "publisher": "heyoub",
   "engines": {
     "vscode": "^1.85.0"
@@ -11,17 +11,33 @@
     "Themes"
   ],
   "keywords": [
-    "theme",
-    "dark",
-    "color-theme",
+    "wook",
     "edm",
+    "rave",
+    "festival",
+    "plur",
+    "funk",
+    "bass",
+    "glitch",
+    "laser",
+    "brass",
+    "afterhours",
+    "lightshow",
+    "dark",
+    "dark theme",
+    "theme",
+    "color-theme",
     "neon",
     "purple",
-    "brass",
-    "laser",
-    "cursor",
-    "wook",
-    "synth"
+    "pink",
+    "gold",
+    "lime",
+    "cyan",
+    "synthwave",
+    "retro",
+    "vibrant",
+    "cyberpunk",
+    "cursor"
   ],
   "galleryBanner": {
     "color": "#0e0a17",

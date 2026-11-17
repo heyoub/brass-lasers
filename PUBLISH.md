@@ -1,7 +1,9 @@
 # Publish Brass Lasers 4AM
 
-You already have a local VSIX: `brass-lasers-4am-0.1.0.vsix`  
-Also attached to GitHub Release: https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0
+Current release: **v0.2.0 — the afterglow set** → `brass-lasers-4am-0.2.0.vsix` (build with `npx @vscode/vsce package`)
+Previous: v0.1.0 is attached to its GitHub Release at https://github.com/heyoub/brass-lasers/releases/tag/v0.1.0
+
+**Before publishing 0.2.0:** capture and push the screenshots ([`media/screenshots/README.md`](media/screenshots/README.md)). The Marketplace README pulls them from raw GitHub URLs.
 
 Extension ID on both registries: **`heyoub.brass-lasers-4am`**
 
@@ -16,7 +18,7 @@ T3 gallery PR (opened as `heyoub`): https://github.com/SunkenInTime/t3-themes/pu
 ### Cursor
 
 1. Extensions → `…` → **Install from VSIX…**
-2. Select `brass-lasers-4am-0.1.0.vsix`
+2. Select `brass-lasers-4am-0.2.0.vsix`
 3. `Ctrl+K Ctrl+T` → choose **Brass Lasers 4AM**
 4. Check: editor void purple, pink cursor/focus, brass line numbers, lime terminal text
 
@@ -25,7 +27,7 @@ T3 gallery PR (opened as `heyoub`): https://github.com/SunkenInTime/t3-themes/pu
 Same steps, or:
 
 ```bash
-code --install-extension .\brass-lasers-4am-0.1.0.vsix
+code --install-extension .\brass-lasers-4am-0.2.0.vsix
 ```
 
 If anything still looks default-gray, the theme isn’t selected yet — install ≠ activate.
@@ -43,7 +45,7 @@ If anything still looks default-gray, the theme isn’t selected yet — install
 4. Publish:
 
 ```bash
-npx @vscode/vsce publish --packagePath brass-lasers-4am-0.1.0.vsix -p YOUR_VSCE_PAT
+npx @vscode/vsce publish --packagePath brass-lasers-4am-0.2.0.vsix -p YOUR_VSCE_PAT
 ```
 
 Or login once, then publish from the folder:
@@ -71,7 +73,7 @@ npx ovsx create-namespace heyoub -p YOUR_OVSX_PAT
 5. Publish the same VSIX:
 
 ```bash
-npx ovsx publish brass-lasers-4am-0.1.0.vsix -p YOUR_OVSX_PAT
+npx ovsx publish brass-lasers-4am-0.2.0.vsix -p YOUR_OVSX_PAT
 ```
 
 ---
@@ -93,6 +95,56 @@ Manual path: PR only `themes/brass-lasers-4am.json` into https://github.com/Sunk
 
 ---
 
+## 4) Zed extension registry
+
+The extension lives in `zed/` (`id = "brass-lasers-4am-theme"`, MIT license copied into `zed/LICENSE`, since Zed requires it inside the extension folder). Publishing is a PR to `zed-industries/extensions`.
+
+**Rules:**
+- One extension per PR, at most three open PRs.
+- Respond to maintainer feedback within 3 weeks.
+- Fork to your personal account, not an org.
+
+**Steps:**
+
+1. **Test first.** In Zed, run `zed: install dev extension`, pick `zed/`, and select the theme. Zed requires a manual test at the exact commit you submit.
+2. **Push this repo**, so the commit containing `zed/` is on a branch on GitHub.
+3. **Fork and clone** `zed-industries/extensions`, then:
+
+   ```bash
+   git clone https://github.com/heyoub/extensions
+   cd extensions
+   git submodule init
+   git submodule update
+   git submodule add https://github.com/heyoub/brass-lasers.git extensions/brass-lasers-4am-theme
+   ```
+
+4. **Add an entry to the top-level `extensions.toml`.** The version must match `zed/extension.toml`:
+
+   ```toml
+   [brass-lasers-4am-theme]
+   submodule = "extensions/brass-lasers-4am-theme"
+   path = "zed"
+   version = "0.2.0"
+   ```
+
+5. **Sort, commit and open the PR:**
+
+   ```bash
+   pnpm sort-extensions
+   git add -A
+   git commit -m "Add brass-lasers-4am-theme"
+   ```
+
+   Then push and open the PR.
+
+**Updating later:**
+1. Bump `version` in `zed/extension.toml`.
+2. Push.
+3. In your fork, update the submodule to the new commit and bump the version in `extensions.toml`.
+4. Open a PR.
+
+---
+
 ## Repo checklist
 
 - Push this folder to https://github.com/heyoub/brass-lasers so `repository` / `bugs` links resolve
@@ -107,6 +159,6 @@ Manual path: PR only `themes/brass-lasers-4am.json` into https://github.com/Sunk
 # PowerShell examples — do not commit these
 $env:VSCE_PAT = "..."
 $env:OVSX_PAT = "..."
-npx @vscode/vsce publish --packagePath brass-lasers-4am-0.1.0.vsix -p $env:VSCE_PAT
-npx ovsx publish brass-lasers-4am-0.1.0.vsix -p $env:OVSX_PAT
+npx @vscode/vsce publish --packagePath brass-lasers-4am-0.2.0.vsix -p $env:VSCE_PAT
+npx ovsx publish brass-lasers-4am-0.2.0.vsix -p $env:OVSX_PAT
 ```

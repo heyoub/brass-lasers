@@ -1,0 +1,8 @@
+[package]
+name = "laser-rig"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Showcase crate for Brass Lasers 4AM screenshots. Not shipped in the VSIX."
+
+[dependencies]

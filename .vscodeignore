@@ -13,3 +13,9 @@ agent-tools/**
 scripts/**
 node_modules/**
 **/*.map
+media/screenshots/**
+zed/**
+plans/**
+.github/**
+**/target/**
+RELEASE_NOTES.md
