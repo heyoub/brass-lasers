@@ -140,6 +140,27 @@ function buildAll() {
   // Landing site playground
   files["site/palettes.json"] = JSON.stringify(palettes.map((p) => ({ meta: p.meta, colors: p.colors })), null, 2) + "\n";
 
+  // Landing page: every count and version comes from the data, so the copy can't drift
+  const WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
+  const { PAIRS } = require("./contrast-lib.js");
+  const portApps = new Set(JSON.parse(read("templates/ports/ports.json")).map((x) => x.out.split("/")[1] === undefined ? x.out : x.out.startsWith("colors/") ? "neovim" : x.out.split("/")[1]));
+  portApps.delete("banner");
+  const apps = portApps.size + ["vscode", "cursor", "vscodium", "zed", "t3", "delta"].length;
+  const word = WORDS[palettes.length] ?? String(palettes.length);
+  const siteVars = {
+    sets: word,
+    Sets: word[0].toUpperCase() + word.slice(1),
+    themes: String(palettes.length * 2),
+    pairs: String(PAIRS.length),
+    checks: String(PAIRS.length * palettes.length),
+    apps: String(apps),
+    version: JSON.parse(read("package.json")).version,
+  };
+  files["site/index.html"] = read("templates/site/index.html").replace(/\r\n/g, "\n").replace(/\{\{(\w+)\}\}/g, (m, k) => {
+    if (!(k in siteVars)) throw new Error(`templates/site/index.html: unknown {{${k}}}`);
+    return siteVars[k];
+  });
+
   // Neon Glow extension reads the palettes to know which colors are lasers
   for (const p of palettes) files[`extensions/glow/palettes/${p.meta.slug}.json`] = JSON.stringify({ meta: p.meta, colors: p.colors }, null, 2) + "\n";
 

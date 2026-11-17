@@ -7,7 +7,8 @@
     "set": "The Main Stage",
     "tagline": "Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.",
     "t3Description": "Void-purple lot lights, brass-gold accents, hot-pink lasers — funky EDM energy for T3 Code at 4AM. Still readable. Still slap.",
-    "jetbrainsParent": "Darcula"
+    "jetbrainsParent": "Darcula",
+    "nameUrl": "Brass%20Lasers%204AM"
   },
   "colors": {
     "brass": "#ffb627",

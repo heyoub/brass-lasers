@@ -148,24 +148,33 @@ function writeWorld() {
   Object.assign(world.state.nums, live.nums);
 }
 
-let tween = null;
+// Retargetable transitions: live values continuously chase the current target, with a
+// frame-rate-independent rate. Racing through five sets just bends the path toward the
+// newest one; nothing restarts, nothing snaps.
+const CHASE_RATE = 3.4; // per second; ~1s to settle
+let target = null, chasing = 0, lastChase = 0;
+function chase(now) {
+  const dt = Math.min(0.05, (now - lastChase) / 1000 || 0.016);
+  lastChase = now;
+  const k = 1 - Math.exp(-dt * CHASE_RATE);
+  let moving = false;
+  for (const k2 in target.css) { const a = live.css[k2], b = target.css[k2]; if (a !== b) { const n = a ? mix(a, b, k) : b; live.css[k2] = n === a ? b : n; moving = true; } }
+  for (const k2 in target.colors) { const a = live.colors[k2], b = target.colors[k2]; if (a !== b) { const n = a ? mix(a, b, k) : b; live.colors[k2] = n === a ? b : n; moving = true; } }
+  for (const k2 in target.nums) { const a = live.nums[k2], b = target.nums[k2]; if (a !== b) { live.nums[k2] = a === undefined || Math.abs(b - a) < 1e-3 ? b : a + (b - a) * k; moving = true; } }
+  applyCss(live.css);
+  writeWorld();
+  chasing = moving ? requestAnimationFrame(chase) : 0;
+}
+
 function setSet(i, { instant = false } = {}) {
   if (i === current || !palettes[i]) return;
   current = i;
   const p = palettes[i], w = worldFor(p);
-  const from = { css: { ...live.css }, colors: { ...live.colors }, nums: { ...live.nums } };
-  const to = { css: p.colors, colors: w.colors, nums: w.nums };
-  const step = (t) => {
-    for (const k in to.css) live.css[k] = from.css[k] ? mix(from.css[k], to.css[k], t) : to.css[k];
-    for (const k in to.colors) live.colors[k] = from.colors[k] ? mix(from.colors[k], to.colors[k], t) : to.colors[k];
-    for (const k in to.nums) live.nums[k] = from.nums[k] !== undefined ? from.nums[k] + (to.nums[k] - from.nums[k]) * t : to.nums[k];
-    applyCss(live.css);
-    writeWorld();
-  };
-  if (tween) tween.pause();
-  const prog = { t: 0 };
-  if (instant || reducedMotion || !anime) step(1);
-  else tween = anime({ targets: prog, t: 1, duration: 1100, easing: "easeInOutCubic", update: () => step(prog.t) });
+  target = { css: p.colors, colors: w.colors, nums: w.nums };
+  if (instant || reducedMotion) {
+    Object.assign(live.css, target.css); Object.assign(live.colors, target.colors); Object.assign(live.nums, target.nums);
+    applyCss(live.css); writeWorld();
+  } else if (!chasing) { lastChase = performance.now(); chasing = requestAnimationFrame(chase); }
   // lightning cracks as the set changes; the clock takes the new set's tempo
   if (!instant && world) world.strike(w.colors.flash);
   beat.bpm = w.nums.bpm;
@@ -214,8 +223,15 @@ function measure() {
 }
 function onScroll(y, velocity = 0) {
   const prog = (y - layout.top) / layout.span;
-  const s = store.get();
-  const set = prog < 0 ? home : prog <= 1 ? Math.min(palettes.length - 1, Math.floor(prog * palettes.length)) : s.set;
+  const s = store.get(), n = palettes.length;
+  let set = s.set;
+  if (prog < 0) set = home;
+  else if (prog <= 1) {
+    // hysteresis: hovering on a boundary doesn't flicker between two sets
+    const raw = prog * n, HYST = 0.12;
+    const inLineup = s.set >= 0 && s.lineup >= 0 && s.lineup <= 1;
+    if (!inLineup || raw < s.set - HYST || raw > s.set + 1 + HYST) set = Math.min(n - 1, Math.floor(raw));
+  }
   store.set({ y, velocity, lineup: prog, set });
 }
 let home = 0, lenis = null;
@@ -279,7 +295,7 @@ function reveals() {
       if (!e.isIntersecting) continue;
       io.unobserve(e.target);
       anime({ targets: e.target, translateY: [36, 0], opacity: [0, 1], duration: 1100, easing: "easeOutExpo", delay: +(e.target.dataset.delay || 0) });
-      if (e.target.id === "proof-number") anime({ targets: { n: 0 }, n: 52 * palettes.length, round: 1, duration: 2200, easing: "easeOutExpo", update: (a) => ($("#count").textContent = a.animations[0].currentValue) });
+      if (e.target.id === "proof-number") anime({ targets: { n: 0 }, n: +$("#count").textContent, round: 1, duration: 2200, easing: "easeOutExpo", update: (a) => ($("#count").textContent = a.animations[0].currentValue) });
     }
   }, { threshold: 0.18 });
   $$(".reveal").forEach((el) => io.observe(el));
@@ -372,7 +388,19 @@ async function boot() {
   if (!reducedMotion) {
     try {
       const { default: Lenis } = await import("lenis");
-      lenis = new Lenis({ lerp: 0.085, smoothWheel: true, wheelMultiplier: 0.9 });
+      // Wheel feel: light inertia (lerp) so it stays responsive, and a per-event ceiling so a
+      // hard flick has a top speed. Slow scrolls and trackpads (small deltas) pass untouched.
+      const WHEEL_MAX = 140;
+      lenis = new Lenis({
+        lerp: 0.11,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 1.4,
+        virtualScroll: (e) => {
+          if (e.event.type === "wheel") e.deltaY = Math.max(-WHEEL_MAX, Math.min(WHEEL_MAX, e.deltaY));
+          return true;
+        },
+      });
       lenis.on("scroll", (l) => onScroll(l.scroll, l.velocity));
       const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);

@@ -8,7 +8,8 @@
     "source": "heyoub.dev brand tokens: src/lib/palette.ts (dark key), with a matte finish",
     "tagline": "A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.",
     "t3Description": "Brass Lasers Soundcheck: a matte charcoal set. Muted pink, cyan, warm amber and green with the gloss sanded off.",
-    "jetbrainsParent": "Darcula"
+    "jetbrainsParent": "Darcula",
+    "nameUrl": "Brass%20Lasers%20Soundcheck"
   },
   "colors": {
     "brass": "#f0c25f",

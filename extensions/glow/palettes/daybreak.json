@@ -7,7 +7,8 @@
     "set": "The Sunrise Walk",
     "tagline": "First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.",
     "t3Description": "Brass Lasers at sunrise: porcelain mist, indigo ink, dawn-rose keywords, cool and calm.",
-    "jetbrainsParent": "Default"
+    "jetbrainsParent": "Default",
+    "nameUrl": "Brass%20Lasers%20Daybreak"
   },
   "colors": {
     "brass": "#8a5a00",

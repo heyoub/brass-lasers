@@ -7,7 +7,8 @@
     "set": "The Night Market",
     "tagline": "Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.",
     "t3Description": "Brass Lasers at midnight: navy ink, moonlit text, sodium-orange streetlight keywords.",
-    "jetbrainsParent": "Darcula"
+    "jetbrainsParent": "Darcula",
+    "nameUrl": "Brass%20Lasers%20Midnight"
   },
   "colors": {
     "brass": "#f5d76e",

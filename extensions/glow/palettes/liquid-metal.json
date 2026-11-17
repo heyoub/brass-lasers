@@ -8,7 +8,8 @@
     "source": "Free Battery Factory (the-fbf) brand tokens: src/lib/palette.ts and the metal gradients in variables.css",
     "tagline": "Molten chrome under the headliner. Graphite and mercury, with the yellow-cyan-purple spark spectrum of an oil slick.",
     "t3Description": "Brass Lasers Liquid Metal: graphite, chrome text, champagne strings and an iridescent yellow, cyan and purple spark spectrum.",
-    "jetbrainsParent": "Darcula"
+    "jetbrainsParent": "Darcula",
+    "nameUrl": "Brass%20Lasers%20Liquid%20Metal"
   },
   "colors": {
     "brass": "#eab308",

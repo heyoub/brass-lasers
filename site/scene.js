@@ -204,7 +204,15 @@ void main() {
     col = mix(col, uFlareCol, clamp((streak + ghosts) * uFlare, 0.0, 0.85));
   }
 
-  col = mix(col, uFlashCol, uFlash * 0.42) + uFlashCol * uFlash * 0.18;
+  // lightning lights what's already there: a multiplicative boost (shadows stay dark, no fog
+  // wash), a little sky glow from above, then a soft shoulder so the brightest point rolls
+  // off gently instead of clipping to white
+  if (uFlash > 0.0001) {
+    vec3 gain = uFlashCol * uFlash;
+    vec3 lifted = col * (1.0 + gain * 1.8) + gain * 0.07 * smoothstep(0.35, 1.0, vUv.y);
+    vec3 over = max(lifted - 0.78, 0.0);
+    col = min(lifted, vec3(0.78)) + 0.22 * (1.0 - exp(-over * 4.0));
+  }
   col += (hash(vUv * vec2(1920.0, 1080.0) + fract(uTime) * 61.0) - 0.5) * uGrain;
   col = clamp(col, 0.0, 64.0);
   if (any(isnan(col))) col = vec3(0.0);
@@ -214,6 +222,25 @@ void main() {
 
 export const COLOR_KEYS = ["top", "mid", "horizon", "sunA", "sunB", "star", "fill", "grid", "grid2", "beam0", "beam1", "beam2", "beam3", "mote", "frame", "glass", "leafA", "leafB", "leafDark", "fog", "flare", "flash", "sheenA", "sheenB", "sheenC"];
 export const NUM_KEYS = ["sunY", "sunR", "stripes", "stars", "glow", "beams", "motes", "bloom", "speed", "amp", "line", "rise", "thresh", "greenhouse", "flare", "fog", "dew", "sunGain", "sheen", "valley", "grain"];
+
+// The feel of the world, in one place. Rates are per second (frame-rate independent);
+// caps keep a hard flick from turning into a seizure.
+export const FEEL = {
+  velocityForFull: 70,   // Lenis px/frame that counts as "full send"
+  energyMax: 0.8,        // ceiling on scroll energy, however hard you fling
+  energyAttack: 7,       // how fast energy rises (snappy)
+  energyRelease: 1.4,    // how fast it settles (lingers, like a crowd after the drop)
+  aberrationMax: 0.028,  // lens split at full energy
+  travelBoost: 2.6,      // terrain speed multiplier at full energy
+  pointerRate: 2.6,      // camera parallax follow
+  flashPeak: 0.55,       // flash strength; the shader rolls highlights off, so it never clips
+  flashFastScale: 0.35,  // fraction of the flash left when scrolling at full energy
+  flashAttack: 0.06,     // seconds to peak
+  flashDecay: 4.2,       // decay rate after the peak
+  boltPeak: 0.7,         // bolt line opacity
+  boltMaxEnergy: 0.55,   // above this energy, skip the bolt (a soft shimmer only)
+  strikeGap: 1100,       // ms between strikes, minimum
+};
 
 export function createWorld(canvas, { reducedMotion, store, beat }) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
@@ -333,7 +360,9 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
 
   const clock = new THREE.Clock();
   const sunPos = new THREE.Vector3();
-  let travel = 0, rafId = 0, energy = 0, flash = 0, lastStrike = -1e9;
+  let travel = 0, rafId = 0, energy = 0, flash = 0, lastStrike = -1e9, flashAge = 99, flashPeakNow = 0;
+  // frame-rate-independent smoothing factor for a per-second rate
+  const ease = (dt, rate) => 1 - Math.exp(-dt * rate);
   // frame-time watchdog for adaptive resolution
   let acc = 0, count = 0, cool = 0;
   function adapt(dt) {
@@ -353,8 +382,10 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     const motion = reducedMotion ? 0 : 1;
     // scroll velocity (from the store) becomes "energy": faster travel, beam surge, lens split
     const v = Math.abs(store?.get().velocity || 0);
-    energy += (Math.min(1, v / 60) - energy) * (v / 60 > energy ? 0.25 : 0.05);
-    travel += dt * state.nums.speed * (1 + energy * 3) * 4 * motion;
+    const x = Math.min(1, v / FEEL.velocityForFull);
+    const target = FEEL.energyMax * x * x * (3 - 2 * x); // smoothstep: slow scrolls barely register
+    energy += (target - energy) * ease(dt, target > energy ? FEEL.energyAttack : FEEL.energyRelease);
+    travel += dt * state.nums.speed * (1 + energy * FEEL.travelBoost) * 4 * motion;
     ground.material.uniforms.uOff.value = travel;
     sky.material.uniforms.uTime.value = t * motion;
     motes.material.uniforms.uTime.value = t * motion;
@@ -380,13 +411,16 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     post.uniforms.uFlare.value = state.nums.flare * sunUp;
     post.uniforms.uFlareCol.value.copy(state.colors.flare);
     post.uniforms.uDew.value = state.nums.dew;
-    flash *= Math.exp(-dt * 7);
+    // flash envelope: quick attack to its peak, then an exponential tail (no instant pop)
+    flashAge += dt;
+    flash = flashAge < FEEL.flashAttack ? flashPeakNow * (flashAge / FEEL.flashAttack) : flashPeakNow * Math.exp(-(flashAge - FEEL.flashAttack) * FEEL.flashDecay);
     post.uniforms.uFlash.value = flash;
     post.uniforms.uFlashCol.value.copy(state.colors.flash);
     post.uniforms.uTime.value = t;
-    post.uniforms.uAberration.value = reducedMotion ? 0 : energy * 0.035 + pulse * 0.006;
-    pointer.x += (pointer.tx - pointer.x) * 0.04;
-    pointer.y += (pointer.ty - pointer.y) * 0.04;
+    post.uniforms.uAberration.value = reducedMotion ? 0 : Math.min(FEEL.aberrationMax, energy * (FEEL.aberrationMax / FEEL.energyMax)) + pulse * 0.005;
+    const pk = ease(dt, FEEL.pointerRate);
+    pointer.x += (pointer.tx - pointer.x) * pk;
+    pointer.y += (pointer.ty - pointer.y) * pk;
     camera.position.x = pointer.x * 1.6;
     camera.position.y = 2.4 - pointer.y * 0.6;
     camera.lookAt(0, 9.5, -60);
@@ -405,10 +439,13 @@ export function createWorld(canvas, { reducedMotion, store, beat }) {
     strike(color) {
       if (reducedMotion) return;
       const now = performance.now();
-      if (now - lastStrike < 900) return;
+      if (now - lastStrike < FEEL.strikeGap) return;
       lastStrike = now;
-      flash = 1;
-      weather.strike(new THREE.Color(color));
+      // the faster you're moving, the softer the flash; fast scrolls get a shimmer, not a storm
+      const calm = 1 - (energy / FEEL.energyMax) * (1 - FEEL.flashFastScale);
+      flashPeakNow = FEEL.flashPeak * calm;
+      flashAge = 0;
+      if (energy < FEEL.boltMaxEnergy) weather.strike(new THREE.Color(color), FEEL.boltPeak * calm);
     },
     get quality() { return DPR_STEPS[dprIndex]; },
   };

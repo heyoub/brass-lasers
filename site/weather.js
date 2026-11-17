@@ -44,7 +44,7 @@ export function createWeather(scene, camera) {
     scene.add(line);
     return line;
   });
-  let boltAge = 99;
+  let boltAge = 99, boltPeak = 1;
   function zigzag(from, to, steps, jag) {
     const pts = [];
     for (let i = 0; i <= steps; i++) {
@@ -55,7 +55,8 @@ export function createWeather(scene, camera) {
     }
     return pts;
   }
-  function strike(color) {
+  function strike(color, intensity = 1) {
+    boltPeak = intensity;
     const x = (Math.random() - 0.5) * 50, top = new THREE.Vector3(x, 46, -60), ground = new THREE.Vector3(x + (Math.random() - 0.5) * 18, 1.5, -60);
     const main = zigzag(top, ground, 22, 4.2);
     bolts[0].geometry.setFromPoints(main);
@@ -78,7 +79,7 @@ export function createWeather(scene, camera) {
       // bolt flickers: on, off, on, gone
       boltAge += dt;
       const on = boltAge < 0.07 || (boltAge > 0.11 && boltAge < 0.2);
-      boltMat.opacity = on ? 1 : 0;
+      boltMat.opacity = on ? boltPeak : 0;
       bolts.forEach((b) => (b.visible = boltAge < 0.25));
     },
     get flashing() { return boltAge < 0.25; },

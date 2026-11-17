@@ -8,7 +8,8 @@
       "set": "The Main Stage",
       "tagline": "Void-purple lot lights, brass-gold hardware, hot-pink lasers. The original set.",
       "t3Description": "Void-purple lot lights, brass-gold accents, hot-pink lasers — funky EDM energy for T3 Code at 4AM. Still readable. Still slap.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%204AM"
     },
     "colors": {
       "brass": "#ffb627",
@@ -92,7 +93,8 @@
       "set": "The Greenhouse",
       "tagline": "A biophilic sci-fi workspace. Wood-and-concrete observatory, subtropical plants, amber lamps, turquoise holograms.",
       "t3Description": "The greenhouse after hours: forest-charcoal, lagoon holograms, moss, orchid displays and lantern light. Soft but legible.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Atrium%205AM"
     },
     "colors": {
       "brass": "#e7ad70",
@@ -176,7 +178,8 @@
       "set": "The Sunrise Walk",
       "tagline": "First light over the lot. Porcelain mist, indigo ink, dawn-rose keywords, dew-green strings.",
       "t3Description": "Brass Lasers at sunrise: porcelain mist, indigo ink, dawn-rose keywords, cool and calm.",
-      "jetbrainsParent": "Default"
+      "jetbrainsParent": "Default",
+      "nameUrl": "Brass%20Lasers%20Daybreak"
     },
     "colors": {
       "brass": "#8a5a00",
@@ -261,7 +264,8 @@
       "source": "heyoub.dev brand tokens: src/lib/palette.ts (dark key), with a matte finish",
       "tagline": "A matte finish. House lights at half, gaffer-tape charcoal, every color with the shine sanded off. Nothing glossy, nothing loud, everything in its place.",
       "t3Description": "Brass Lasers Soundcheck: a matte charcoal set. Muted pink, cyan, warm amber and green with the gloss sanded off.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Soundcheck"
     },
     "colors": {
       "brass": "#f0c25f",
@@ -345,7 +349,8 @@
       "set": "The Lagoon Stage",
       "tagline": "Solarized-subtropical daylight. Papaya-cream paper, deep lagoon ink, hibiscus, palm and mango.",
       "t3Description": "Brass Lasers in subtropical daylight: papaya-cream paper, lagoon ink, hibiscus keywords, palm-green strings.",
-      "jetbrainsParent": "Default"
+      "jetbrainsParent": "Default",
+      "nameUrl": "Brass%20Lasers%20Golden%20Hour"
     },
     "colors": {
       "brass": "#9d5901",
@@ -429,7 +434,8 @@
       "set": "The Dusk Set",
       "tagline": "The sky right after the sun drops. Wine-plum dusk, coral clouds, mint grass, blue-hour light.",
       "t3Description": "Brass Lasers at dusk: wine-plum sky, coral and rose clouds, mint strings, blue-hour functions.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Afterglow"
     },
     "colors": {
       "brass": "#f29bb2",
@@ -514,7 +520,8 @@
       "source": "Free Battery Factory (the-fbf) brand tokens: src/lib/palette.ts and the metal gradients in variables.css",
       "tagline": "Molten chrome under the headliner. Graphite and mercury, with the yellow-cyan-purple spark spectrum of an oil slick.",
       "t3Description": "Brass Lasers Liquid Metal: graphite, chrome text, champagne strings and an iridescent yellow, cyan and purple spark spectrum.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Liquid%20Metal"
     },
     "colors": {
       "brass": "#eab308",
@@ -598,7 +605,8 @@
       "set": "The Night Market",
       "tagline": "Navy ink, moonlight text and sodium-orange streetlights. The walk between stages.",
       "t3Description": "Brass Lasers at midnight: navy ink, moonlit text, sodium-orange streetlight keywords.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Midnight"
     },
     "colors": {
       "brass": "#f5d76e",
@@ -683,7 +691,8 @@
       "contrastFloor": 7,
       "tagline": "High contrast. Pure black, UV magenta, electric cyan, laser yellow. Every syntax color at WCAG AAA (7:1).",
       "t3Description": "Brass Lasers at full strobe: pure black, UV magenta, electric cyan, AAA contrast everywhere it counts.",
-      "jetbrainsParent": "Darcula"
+      "jetbrainsParent": "Darcula",
+      "nameUrl": "Brass%20Lasers%20Strobe"
     },
     "colors": {
       "brass": "#ffe24d",

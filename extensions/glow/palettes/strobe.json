@@ -8,7 +8,8 @@
     "contrastFloor": 7,
     "tagline": "High contrast. Pure black, UV magenta, electric cyan, laser yellow. Every syntax color at WCAG AAA (7:1).",
     "t3Description": "Brass Lasers at full strobe: pure black, UV magenta, electric cyan, AAA contrast everywhere it counts.",
-    "jetbrainsParent": "Darcula"
+    "jetbrainsParent": "Darcula",
+    "nameUrl": "Brass%20Lasers%20Strobe"
   },
   "colors": {
     "brass": "#ffe24d",

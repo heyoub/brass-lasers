@@ -263,3 +263,21 @@ button.now-playing:disabled { cursor: default; }
 .cursor-ring.on { opacity: 1; }
 .cursor-ring.hot { width: 46px; height: 46px; margin: -23px 0 0 -23px; border-color: var(--pink); box-shadow: 0 0 22px -6px var(--pink), inset 0 0 14px -8px var(--pink); }
 .cursor-ring.press { width: 22px; height: 22px; margin: -11px 0 0 -11px; }
+
+/* ---------- scrollbar: a brass rail with a laser in it ---------- */
+/* Chromium/Safari get the full treatment; Firefox gets the standard thin, tinted bar. */
+@supports not selector(::-webkit-scrollbar) {
+  html { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--brass) 70%, transparent) transparent; }
+}
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: linear-gradient(90deg, transparent 5px, color-mix(in srgb, var(--text) 7%, transparent) 5px 7px, transparent 7px); }
+::-webkit-scrollbar-thumb {
+  border: 4px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--brass), var(--pink)) padding-box;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 45%, transparent);
+  min-height: 48px;
+}
+::-webkit-scrollbar-thumb:hover { border-width: 3px; background: linear-gradient(180deg, var(--brassLight), var(--pinkLight)) padding-box; }
+::-webkit-scrollbar-thumb:active { border-width: 2px; }
+::-webkit-scrollbar-corner { background: transparent; }
