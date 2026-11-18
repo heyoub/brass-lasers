@@ -199,9 +199,10 @@ palette/*.json  ──►  scripts/expand.js  ──►  templates/**  ──►
 ```
 
 - `npm run build` renders every palette through every template.
-- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (<!--=pairs-->52<!--/--> WCAG pairs × <!--=setNum-->9<!--/--> sets; Strobe holds syntax to AAA).
+- `npm run check` fails if any generated file is stale, any palette drops below its contrast floor (<!--=pairs-->52<!--/--> WCAG pairs × <!--=setNum-->9<!--/--> sets; Strobe holds syntax to AAA), any port or icon breaks, or a relative link points nowhere.
 - `npm run art` redraws swatches, wallpapers and the social card from the palettes.
-- Tag a release (`git tag v0.3.0 && git push origin v0.3.0`) and CI publishes to Open VSX, the VS Marketplace and GitHub Releases.
+- `npm run release -- minor`, then `git push --follow-tags`, and CI publishes to Open VSX, the VS Marketplace and GitHub Releases ([PUBLISH.md](PUBLISH.md)).
+- Every Monday, CI checks that every store serves the current version and every link still resolves (`npm run stores`, `npm run links`), and opens an issue only when something's actually broken.
 
 Want a tweak? Change a hex in `palette/`, run `npm run build`, and every app updates together.
 

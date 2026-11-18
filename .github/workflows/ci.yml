@@ -30,6 +30,9 @@ jobs:
       - name: Contrast gate (WCAG)
         run: node scripts/contrast.js --report
 
+      - name: Relative links resolve (the weekly Health check covers external ones)
+        run: node scripts/check-links.js --local
+
       - name: Changelog reminder (shipped changes since the last tag need an Unreleased note)
         run: |
           last=$(git describe --tags --abbrev=0 2>/dev/null || true)

@@ -1,0 +1,65 @@
+name: Health (weekly)
+
+# Is the outside world still in step with the repo?
+#  - stores: every store and the site serve the version package.json says. Also runs after each
+#            Release, waiting up to 30 minutes for the mirrors to catch up.
+#  - links:  every link in the docs and on the site still resolves.
+# Each opens (or comments on) one issue when something breaks and closes it once it's fixed.
+on:
+  schedule:
+    - cron: "41 6 * * 1" # Mondays, after the ports check
+  workflow_run:
+    workflows: [Release]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  stores:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Every store serves the repo's version
+        id: check
+        env:
+          STORES_REPORT: report.md
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/check-stores.js ${{ github.event_name == 'workflow_run' && '--wait 30' || '' }}
+      - name: Open, update or close the issue
+        if: always() && steps.check.outcome != 'skipped'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Stores out of date: not everything serves the latest version"
+          FAILED: ${{ steps.check.outcome == 'failure' }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: bash .github/scripts/health-issue.sh
+
+  links:
+    if: github.event_name != 'workflow_run'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Every link resolves
+        id: check
+        env:
+          LINKS_REPORT: report.md
+        run: node scripts/check-links.js
+      - name: Open, update or close the issue
+        if: always() && steps.check.outcome != 'skipped'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: "Broken links in the docs or site"
+          FAILED: ${{ steps.check.outcome == 'failure' }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: bash .github/scripts/health-issue.sh

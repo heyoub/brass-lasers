@@ -182,7 +182,7 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "check": "node scripts/build.js --check && node scripts/contrast.js && node scripts/check-ports.js && node scripts/check-icons.js",
+    "check": "node scripts/build.js --check && node scripts/contrast.js && node scripts/check-ports.js && node scripts/check-icons.js && node scripts/check-links.js --local",
     "contrast": "node scripts/contrast.js --report",
     "art": "node scripts/make-art.js",
     "package": "npx @vscode/vsce package",
@@ -190,6 +190,8 @@
     "ports": "node scripts/check-ports.js",
     "ports:refresh": "node scripts/refresh-port-contracts.js",
     "ports:smoke": "node scripts/ports/smoke.js",
-    "release": "node scripts/release.js"
+    "release": "node scripts/release.js",
+    "links": "node scripts/check-links.js",
+    "stores": "node scripts/check-stores.js"
   }
 }
