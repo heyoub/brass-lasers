@@ -1,6 +1,6 @@
 # Brass Lasers for Zed
 
-The Zed port of [Brass Lasers](https://github.com/heyoub/brass-lasers): nine color themes, one for every hour of the festival, each with a No Italics flavor (18 themes).
+The Zed port of [Brass Lasers](https://github.com/heyoub/brass-lasers): <!--=sets-->nine<!--/--> color themes, one for every hour of the festival, each with a No Italics flavor (<!--=themes-->18<!--/--> themes).
 
 | Time | Set |
 |---|---|

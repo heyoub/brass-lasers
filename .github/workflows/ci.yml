@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # tags, for the changelog reminder
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -27,6 +29,15 @@ jobs:
 
       - name: Contrast gate (WCAG)
         run: node scripts/contrast.js --report
+
+      - name: Changelog reminder (shipped changes since the last tag need an Unreleased note)
+        run: |
+          last=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          [ -n "$last" ] || exit 0
+          changed=$(git diff --name-only "$last" HEAD -- palette templates scripts site icons themes extensions zed ports | head -1)
+          if [ -n "$changed" ] && ! grep -q "^## Unreleased" CHANGELOG.md; then
+            echo "::warning file=CHANGELOG.md::Changes since $last (e.g. $changed) but no '## Unreleased' section in CHANGELOG.md"
+          fi
 
       - name: Package VSIX
         run: npx --yes @vscode/vsce package --out brass-lasers.vsix

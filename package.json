@@ -189,6 +189,7 @@
     "previews": "node scripts/make-previews.js",
     "ports": "node scripts/check-ports.js",
     "ports:refresh": "node scripts/refresh-port-contracts.js",
-    "ports:smoke": "node scripts/ports/smoke.js"
+    "ports:smoke": "node scripts/ports/smoke.js",
+    "release": "node scripts/release.js"
   }
 }

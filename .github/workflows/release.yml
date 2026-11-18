@@ -1,8 +1,10 @@
 name: Release
 
-# git tag v0.3.0 && git push origin v0.3.0
+# npm run release -- minor && git push --follow-tags   (see PUBLISH.md)
 # → checks, packages the VSIX, publishes to Open VSX and the VS Marketplace
-#   (each only if its token secret is set), and creates the GitHub Release.
+#   (each only if its token secret is set), publishes Neon Glow when its version is new,
+#   and creates the GitHub Release from the CHANGELOG.
+# build --check also fails if zed/extension.toml and package.json versions differ.
 
 on:
   push:
@@ -20,11 +22,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Tag matches package.json version
+      - name: Tag, package.json and CHANGELOG agree
         run: |
           v=$(node -p "require('./package.json').version")
           if [ "v$v" != "$GITHUB_REF_NAME" ]; then
             echo "::error::Tag $GITHUB_REF_NAME does not match package.json version $v"; exit 1
+          fi
+          if ! grep -qE "^## $v( |$)" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no '## $v' section"; exit 1
           fi
           echo "VERSION=$v" >> "$GITHUB_ENV"
 
@@ -49,10 +54,22 @@ jobs:
         if: env.VSCE_PAT != ''
         run: npx --yes @vscode/vsce publish --packagePath "brass-lasers-4am-$VERSION.vsix" -p "$VSCE_PAT"
 
+      - name: Publish Neon Glow (only when its version is new)
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        if: env.OVSX_PAT != ''
+        working-directory: extensions/glow
+        run: |
+          gv=$(node -p "require('./package.json').version")
+          live=$(curl -sf https://open-vsx.org/api/heyoub/brass-lasers-glow | node -p "JSON.parse(require('fs').readFileSync(0)).version" 2>/dev/null || true)
+          if [ "$gv" = "$live" ]; then echo "Neon Glow $gv is already live"; exit 0; fi
+          npx --yes @vscode/vsce package --out "brass-lasers-glow-$gv.vsix"
+          npx --yes ovsx publish "brass-lasers-glow-$gv.vsix" -p "$OVSX_PAT"
+
       - name: Release notes from CHANGELOG
         run: |
-          awk -v v="$VERSION" '$0 ~ "^## "v" " {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
-          [ -s notes.md ] || echo "See CHANGELOG.md" > notes.md
+          awk -v v="$VERSION" '$0 ~ "^## "v"( |$)" {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
+          if [ ! -s notes.md ]; then echo "::error::No notes under '## $VERSION' in CHANGELOG.md"; exit 1; fi
 
       - name: GitHub Release
         env:

@@ -20,7 +20,7 @@ A family of neon synthwave color themes, built for that stretch of night when th
 
 ## The lineup: a day at the festival
 
-Nine sets, starting where it all began, at 4AM, and running the clock forward through dawn, the afternoon, golden hour, dusk, the headliner and back into the night. Each has its own room, its own light, its own reason to exist.
+<!--=Sets-->Nine<!--/--> sets, starting where it all began, at 4AM, and running the clock forward through dawn, the afternoon, golden hour, dusk, the headliner and back into the night. Each has its own room, its own light, its own reason to exist.
 
 | Time | Set | Room | |
 |---|---|---|---|
@@ -34,7 +34,7 @@ Nine sets, starting where it all began, at 4AM, and running the clock forward th
 | 12AM | **Midnight** | The Night Market. Navy ink, moonlight text, sodium-orange streetlights. | ![Midnight](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/midnight.png) |
 | 2AM | **Strobe** · high contrast | The Warehouse. Pure black, UV magenta, electric cyan, every syntax color at WCAG **AAA** (7:1). | ![Strobe](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/swatches/strobe.png) |
 
-Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's 18 themes in the picker.
+Every set also ships a **No Italics** flavor, for people who'd rather not see comments and keywords lean. That's <!--=themes-->18<!--/--> themes in the picker.
 
 ![All nine sets](https://raw.githubusercontent.com/heyoub/brass-lasers/master/media/previews/lineup.png)
 
@@ -57,7 +57,7 @@ Every set also ships a **No Italics** flavor, for people who'd rather not see co
 **VS Code:** the Marketplace listing is on its way. Until then, grab `brass-lasers-4am-<version>.vsix` from the [latest release](https://github.com/heyoub/brass-lasers/releases/latest), then:
 
 ```bash
-code --install-extension brass-lasers-4am-0.5.0.vsix
+code --install-extension brass-lasers-4am-0.6.0.vsix
 ```
 
 **Cursor / VSCodium:** these pull from [Open VSX](https://open-vsx.org/extension/heyoub/brass-lasers-4am). Search **Brass Lasers 4AM** in Extensions.
@@ -107,8 +107,8 @@ The theme looks good with anything. These make it look its best:
 
 A full file and folder icon theme ships in the same extension. Pick it with **Preferences → File Icon Theme → Brass Lasers Icons**.
 
-- **Files: Enamel Edge.** Every icon from [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme) (1,391 extensions, 2,156 file names), with shapes untouched, recolored from the palette, and finished with a soft light falloff, a top sheen, a darker rim and a small cut shadow.
-- **Folders: Resin.** [Catppuccin](https://github.com/catppuccin/vscode-icons)'s line folders in brass, each with a tinted glass body (421 folder names).
+- **Files: Enamel Edge.** Every icon from [Material Icon Theme](https://github.com/material-extensions/vscode-material-icon-theme) (<!--=extensions-->1,391<!--/--> extensions, <!--=fileNames-->2,156<!--/--> file names), with shapes untouched, recolored from the palette, and finished with a soft light falloff, a top sheen, a darker rim and a small cut shadow.
+- **Folders: Resin.** [Catppuccin](https://github.com/catppuccin/vscode-icons)'s line folders in brass, each with a tinted glass body (<!--=folders-->421<!--/--> folder names).
 - **Light sets:** each icon is lifted to the brightest tone that still keeps 3:1 contrast against the sidebar.
 - **Classic badges:** the original typographic badges are still there as **Brass Lasers Icons (Classic)**.
 
@@ -120,7 +120,7 @@ Both source sets are MIT; their notices ship in `icons/THIRD-PARTY-NOTICES.txt`.
 
 ## Everywhere else
 
-All nine sets are ported to **25+ apps**, all generated from one palette, so they always match.
+All <!--=sets-->nine<!--/--> sets are ported to **25+ apps**, all generated from one palette, so they always match.
 
 | | |
 |---|---|
@@ -199,7 +199,7 @@ palette/*.json  ──►  scripts/expand.js  ──►  templates/**  ──►
 ```
 
 - `npm run build` renders every palette through every template.
-- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (52 WCAG pairs × 9 sets; Strobe holds syntax to AAA).
+- `npm run check` fails if any generated file is stale, or if any palette drops below its contrast floor (<!--=pairs-->52<!--/--> WCAG pairs × <!--=setNum-->9<!--/--> sets; Strobe holds syntax to AAA).
 - `npm run art` redraws swatches, wallpapers and the social card from the palettes.
 - Tag a release (`git tag v0.3.0 && git push origin v0.3.0`) and CI publishes to Open VSX, the VS Marketplace and GitHub Releases.
 

@@ -1,0 +1,19 @@
+# Monthly, grouped: one PR for GitHub Actions, one for npm dev dependencies.
+# CI's gates decide whether a bump is safe. A material-icon-theme bump that changes
+# icons fails `build --check` until someone runs `npm run build` on the PR.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      dev:
+        patterns: ["*"]

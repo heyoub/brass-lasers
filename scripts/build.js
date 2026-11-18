@@ -27,6 +27,8 @@ const VARIANTS = ["4am", "atrium", "daybreak", "soundcheck", "golden-hour", "aft
 
 function loadPalettes() {
   const { expand } = require("./expand.js");
+  const extra = fs.readdirSync(rel("palette")).filter((f) => f.endsWith(".json") && !VARIANTS.includes(f.slice(0, -5)));
+  if (extra.length) throw new Error(`palette/${extra.join(", palette/")}: add the slug to VARIANTS in scripts/build.js (in set-time order)`);
   return VARIANTS.map((slug) => {
     const p = JSON.parse(read(`palette/${slug}.json`));
     if (p.meta.slug !== slug) throw new Error(`palette/${slug}.json has meta.slug ${p.meta.slug}`);
@@ -175,6 +177,26 @@ function buildAll() {
     { id: "brass-lasers-icons-classic", label: "Brass Lasers Icons (Classic)", path: "./icons/brass-lasers-classic-icon-theme.json" },
   ];
   files["package.json"] = JSON.stringify(pkg, null, 2) + "\n";
+
+  // The Zed extension ships in lockstep with the VSIX
+  const zedVersion = (read("zed/extension.toml").match(/^version\s*=\s*"([^"]+)"/m) || [])[1];
+  if (zedVersion !== pkg.version) throw new Error(`zed/extension.toml version ${zedVersion} != package.json ${pkg.version} (npm run release bumps both)`);
+
+  // Hand-written docs: facts that change with the data are filled in here, so they can't drift.
+  //   <!--=key-->value<!--/-->  in prose (key from docVars)
+  //   brass-lasers-4am-X.Y.Z.vsix  anywhere, code blocks included, follows package.json
+  const theme = JSON.parse(files["icons/brass-lasers-icon-theme.json"]);
+  const n = (k) => Object.keys(theme[k]).length.toLocaleString("en-US");
+  const docVars = { ...siteVars, extensions: n("fileExtensions"), fileNames: n("fileNames"), languages: n("languageIds"), folders: n("folderNames"), setNum: String(palettes.length) };
+  for (const doc of ["README.md", "PUBLISH.md", "zed/README.md", "ports/README.md"]) {
+    const src = read(doc).replace(/\r\n/g, "\n");
+    files[doc] = src
+      .replace(/<!--=(\w+)-->[\s\S]*?<!--\/-->/g, (m, k) => {
+        if (!(k in docVars)) throw new Error(`${doc}: unknown <!--=${k}--> (known: ${Object.keys(docVars).join(", ")})`);
+        return `<!--=${k}-->${docVars[k]}<!--/-->`;
+      })
+      .replace(/brass-lasers-4am-\d+\.\d+\.\d+\.vsix/g, `brass-lasers-4am-${pkg.version}.vsix`);
+  }
 
   return files;
 }
