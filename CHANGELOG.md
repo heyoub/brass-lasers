@@ -2,6 +2,17 @@
 
 All notable drops of **Brass Lasers 4AM** land here. Newest first. Hydrate accordingly.
 
+## Unreleased
+
+### Wallpapers
+
+- **A world for every set:** 4AM keeps the original synthwave; the other eight sets each get their own scene, drawn from the palette in the icons' enamel, resin and matte materials.
+- The wordmark carries a soft halo so it reads over foliage, glitter and sparks.
+
+### Housekeeping
+
+- Removed the stale `plans/` folder from the 0.2.0 era.
+
 ## 0.6.0 — the new hardware
 
 **Brass Lasers Icons, rebuilt.** The typographic badges are replaced by a full organic icon theme, chosen from three prototypes in the [icon lab](media/icon-lab/README.md).
